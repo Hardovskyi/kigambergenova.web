@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamila Igambergenova — Architecture as Connection</title>
+  <meta name="description" content="Architectural designer Kamila Igambergenova. Reading disconnection — social, spatial, urban — and turning it into shared ground." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1ece1'/%3E%3Cpath d='M20 70 Q50 10 80 70' stroke='%23c1572f' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body data-page="about">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html">
+      <span class="nav__mono">KI</span>
+      <span class="nav__name">Kamila Igambergenova</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#path">Path</a>
+      <a href="#work">Work</a>
+      <a href="#frames">Frames</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/Resume_Kamila_Igambergenova.pdf" target="_blank" rel="noopener" class="nav__cv">Résumé ↗</a>
+    </nav>
+    <button class="nav__menu" id="navMenu" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+  <div class="scroll-thread"><span id="scrollThread"></span></div>
+
+  <!-- ============================================================
+       01 — HERO  (the thread/knot animation lives ONLY here)
+       ============================================================ -->
+  <section class="hero" id="top">
+    <canvas id="thread-canvas" aria-hidden="true"></canvas>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Architectural Designer · Chicago / Kazakhstan</p>
+      <h1 class="hero__title">
+        <span class="line"><em>Architecture</em></span>
+        <span class="line">as <span class="accent">Connection</span></span>
+      </h1>
+      <p class="hero__lede">
+        I read disconnection — social, spatial, urban — and turn it into shared
+        ground. A path that wasn’t the standard corporate route, and is stronger
+        for it.
+      </p>
+      <div class="hero__cta">
+        <a href="#work" class="btn btn--clay">Selected Work →</a>
+        <a href="#path" class="btn">Start with my path</a>
+      </div>
+    </div>
+    <div class="hero__foot">
+      <span class="hero__scrollcue">Scroll ↓</span>
+      <span>Portfolio ’20—’26</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 — MANIFESTO  (scroll-revealed statement, osos-style)
+       ============================================================ -->
+  <section class="manifesto" id="manifesto">
+    <p class="manifesto__label"><span>01</span> The idea</p>
+    <p class="manifesto__text" data-reveal-words>
+      Every site arrives as a knot — a tangle of people, terrain, and use. My work
+      pulls one strand at a time until disconnection becomes shared form. I observe
+      before I propose, I build with my hands, and I keep people at the center.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       03 — THE PATH  (pinned image swaps as the story scrolls)
+       ============================================================ -->
+  <section class="path" id="path">
+    <div class="path__intro reveal">
+      <p class="path__kicker"><span>02</span> The Path</p>
+      <h2 class="path__title">One line, drawn across five places.</h2>
+      <p class="path__lede">A portfolio is usually a list of buildings. Mine is a route — the same strand running through the people who hosted me, the craft that supported me, and the ground that received the work.</p>
+    </div>
+
+    <div class="path__layout">
+      <!-- sticky media column -->
+      <div class="path__media" aria-hidden="true">
+        <!-- PHOTO: replace futureassets/path-*.jpg -->
+        <figure class="path__img is-active" data-step="0" data-file="futureassets/path-kazakhstan.jpg">
+          <img src="futureassets/path-kazakhstan.jpg" alt="" loading="lazy" /><span class="path__imgtag">Aksay, Kazakhstan</span>
+        </figure>
+        <figure class="path__img" data-step="1" data-file="futureassets/path-chicago.jpg">
+          <img src="futureassets/path-chicago.jpg" alt="" loading="lazy" /><span class="path__imgtag">Chicago, USA</span>
+        </figure>
+        <figure class="path__img" data-step="2" data-file="futureassets/path-japan.jpg">
+          <img src="futureassets/path-japan.jpg" alt="" loading="lazy" /><span class="path__imgtag">Japan</span>
+        </figure>
+        <figure class="path__img" data-step="3" data-file="futureassets/path-india.jpg">
+          <img src="futureassets/path-india.jpg" alt="" loading="lazy" /><span class="path__imgtag">Maharashtra, India</span>
+        </figure>
+        <figure class="path__img" data-step="4" data-file="futureassets/path-bangkok.jpg">
+          <img src="futureassets/path-bangkok.jpg" alt="" loading="lazy" /><span class="path__imgtag">Bangkok (Studio)</span>
+        </figure>
+      </div>
+
+      <!-- scrolling steps -->
+      <ol class="path__steps">
+        <li class="path__step" data-step="0">
+          <span class="path__year">2020 — 2021</span>
+          <h3>Aksay, Kazakhstan</h3>
+          <p class="path__role">Assistant Architect &amp; Project Engineer</p>
+          <p>Two summers inside working firms. I produced construction drawings for a 700 m² supermarket and pharmacy, and redesigned a building entry to meet ADA — permitted on the first submission. The knot: turning client wishes into documents that pass on the first try.</p>
+        </li>
+        <li class="path__step" data-step="1">
+          <span class="path__year">2020 — 2025</span>
+          <h3>Chicago, USA</h3>
+          <p class="path__role">B.Arch → M. Tall Buildings, IIT</p>
+          <p>Illinois Institute of Technology became base camp: Dean’s List six semesters, the Elevate scholarship, then a master’s in tall buildings and vertical urbanism. The knot: how does a city stack people without stacking them apart?</p>
+        </li>
+        <li class="path__step" data-step="2">
+          <span class="path__year">2023</span>
+          <h3>Japan</h3>
+          <p class="path__role">Summer Study Abroad</p>
+          <p>A daily sketch for every day, and presentations on SANAA, Kengo Kuma, and Sou Fujimoto. I co-organized the IIT exhibition that came home with us. The knot: learning to see lightness, threshold, and restraint.</p>
+        </li>
+        <li class="path__step" data-step="3">
+          <span class="path__year">2024</span>
+          <h3>Maharashtra, India</h3>
+          <p class="path__role">Design-Build Studio · Community Room</p>
+          <p>Concept to construction in eight weeks, inside a $50k budget. When the site relocated, I replanned the foundations and structural grid in five days. The knot: an absence of shared public space — answered in brick, steel, and our own hands.</p>
+        </li>
+        <li class="path__step" data-step="4">
+          <span class="path__year">2024 — 2025</span>
+          <h3>Bangkok (Studio)</h3>
+          <p class="path__role">Vertical Urbanism · Village in the City</p>
+          <p>A tower designed as a vertical village — terraces and social streets in the sky that bring elders, students, and families back into daily contact. The knot: isolation inside high-rise living.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — SELECTED WORK  (horizontal gallery, aitakesover-style)
+       ============================================================ -->
+  <section class="work-gallery" id="work">
+    <div class="work-gallery__head reveal">
+      <div>
+        <p class="work-gallery__kicker"><span>03</span> Selected Work</p>
+        <h2 class="work-gallery__title">Four knots, one method.</h2>
+      </div>
+      <p class="work-gallery__hint">Drag, scroll, or swipe →</p>
+    </div>
+
+    <div class="work-track" id="workTrack" tabindex="0" aria-label="Selected projects, horizontally scrollable">
+      <!-- PROJECT 01 -->
+      <article class="work-card">
+        <a class="work-card__media" href="work.html#p01" data-file="futureassets/work-community-room.jpg">
+          <img src="futureassets/work-community-room.jpg" alt="Community Room — design-build pavilion (replace)" loading="lazy" />
+          <span class="work-card__index">01</span>
+        </a>
+        <div class="work-card__body">
+          <h3>Community Room</h3>
+          <p class="work-card__node">Node — absence of shared public space</p>
+          <ul class="work-card__tags"><li>Design-Build</li><li>Built</li><li>India</li></ul>
+        </div>
+      </article>
+      <!-- PROJECT 02 -->
+      <article class="work-card">
+        <a class="work-card__media" href="work.html#p02" data-file="futureassets/work-the-cove.jpg">
+          <img src="futureassets/work-the-cove.jpg" alt="The Cove — civic roofscape (replace)" loading="lazy" />
+          <span class="work-card__index">02</span>
+        </a>
+        <div class="work-card__body">
+          <h3>The Cove</h3>
+          <p class="work-card__node">Node — disconnection between urban levels</p>
+          <ul class="work-card__tags"><li>Universal Space</li><li>Chicago</li></ul>
+        </div>
+      </article>
+      <!-- PROJECT 03 -->
+      <article class="work-card">
+        <a class="work-card__media" href="work.html#p03" data-file="futureassets/work-village.jpg">
+          <img src="futureassets/work-village.jpg" alt="Village in the City — intergenerational tower (replace)" loading="lazy" />
+          <span class="work-card__index">03</span>
+        </a>
+        <div class="work-card__body">
+          <h3>Village in the City</h3>
+          <p class="work-card__node">Node — social isolation in vertical living</p>
+          <ul class="work-card__tags"><li>Tall Building</li><li>Bangkok</li></ul>
+        </div>
+      </article>
+      <!-- PROJECT 04 -->
+      <article class="work-card">
+        <a class="work-card__media" href="work.html#p04" data-file="futureassets/work-the-wave.jpg">
+          <img src="futureassets/work-the-wave.jpg" alt="The Wave — neighborhood fieldhouse (replace)" loading="lazy" />
+          <span class="work-card__index">04</span>
+        </a>
+        <div class="work-card__body">
+          <h3>The Wave</h3>
+          <p class="work-card__node">Node — a fieldhouse without a field</p>
+          <ul class="work-card__tags"><li>Civic</li><li>Gradient of light</li></ul>
+        </div>
+      </article>
+      <!-- VIEW ALL -->
+      <a class="work-card work-card--all" href="work.html">
+        <span class="work-card__allarrow">→</span>
+        <span class="work-card__alltext">Full portfolio<br/>&amp; 22-page document</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 — FRAMES OF PRACTICE  (sequenced image storytelling)
+       Sticky chapter rail + scrolling image stage.
+       Story order: Japan (observe) → Texas (serve) → India (build).
+       PHOTOS: ~10 available per place; drop into /futureassets.
+       ============================================================ -->
+  <section class="frames" id="frames" aria-labelledby="frames-title">
+    <div class="frames__intro reveal">
+      <p class="frames__kicker"><span>04</span> Frames of Practice</p>
+      <h2 class="frames__title" id="frames-title">Frames of <em>Practice</em></h2>
+      <p class="frames__lede">Three experiences outside the traditional office — read in sequence — taught me how to observe, serve, and build. Each is a scene; each image is evidence.</p>
+    </div>
+
+    <div class="frames__stage">
+
+      <!-- STICKY CHAPTER RAIL -->
+      <aside class="rail" aria-label="Frames of Practice chapters">
+        <nav class="rail__nav">
+          <span class="rail__line" aria-hidden="true"><span id="railProgress"></span></span>
+          <a class="rail__item is-active" href="#frame-japan" data-target="frame-japan"><span class="rail__no">01</span><span class="rail__label">Japan</span></a>
+          <a class="rail__item" href="#frame-texas" data-target="frame-texas"><span class="rail__no">02</span><span class="rail__label">Texas</span></a>
+          <a class="rail__item" href="#frame-india" data-target="frame-india"><span class="rail__no">03</span><span class="rail__label">India</span></a>
+          <a class="rail__item" href="#frame-practice" data-target="frame-practice"><span class="rail__no">04</span><span class="rail__label">In Practice</span></a>
+        </nav>
+        <div class="rail__readouts">
+          <div class="readout is-active" data-for="frame-japan">
+            <p class="readout__loc">Japan · 2023</p>
+            <p class="readout__lesson">I learned to see sequence, restraint, and atmosphere.</p>
+            <ul class="readout__tags"><li>Observation</li><li>Spatial sequencing</li><li>Atmosphere</li></ul>
+          </div>
+          <div class="readout" data-for="frame-texas">
+            <p class="readout__loc">Texas · Habitat for Humanity</p>
+            <p class="readout__lesson">I learned that contribution starts with listening and showing up.</p>
+            <ul class="readout__tags"><li>Humility</li><li>Community</li><li>Initiative</li></ul>
+          </div>
+          <div class="readout" data-for="frame-india">
+            <p class="readout__loc">Maharashtra, India · 2024</p>
+            <p class="readout__lesson">I learned what drawings become when people, materials, and time enter the process.</p>
+            <ul class="readout__tags"><li>Constructability</li><li>Coordination</li><li>Problem solving</li></ul>
+          </div>
+          <div class="readout" data-for="frame-practice">
+            <p class="readout__loc">Synthesis</p>
+            <p class="readout__lesson">What three places taught me — translated into how I work.</p>
+            <ul class="readout__tags"><li>Observe</li><li>Adapt</li><li>Build</li></ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- SCROLLING IMAGE STAGE -->
+      <div class="scenes">
+
+        <!-- CHAPTER 01 — JAPAN -->
+        <article class="scene" id="frame-japan" data-chapter="01" aria-labelledby="frame-japan-h">
+          <header class="scene__head">
+            <p class="scene__eyebrow">01 — Japan · 2023 · Study Abroad</p>
+            <h3 class="scene__h" id="frame-japan-h">Learning to see sequence, restraint, and atmosphere.</h3>
+          </header>
+          <figure class="frame-img frame-img--hero" data-file="futureassets/japan-hero.jpg">
+            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-hero.jpg" alt="Establishing shot — quiet Japanese street sequence (replace)" loading="lazy" /></div>
+            <figcaption>Establishing — street sequence, the daily walk</figcaption>
+          </figure>
+          <p class="scene__note">Daily sketching and architectural study in Japan sharpened how I read thresholds, light, and material restraint. It made my process slower in the best way — more observant before becoming formal.</p>
+          <div class="stills" aria-label="Stills from Japan">
+            <figure class="frame-img frame-img--still still--tall" data-file="futureassets/japan-01.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-01.jpg" alt="Still — street sequence (replace)" loading="lazy" /></div><figcaption>Street sequence</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/japan-02.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-02.jpg" alt="Still — threshold study (replace)" loading="lazy" /></div><figcaption>Threshold study</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/japan-03.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-03.jpg" alt="Still — daily sketch (replace)" loading="lazy" /></div><figcaption>Daily sketch documentation</figcaption></figure>
+            <figure class="frame-img frame-img--still still--wide" data-file="futureassets/japan-04.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-04.jpg" alt="Still — material restraint and shadow (replace)" loading="lazy" /></div><figcaption>Material restraint and shadow</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/japan-05.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-05.jpg" alt="Still — temple detail (replace)" loading="lazy" /></div><figcaption>Detail &amp; joinery</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/japan-06.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-06.jpg" alt="Still — urban rhythm (replace)" loading="lazy" /></div><figcaption>Everyday urban rhythm</figcaption></figure>
+          </div>
+        </article>
+
+        <!-- CHAPTER 02 — TEXAS -->
+        <article class="scene" id="frame-texas" data-chapter="02" aria-labelledby="frame-texas-h">
+          <header class="scene__head">
+            <p class="scene__eyebrow">02 — Texas · Habitat for Humanity</p>
+            <h3 class="scene__h" id="frame-texas-h">Learning that contribution starts with listening and showing up.</h3>
+          </header>
+          <figure class="frame-img frame-img--hero" data-file="futureassets/texas-hero.jpg">
+            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-hero.jpg" alt="Establishing shot — Habitat for Humanity build day (replace)" loading="lazy" /></div>
+            <figcaption>Establishing — Habitat for Humanity build</figcaption>
+          </figure>
+          <p class="scene__note">Volunteering deepened my understanding of service, community, and the role of architecture in improving lives. It taught me to contribute practically, work alongside others, and treat buildings as lived environments.</p>
+          <div class="stills" aria-label="Stills from Texas">
+            <figure class="frame-img frame-img--still" data-file="futureassets/texas-01.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-01.jpg" alt="Still — demolition and retrofit (replace)" loading="lazy" /></div><figcaption>Demolition &amp; retrofit</figcaption></figure>
+            <figure class="frame-img frame-img--still still--tall" data-file="futureassets/texas-02.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-02.jpg" alt="Still — interior improvements (replace)" loading="lazy" /></div><figcaption>Interior improvements</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/texas-03.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-03.jpg" alt="Still — material salvage (replace)" loading="lazy" /></div><figcaption>Material salvage for reuse</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/texas-04.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-04.jpg" alt="Still — teamwork on site (replace)" loading="lazy" /></div><figcaption>Teamwork on site</figcaption></figure>
+            <figure class="frame-img frame-img--still still--wide" data-file="futureassets/texas-05.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-05.jpg" alt="Still — community impact (replace)" loading="lazy" /></div><figcaption>Community impact</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/texas-06.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/texas-06.jpg" alt="Still — finishing work (replace)" loading="lazy" /></div><figcaption>Finishing work</figcaption></figure>
+          </div>
+        </article>
+
+        <!-- CHAPTER 03 — INDIA -->
+        <article class="scene" id="frame-india" data-chapter="03" aria-labelledby="frame-india-h">
+          <header class="scene__head">
+            <p class="scene__eyebrow">03 — Maharashtra, India · 2024 · Design-Build</p>
+            <h3 class="scene__h" id="frame-india-h">Learning what drawings become when people, materials, and time enter the process.</h3>
+          </header>
+          <figure class="frame-img frame-img--hero" data-file="futureassets/india-hero.jpg">
+            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-hero.jpg" alt="Establishing shot — community build at the village edge (replace)" loading="lazy" /></div>
+            <figcaption>Establishing — community build, village edge</figcaption>
+          </figure>
+          <p class="scene__note">Design-build moved design out of the studio and into coordination, budget, labor, weather, and construction sequence. It taught me to make decisions that can be communicated clearly and adjusted quickly.</p>
+          <ul class="scene__meta" aria-label="Project facts">
+            <li><span>Duration</span><b>8 weeks</b></li>
+            <li><span>Budget</span><b>$50k</b></li>
+            <li><span>Site reset</span><b>5-day redesign</b></li>
+          </ul>
+          <div class="stills" aria-label="Stills from India">
+            <figure class="frame-img frame-img--still still--tall" data-file="futureassets/india-01.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-01.jpg" alt="Still — site condition (replace)" loading="lazy" /></div><figcaption>Site condition</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/india-02.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-02.jpg" alt="Still — structural grid adjustment (replace)" loading="lazy" /></div><figcaption>Structural grid adjustment</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/india-03.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-03.jpg" alt="Still — brickwork in progress (replace)" loading="lazy" /></div><figcaption>Brickwork in progress</figcaption></figure>
+            <figure class="frame-img frame-img--still still--wide" data-file="futureassets/india-04.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-04.jpg" alt="Still — detail development on site (replace)" loading="lazy" /></div><figcaption>Detail development on site</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/india-05.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-05.jpg" alt="Still — team coordination (replace)" loading="lazy" /></div><figcaption>Team coordination</figcaption></figure>
+            <figure class="frame-img frame-img--still" data-file="futureassets/india-06.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/india-06.jpg" alt="Still — completed room (replace)" loading="lazy" /></div><figcaption>Completed community room</figcaption></figure>
+          </div>
+        </article>
+
+        <!-- CHAPTER 04 — SYNTHESIS -->
+        <article class="scene scene--synthesis" id="frame-practice" data-chapter="04" aria-labelledby="frame-practice-h">
+          <header class="scene__head">
+            <p class="scene__eyebrow">04 — Synthesis</p>
+            <h3 class="scene__h" id="frame-practice-h">What this means in practice.</h3>
+          </header>
+          <ol class="synthesis">
+            <li class="synthesis__item"><span class="synthesis__no">01</span><div><h4>I observe before proposing.</h4><p>Careful reading of context, people, and patterns.</p></div></li>
+            <li class="synthesis__item"><span class="synthesis__no">02</span><div><h4>I translate across scales.</h4><p>From urban systems to details that get built.</p></div></li>
+            <li class="synthesis__item"><span class="synthesis__no">03</span><div><h4>I communicate visually and clearly.</h4><p>Diagrams, drawings, and stories that align teams.</p></div></li>
+            <li class="synthesis__item"><span class="synthesis__no">04</span><div><h4>I adapt when conditions change.</h4><p>Flexibility to adjust ideas without losing intent.</p></div></li>
+            <li class="synthesis__item"><span class="synthesis__no">05</span><div><h4>I design with people at the center.</h4><p>Spaces that connect, support, and last.</p></div></li>
+            <li class="synthesis__item"><span class="synthesis__no">06</span><div><h4>I understand design as concept and execution.</h4><p>Ideas that survive contact with budget, site, and craft.</p></div></li>
+          </ol>
+        </article>
+
+      </div><!-- /.scenes -->
+    </div><!-- /.frames__stage -->
+  </section>
+
+  <!-- ============================================================
+       06 — BACKGROUND  (recruiter facts: education + experience + toolkit)
+       ============================================================ -->
+  <section class="background" id="background">
+    <div class="bg__head reveal">
+      <p class="bg__kicker"><span>05</span> Background</p>
+      <h2 class="bg__title">The credentials, in brief.</h2>
+    </div>
+
+    <div class="bg__grid">
+      <!-- education -->
+      <div class="bg__col reveal">
+        <h3 class="bg__label">Education</h3>
+        <article class="bg__item">
+          <span class="bg__year">Dec 2025 — Present</span>
+          <h4>M. Tall Buildings &amp; Vertical Urbanism</h4>
+          <p>Illinois Institute of Technology — Chicago, IL</p>
+        </article>
+        <article class="bg__item">
+          <span class="bg__year">Aug 2020 — May 2025</span>
+          <h4>Bachelor of Architecture (B.Arch)</h4>
+          <p>Illinois Institute of Technology — Chicago, IL</p>
+          <p class="bg__honors">Dean’s List (6 semesters) · Elevate Scholarship ($5k)</p>
+        </article>
+      </div>
+
+      <!-- experience -->
+      <div class="bg__col reveal">
+        <h3 class="bg__label">Experience</h3>
+        <article class="bg__item"><span class="bg__year">2025 — Present</span><h4>Design Associate</h4><p>Impact Partners Studio · Remote</p></article>
+        <article class="bg__item"><span class="bg__year">2024 — 2025</span><h4>Teaching Assistant</h4><p>Illinois Institute of Technology</p></article>
+        <article class="bg__item"><span class="bg__year">2024</span><h4>Design-Build Studio Member</h4><p>IIT × Glass Wall Systems · India</p></article>
+        <article class="bg__item"><span class="bg__year">2020 — 2021</span><h4>Assistant Architect / Project Engineer</h4><p>Karachaganak · Aksay, Kazakhstan</p></article>
+      </div>
+
+      <!-- toolkit -->
+      <div class="bg__col reveal">
+        <h3 class="bg__label">Toolkit</h3>
+        <div class="bg__skills">
+          <p><b>BIM &amp; Design</b><br/>Revit · Rhino · Grasshopper · AutoCAD</p>
+          <p><b>Render &amp; Analysis</b><br/>V-Ray · Arnold · Lumion · Ladybug · Karamba</p>
+          <p><b>Graphics</b><br/>InDesign · Illustrator · Photoshop · Lightroom</p>
+          <p><b>Fabrication</b><br/>Laser · 3D print · CNC · Physical modeling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       07 — CONTACT
+       ============================================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer__top reveal">
+      <p class="footer__kicker"><span>06</span> Contact</p>
+      <p class="footer__statement">Let’s untangle<br/>something together.</p>
+    </div>
+    <div class="footer__grid">
+      <div>
+        <span class="footer__label">Email</span>
+        <a href="mailto:igambergenovak@gmail.com">igambergenovak@gmail.com</a>
+      </div>
+      <div>
+        <span class="footer__label">Phone</span>
+        <a href="tel:+13127920646">+1 (312) 792-0646</a>
+      </div>
+      <div>
+        <span class="footer__label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/kigambergenova/" target="_blank" rel="noopener">in/kigambergenova ↗</a>
+      </div>
+      <div>
+        <span class="footer__label">Documents</span>
+        <a href="assets/Resume_Kamila_Igambergenova.pdf" target="_blank" rel="noopener">Résumé (PDF) ↗</a><br/>
+        <a href="assets/Portfolio_Kamila_Igambergenova.pdf" target="_blank" rel="noopener">Portfolio (PDF) ↗</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span id="year"></span> Kamila Igambergenova</span>
+      <span>Architecture as Connection</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
