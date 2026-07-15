@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="The Wave  placeholder drawing">
+  <rect width="1200" height="900" fill="#e7dfce"/>
+  <g fill="none" stroke="#8c8473" stroke-width="1" opacity="0.45">
+    <path d="M0 150 H1200 M0 300 H1200 M0 450 H1200 M0 600 H1200 M0 750 H1200"/>
+    <path d="M150 0 V900 M300 0 V900 M450 0 V900 M600 0 V900 M750 0 V900 M900 0 V900 M1050 0 V900"/>
+  </g>
+  <g fill="none" stroke="#181512" stroke-width="2.2">
+    <path d="M160 680 C320 680 320 220 520 220 C720 220 720 680 880 680 C980 680 1040 520 1040 420"/>
+    <path d="M160 680 H1040"/>
+    <path d="M360 680 V420 M600 680 V300 M840 680 V480"/>
+  </g>
+  <path d="M200 500 C340 420 460 560 600 480 C740 400 860 540 1000 460" fill="none" stroke="#c1572f" stroke-width="2.4"/>
+  <text x="180" y="820" fill="#c1572f" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">04 · THE WAVE</text>
+  <text x="180" y="852" fill="#4b443b" font-family="ui-monospace, monospace" font-size="16" letter-spacing="2">NEIGHBORHOOD FIELDHOUSE</text>
+</svg>

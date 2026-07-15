@@ -441,7 +441,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.08; margin-bottom: 16px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 720px) {
   .work-feat, .work-sup, .work-sup:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
 }
 
@@ -1689,7 +1689,7 @@ body.opener-lock { overflow: hidden; }
   font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.55; max-width: 48ch;
 }
 .bring__list {
-  list-style: none; max-width: 760px;
+  list-style: none; max-width: 860px;
   border-left: 1.5px solid var(--line); padding-left: clamp(20px, 3vw, 36px);
   display: flex; flex-direction: column; gap: clamp(28px, 4.5vh, 48px);
 }

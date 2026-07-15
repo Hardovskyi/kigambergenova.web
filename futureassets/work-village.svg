@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Village in the City  placeholder drawing">
+  <rect width="1200" height="900" fill="#e7dfce"/>
+  <g fill="none" stroke="#8c8473" stroke-width="1" opacity="0.45">
+    <path d="M0 150 H1200 M0 300 H1200 M0 450 H1200 M0 600 H1200 M0 750 H1200"/>
+    <path d="M150 0 V900 M300 0 V900 M450 0 V900 M600 0 V900 M750 0 V900 M900 0 V900 M1050 0 V900"/>
+  </g>
+  <g fill="none" stroke="#181512" stroke-width="2.2">
+    <rect x="470" y="120" width="260" height="620"/>
+    <path d="M470 240 H730 M470 360 H730 M470 480 H730 M470 600 H730"/>
+    <path d="M400 300 H470 M730 300 H800 M400 540 H470 M730 540 H800"/>
+    <rect x="400" y="280" width="70" height="80"/>
+    <rect x="730" y="280" width="70" height="80"/>
+    <rect x="400" y="520" width="70" height="80"/>
+    <rect x="730" y="520" width="70" height="80"/>
+  </g>
+  <circle cx="600" cy="180" r="8" fill="#c1572f"/>
+  <text x="180" y="820" fill="#c1572f" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">03 · VILLAGE IN THE CITY</text>
+  <text x="180" y="852" fill="#4b443b" font-family="ui-monospace, monospace" font-size="16" letter-spacing="2">TALL BUILDING · BANGKOK</text>
+</svg>
