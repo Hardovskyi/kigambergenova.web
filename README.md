@@ -11,19 +11,23 @@ continuous *thread*, traced through her six-stage method:
 
 ## Homepage structure (`index.html`)
 
-A single guided scroll, sequenced like a film — each "wow" interaction appears
-once, tied to its content:
+A single guided scroll, structured like an architectural plan — five sections
+threaded from a central "Practice" knot. Knots appear only at meaningful
+transitions (hero, Practice, contact); a thread seam connects each section.
 
-1. **Hero** — name + "Architecture as Connection". The animated **thread/knot
-   canvas lives here only**.
-2. **Manifesto** — a statement whose words light up as you scroll through it.
-3. **The Path** — biography with a **pinned image that swaps** through her five
-   places (Kazakhstan → Chicago → Japan → India → Bangkok) as the story scrolls.
-4. **Selected Work** — a **horizontal gallery** of projects (drag / scroll / swipe).
-5. **Frames of Practice** — sequenced image storytelling with a sticky chapter
+1. **Hero** — "Architecture as Connection" beside an interactive **key plan**:
+   five labelled nodes (Work, Record, Practice-center, Background, Contact)
+   wired to a central knot. Clicking a node jumps to its section. As you scroll
+   the plan grid **unravels** and the thread hands off to a small **corner
+   marker** (a docked key-plan) that tracks the active section — each node
+   untangles from a tangled mini-knot → highlighted → resolved dot.
+2. **Selected Work** — a **horizontal gallery** of projects (drag / scroll / swipe).
+3. **Record** — experience and education as a **schedule table** (not a resume),
+   tagged Arch / Field / Adjacent.
+4. **Frames of Practice** — sequenced image storytelling with a sticky chapter
    rail: Japan → Texas → India → synthesis.
-6. **Background** — education, experience, and toolkit (recruiter facts).
-7. **Contact** — footer with all links.
+5. **Background** — education, experience, and toolkit (recruiter facts).
+6. **Contact** — footer resolved knot where the threads land.
 
 ## Pages
 
@@ -84,11 +88,12 @@ python -m http.server 8000
 - **Type:** Fraunces (display serif), Space Grotesk (sans), Space Mono (labels).
 - **Palette:** bone `#f1ece1`, ink `#181512`, terracotta accent `#c1572f`, warm
   sand `#d8cbb2`.
-- **Motion (deliberately restrained, one technique per section):** the thread
-  canvas in the hero only; word-by-word reveal in the manifesto; pinned
-  image-swap in The Path; horizontal drag/scroll in Selected Work; frame-reveal
-  galleries in Frames of Practice. All motion respects `prefers-reduced-motion`
-  and the site is fully readable with JavaScript disabled.
+- **Motion (deliberately restrained, tied to the thread/knot metaphor):** the
+  hero key-plan unravels to a corner marker on scroll; the docked key-plan's
+  active node untangles (tangled → highlighted → resolved dot); thread seams
+  draw in between sections; horizontal drag/scroll in Selected Work and the
+  Practice strips. All motion respects `prefers-reduced-motion` and the site is
+  fully readable with JavaScript disabled.
 
 ## Photos — `futureassets/` folder
 
@@ -97,8 +102,8 @@ Every image is a labeled placeholder until you drop a real file in
 code changes needed). To change a name/path, edit the `src` + `data-file`
 attributes (each marked with a `PHOTO:` comment in `index.html`).
 
-**The Path (bio):** `path-kazakhstan.jpg`, `path-chicago.jpg`, `path-japan.jpg`,
-`path-india.jpg`, `path-bangkok.jpg`
+**Note:** the Record section is a text schedule and needs no photos. (The old
+`path-*.jpg` bio images are no longer used.)
 
 **Selected Work (home preview):** `work-community-room.jpg`, `work-the-cove.jpg`,
 `work-village.jpg`, `work-the-wave.jpg`

@@ -186,6 +186,233 @@
   })();
 
   /* =========================================================
+     FRAMES image strips — drag + wheel to scroll (per chapter)
+     ========================================================= */
+  (function frameStrips() {
+    var strips = document.querySelectorAll(".strip");
+    if (!strips.length) return;
+
+    strips.forEach(function (strip) {
+      strip.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+        var max = strip.scrollWidth - strip.clientWidth;
+        if (max <= 0) return;
+        var atStart = strip.scrollLeft <= 0;
+        var atEnd = strip.scrollLeft >= max - 1;
+        if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
+        e.preventDefault();
+        strip.scrollLeft += e.deltaY;
+      }, { passive: false });
+
+      var down = false, startX = 0, startLeft = 0, moved = 0;
+      strip.addEventListener("pointerdown", function (e) {
+        if (e.pointerType === "mouse" && e.button !== 0) return;
+        down = true; moved = 0;
+        startX = e.clientX; startLeft = strip.scrollLeft;
+        strip.classList.add("is-dragging");
+        strip.setPointerCapture && strip.setPointerCapture(e.pointerId);
+      });
+      strip.addEventListener("pointermove", function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        moved += Math.abs(dx);
+        strip.scrollLeft = startLeft - dx;
+      });
+      function endDrag() {
+        if (!down) return;
+        down = false; strip.classList.remove("is-dragging");
+      }
+      strip.addEventListener("pointerup", endDrag);
+      strip.addEventListener("pointercancel", endDrag);
+      strip.addEventListener("pointerleave", endDrag);
+      // block image drag ghost while dragging the strip
+      strip.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    });
+  })();
+
+  /* =========================================================
+     KEY-PLAN NAV — unravel-to-thread, corner dock, untangle states
+     ========================================================= */
+  (function keyplanNav() {
+    var heroEl = document.getElementById("top");
+    var dock = document.getElementById("kpDock");
+    var opener = document.getElementById("opener");
+    var openerPlan = document.getElementById("openerPlan");
+    var openerFill = document.getElementById("openerFill");
+
+    function goTo(sectionId, instant) {
+      if (!sectionId) return;
+      var t = document.getElementById(sectionId);
+      if (t) t.scrollIntoView({ behavior: instant || reduceMotion ? "auto" : "smooth" });
+    }
+
+    /* orange thread that runs from the central Record node out to each room
+       (Record is the centre itself, so it has no connector) */
+    var connFor = {
+      work: ".conn-work", frames: ".conn-practice",
+      background: ".conn-background", contact: ".conn-contact"
+    };
+
+    var dismissed = false;
+
+    function removeOpener() {
+      document.body.classList.remove("opener-lock");
+      opener.classList.add("is-gone");
+      setTimeout(function () { opener.setAttribute("hidden", ""); }, 760);
+    }
+
+    /* the entry sequence:
+       A) the knot untangles in the middle,
+       B) the chosen thread lights up and runs FROM the middle out to its node,
+       C) only then does that node light up,
+       D) the node floods the page,
+       E) the section fades in underneath. */
+    function chooseEntry(sectionId, nodeEl) {
+      if (dismissed || !opener) return;
+      dismissed = true;
+
+      if (reduceMotion) {
+        document.body.classList.remove("opener-lock");
+        opener.setAttribute("hidden", "");
+        goTo(sectionId, true);
+        return;
+      }
+
+      if (nodeEl) nodeEl.classList.add("is-chosen");
+      var conn = connFor[sectionId] ? opener.querySelector(connFor[sectionId]) : null;
+      if (conn) conn.classList.add("is-chosen");
+
+      /* anchor the flood at the chosen node */
+      if (openerFill && nodeEl) {
+        var hit = nodeEl.querySelector(".node-hit") || nodeEl;
+        var r = hit.getBoundingClientRect();
+        openerFill.style.left = (r.left + r.width / 2) + "px";
+        openerFill.style.top = (r.top + r.height / 2) + "px";
+      }
+
+      var tUntangle = 720, tThread = conn ? 640 : 0, tLit = 360, tFill = 760;
+
+      /* A — untangle */
+      opener.classList.add("is-choosing");
+
+      /* B — thread lights up and draws from the middle out to the node */
+      if (conn) {
+        setTimeout(function () {
+          conn.style.strokeDasharray = "1";
+          conn.style.strokeDashoffset = "1";
+          conn.style.opacity = "0";
+          conn.getBoundingClientRect(); /* reflow */
+          conn.style.transition = "opacity 0.2s ease, stroke-dashoffset 0.62s cubic-bezier(0.22,1,0.36,1)";
+          conn.style.opacity = "1";
+          conn.style.strokeDashoffset = "0";
+        }, tUntangle);
+      }
+
+      /* C — the section node lights up */
+      setTimeout(function () { opener.classList.add("is-lit"); }, tUntangle + tThread);
+
+      /* D — the node floods the page */
+      setTimeout(function () { opener.classList.add("is-filling"); }, tUntangle + tThread + tLit);
+
+      /* E — jump under the flood, then fade to reveal the section */
+      setTimeout(function () {
+        document.body.classList.remove("opener-lock");
+        goTo(sectionId, true);
+        requestAnimationFrame(function () { removeOpener(); });
+      }, tUntangle + tThread + tLit + tFill);
+    }
+
+    if (opener) {
+      document.body.classList.add("opener-lock");
+      /* draw the connector threads in on entry */
+      if (openerPlan) {
+        if (reduceMotion) {
+          openerPlan.classList.add("is-ready");
+        } else {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { openerPlan.classList.add("is-ready"); });
+          });
+        }
+      }
+      /* choose a point of entry */
+      document.querySelectorAll("#openerPlan .knode[data-section]").forEach(function (el) {
+        var sec = el.getAttribute("data-section");
+        var go = function (e) { if (e) e.stopPropagation(); chooseEntry(sec, el); };
+        el.addEventListener("click", go);
+        el.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(e); }
+        });
+      });
+      /* Escape is a keyboard skip → enter at Work */
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !dismissed) {
+          chooseEntry("work", document.querySelector('#openerPlan .knode[data-section="work"]'));
+        }
+      });
+      /* deep link (e.g. index.html#work) skips the opener entirely */
+      if (location.hash && location.hash.length > 1) {
+        dismissed = true;
+        document.body.classList.remove("opener-lock");
+        opener.setAttribute("hidden", "");
+      }
+    }
+
+    /* the corner marker (dock) appears once you leave the hero */
+    if (dock && heroEl && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { dock.classList.toggle("show", !e.isIntersecting); });
+      }, { threshold: 0 }).observe(heroEl);
+    }
+
+    /* dock nodes jump to their section */
+    document.querySelectorAll(".kp-node[data-section]").forEach(function (el) {
+      var sec = el.getAttribute("data-section");
+      el.addEventListener("click", function () { goTo(sec); });
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goTo(sec); }
+      });
+    });
+
+    /* dock nodes untangle: tangled → active (highlight) → passed (resolved dot) */
+    var order = ["work", "record", "frames", "background", "contact"];
+    var dockNodes = {};
+    document.querySelectorAll(".kp-node[data-section]").forEach(function (n) {
+      dockNodes[n.getAttribute("data-section")] = n;
+    });
+    if (Object.keys(dockNodes).length && "IntersectionObserver" in window) {
+      var secObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var activeIdx = order.indexOf(e.target.id);
+          order.forEach(function (id, i) {
+            var n = dockNodes[id];
+            if (!n) return;
+            n.classList.toggle("is-active", i === activeIdx);
+            n.classList.toggle("is-passed", i < activeIdx);
+          });
+        });
+      }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
+      order.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) secObs.observe(el);
+      });
+    }
+
+    /* reveal inter-section seams + section knots as they enter */
+    var seamEls = document.querySelectorAll(".seam, .knot--section, .knot--resolved");
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      var seamIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-in"); seamIO.unobserve(e.target); }
+        });
+      }, { threshold: 0.35 });
+      seamEls.forEach(function (el) { seamIO.observe(el); });
+    } else {
+      seamEls.forEach(function (el) { el.classList.add("is-in"); });
+    }
+  })();
+
+  /* =========================================================
      FRAMES OF PRACTICE — scene reveals, active chapter, parallax
      ========================================================= */
   (function frames() {
@@ -221,8 +448,11 @@
     window.addEventListener("scroll", updateRailProgress, { passive: true });
     updateRailProgress();
 
+    var connectors = framesSection.querySelectorAll(".scene__connector");
+
     if (!("IntersectionObserver" in window)) {
       scenes.forEach(function (s) { s.classList.add("is-in"); });
+      connectors.forEach(function (c) { c.classList.add("is-in"); });
       return;
     }
 
@@ -235,6 +465,7 @@
       { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
     );
     scenes.forEach(function (s) { revealIO.observe(s); });
+    connectors.forEach(function (c) { revealIO.observe(c); });
 
     scenes.forEach(function (s) {
       var r = s.getBoundingClientRect();
