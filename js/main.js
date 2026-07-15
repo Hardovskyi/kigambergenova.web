@@ -135,15 +135,18 @@
   })();
 
   /* =========================================================
-     SELECTED WORK — horizontal gallery: drag + wheel to scroll
+     SELECTED WORK — placeholders + optional horizontal gallery
      ========================================================= */
   (function workGallery() {
+    document.querySelectorAll(".work-card__media img, .work-feat__media img, .work-sup__media img").forEach(function (img) {
+      var sel = img.closest(".work-feat__media") ? ".work-feat__media"
+        : img.closest(".work-sup__media") ? ".work-sup__media"
+        : ".work-card__media";
+      wirePlaceholder(img, sel);
+    });
+
     var track = document.getElementById("workTrack");
     if (!track) return;
-
-    document.querySelectorAll(".work-card__media img").forEach(function (img) {
-      wirePlaceholder(img, ".work-card__media");
-    });
 
     // translate vertical wheel into horizontal scroll while hovering the track
     track.addEventListener("wheel", function (e) {
@@ -249,8 +252,10 @@
     /* orange thread that runs from the central Record node out to each room
        (Record is the centre itself, so it has no connector) */
     var connFor = {
-      work: ".conn-work", frames: ".conn-practice",
-      background: ".conn-background", contact: ".conn-contact"
+      "selected-work": ".conn-work",
+      "frames-of-practice": ".conn-practice",
+      background: ".conn-background",
+      contact: ".conn-contact"
     };
 
     var dismissed = false;
@@ -346,7 +351,7 @@
       /* Escape is a keyboard skip → enter at Work */
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !dismissed) {
-          chooseEntry("work", document.querySelector('#openerPlan .knode[data-section="work"]'));
+          chooseEntry("selected-work", document.querySelector('#openerPlan .knode[data-section="selected-work"]'));
         }
       });
       /* deep link (e.g. index.html#work) skips the opener entirely */
@@ -374,7 +379,7 @@
     });
 
     /* dock nodes untangle: tangled → active (highlight) → passed (resolved dot) */
-    var order = ["work", "record", "frames", "background", "contact"];
+    var order = ["selected-work", "record", "frames-of-practice", "background", "contact"];
     var dockNodes = {};
     document.querySelectorAll(".kp-node[data-section]").forEach(function (n) {
       dockNodes[n.getAttribute("data-section")] = n;
@@ -416,10 +421,10 @@
      FRAMES OF PRACTICE — scene reveals, active chapter, parallax
      ========================================================= */
   (function frames() {
-    var framesSection = document.getElementById("frames");
+    var framesSection = document.getElementById("frames-of-practice");
     var scenes = document.querySelectorAll(".scene");
     if (!framesSection || !scenes.length) return;
-    var railItems = document.querySelectorAll(".rail__item");
+    var railItems = document.querySelectorAll(".frames-index__item, .rail__item");
     var readouts = document.querySelectorAll(".readout");
     var progress = document.getElementById("railProgress");
 
@@ -429,7 +434,8 @@
 
     function setActive(id) {
       railItems.forEach(function (it) {
-        it.classList.toggle("is-active", it.getAttribute("data-target") === id);
+        var target = it.getAttribute("data-target");
+        it.classList.toggle("is-active", target === id);
       });
       readouts.forEach(function (r) {
         r.classList.toggle("is-active", r.getAttribute("data-for") === id);
