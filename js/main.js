@@ -285,7 +285,13 @@
 
       if (nodeEl) nodeEl.classList.add("is-chosen");
       var conn = connFor[sectionId] ? opener.querySelector(connFor[sectionId]) : null;
-      if (conn) conn.classList.add("is-chosen");
+      if (conn) {
+        conn.classList.add("is-chosen");
+        /* start undrawn + hidden so there is no pre-animation flash */
+        conn.style.strokeDasharray = "1";
+        conn.style.strokeDashoffset = "1";
+        conn.style.opacity = "0";
+      }
 
       /* anchor the flood at the chosen node */
       if (openerFill && nodeEl) {
@@ -300,12 +306,10 @@
       /* A — untangle */
       opener.classList.add("is-choosing");
 
-      /* B — thread lights up and draws from the middle out to the node */
+      /* B — chosen thread draws from the middle out (stays lit after) */
       if (conn) {
         setTimeout(function () {
-          conn.style.strokeDasharray = "1";
-          conn.style.strokeDashoffset = "1";
-          conn.style.opacity = "0";
+          opener.classList.add("is-threading");
           conn.getBoundingClientRect(); /* reflow */
           conn.style.transition = "opacity 0.2s ease, stroke-dashoffset 0.62s cubic-bezier(0.22,1,0.36,1)";
           conn.style.opacity = "1";

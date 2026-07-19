@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260715" />
+  <link rel="stylesheet" href="css/style.css?v=20260719b" />
+  <link rel="stylesheet" href="css/selected-work.css?v=20260719b" />
   <noscript><style>.opener{display:none!important}body{overflow:auto!important}</style></noscript>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1ece1'/%3E%3Cpath d='M20 70 Q50 10 80 70' stroke='%23c1572f' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
@@ -134,6 +135,8 @@
   </header>
   <div class="scroll-thread"><span id="scrollThread"></span></div>
 
+  <a class="page-portfolio" href="work.html">Full portfolio ↗</a>
+
   <!-- ============================================================
        01 — HERO  (key-plan entry nav; unravels to a corner marker)
        ============================================================ -->
@@ -178,88 +181,37 @@
   </nav>
 
   <!-- ============================================================
-       02 — SELECTED WORK  (design proof first)
+       02 — SELECTED WORK  (continuous field)
        ============================================================ -->
-  <section class="work-gallery" id="selected-work">
-    <div class="work-gallery__head reveal">
-      <div>
-        <p class="work-gallery__kicker"><span>01</span> Selected Work</p>
-        <h2 class="work-gallery__title">Design proof first.</h2>
-        <p class="work-gallery__lede">Projects that show how I read a problem, take a role, and deliver an architectural outcome.</p>
+  <section class="work-story" id="selected-work">
+    <div class="story-stage">
+      <header class="story-header page-shell">
+        <div class="section-marker">
+          <span class="section-marker__number">01</span>
+          <span>Selected work</span>
+        </div>
+        <div class="story-heading">
+          <h2>A continuous field, not a gallery.</h2>
+          <p>Four projects · one continuous architectural field</p>
+        </div>
+      </header>
+
+      <div class="field-shell page-shell">
+        <nav class="mobile-stations" id="mobile-stations" aria-label="Select a project"></nav>
+
+        <div class="project-field" id="project-field">
+          <svg
+            class="thread-drawing"
+            id="thread-drawing"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path class="thread-halo" id="thread-halo"></path>
+            <path class="thread-line" id="thread-line"></path>
+            <path class="thread-active" id="thread-active"></path>
+          </svg>
+        </div>
       </div>
-      <a class="work-gallery__all" href="work.html">Full portfolio ↗</a>
-    </div>
-
-    <article class="work-feat reveal">
-      <a class="work-feat__media" href="work.html#community-room" data-file="futureassets/India/image8.jpg">
-        <img src="futureassets/India/image8.jpg" alt="Community Room — a design-build pavilion completed by hand in Maharashtra, India." loading="lazy" width="1200" height="800" />
-        <span class="work-feat__index">01</span>
-      </a>
-      <div class="work-feat__body">
-        <p class="work-feat__type">Design-Build · Maharashtra, India · 2024</p>
-        <h3 class="work-feat__title">Community Room</h3>
-        <dl class="work-meta">
-          <div><dt>Problem</dt><dd>Create a climatically responsive shared space under changing site and construction conditions.</dd></div>
-          <div><dt>Role</dt><dd>Design-Build Studio Member</dd></div>
-          <div><dt>Contribution</dt><dd>Drawing development, structural details, assembly diagrams, field measurements, construction support, and site adaptation.</dd></div>
-          <div><dt>Demonstrates</dt><dd>Constructability, coordination, technical communication, and problem-solving.</dd></div>
-        </dl>
-        <p class="work-xref">Same experience, different lens: <a href="#record">Record ↗</a> · <a href="#frame-india">Frames ↗</a></p>
-        <a class="work-feat__link" href="work.html#community-room">View project →</a>
-      </div>
-    </article>
-
-    <div class="work-support">
-      <article class="work-sup reveal">
-        <a class="work-sup__media" href="work.html#the-cove" data-file="futureassets/work-the-cove.svg">
-          <img src="futureassets/work-the-cove.svg" alt="The Cove — a civic roofscape connecting disconnected urban levels in Chicago." loading="lazy" width="800" height="600" />
-        </a>
-        <div class="work-sup__body">
-          <p class="work-sup__type">Universal Space · Chicago</p>
-          <h3>The Cove</h3>
-          <dl class="work-meta work-meta--compact">
-            <div><dt>Problem</dt><dd>Disconnection between urban levels — a residual void breaking pedestrian continuity.</dd></div>
-            <div><dt>Role</dt><dd>Designer · academic studio</dd></div>
-            <div><dt>Contribution</dt><dd>Civic roofscape scheme reconnecting Upper and Lower Wacker.</dd></div>
-            <div><dt>Demonstrates</dt><dd>Section design across levels; urban connector thinking.</dd></div>
-          </dl>
-          <a class="work-sup__link" href="work.html#the-cove">View project →</a>
-        </div>
-      </article>
-
-      <article class="work-sup reveal">
-        <a class="work-sup__media" href="work.html#village-in-the-city" data-file="futureassets/work-village.svg">
-          <img src="futureassets/work-village.svg" alt="Village in the City — an intergenerational tower with social streets in the sky for Bangkok." loading="lazy" width="800" height="600" />
-        </a>
-        <div class="work-sup__body">
-          <p class="work-sup__type">Tall Building · Bangkok</p>
-          <h3>Village in the City</h3>
-          <dl class="work-meta work-meta--compact">
-            <div><dt>Problem</dt><dd>Social isolation in vertical living — high-rise life weakening generational ties.</dd></div>
-            <div><dt>Role</dt><dd>Designer · M. Tall Buildings</dd></div>
-            <div><dt>Contribution</dt><dd>Intergenerational tower scheme with social streets in the sky.</dd></div>
-            <div><dt>Demonstrates</dt><dd>Vertical urbanism and social programming.</dd></div>
-          </dl>
-          <a class="work-sup__link" href="work.html#village-in-the-city">View project →</a>
-        </div>
-      </article>
-
-      <article class="work-sup reveal">
-        <a class="work-sup__media" href="work.html#the-wave" data-file="futureassets/work-the-wave.svg">
-          <img src="futureassets/work-the-wave.svg" alt="The Wave — a neighborhood fieldhouse organized by a gradient of light." loading="lazy" width="800" height="600" />
-        </a>
-        <div class="work-sup__body">
-          <p class="work-sup__type">Civic · Neighborhood Fieldhouse</p>
-          <h3>The Wave</h3>
-          <dl class="work-meta work-meta--compact">
-            <div><dt>Problem</dt><dd>A fieldhouse without a field — neighborhood life living in thresholds.</dd></div>
-            <div><dt>Role</dt><dd>Designer · academic studio</dd></div>
-            <div><dt>Contribution</dt><dd>Neighborhood fieldhouse concept organized as a gradient of public life.</dd></div>
-            <div><dt>Demonstrates</dt><dd>Light, structure, and civic program.</dd></div>
-          </dl>
-          <a class="work-sup__link" href="work.html#the-wave">View project →</a>
-        </div>
-      </article>
     </div>
   </section>
 
@@ -597,6 +549,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260715"></script>
+  <script src="js/main.js?v=20260719b"></script>
+  <script src="js/selected-work.js?v=20260719b"></script>
 </body>
 </html>

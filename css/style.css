@@ -99,6 +99,50 @@ a { color: inherit; text-decoration: none; }
 .nav__menu { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; }
 .nav__menu span { display: block; width: 26px; height: 2px; background: #fff; transition: 0.3s; }
 
+/* persistent Full Portfolio control — top right under nav */
+.page-portfolio {
+  position: fixed;
+  top: clamp(58px, 7.5vh, 76px);
+  right: var(--gutter);
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: clamp(0.88rem, 1.35vw, 1.12rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clay);
+  text-decoration: none;
+  padding: clamp(12px, 1.4vw, 16px) clamp(16px, 2vw, 22px);
+  border: 1.5px solid var(--clay);
+  background: rgba(241, 236, 225, 0.94);
+  backdrop-filter: blur(8px);
+  transition: color 0.3s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease), opacity 0.35s var(--ease);
+}
+.page-portfolio:hover,
+.page-portfolio:focus-visible {
+  color: var(--paper);
+  background: var(--clay);
+  border-color: var(--clay);
+  outline: none;
+}
+body.opener-lock .page-portfolio {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 560px) {
+  .page-portfolio {
+    top: auto;
+    bottom: 18px;
+    right: 16px;
+    left: auto;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    padding: 12px 14px;
+  }
+}
+
 /* scroll progress thread under nav */
 .scroll-thread {
   position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 49;
@@ -1522,10 +1566,15 @@ body.opener-lock { overflow: hidden; }
 .opener.is-choosing .connector:not(.is-chosen),
 .opener.is-choosing .opener__cue { opacity: 0; transition: opacity 0.55s var(--ease); }
 
-/* PHASE B — the chosen thread lights up and runs from Record to its room
-   (stroke-dashoffset driven inline by JS for correct direction) */
+/* PHASE B — chosen thread only lights while/after it draws
+   (no pre-animation flash; stroke-dashoffset driven inline by JS) */
 .opener .connector.is-chosen {
-  stroke: var(--clay); stroke-width: 5;
+  stroke: var(--clay);
+  stroke-width: 2.6;
+}
+.opener.is-threading .connector.is-chosen,
+.opener.is-lit .connector.is-chosen {
+  stroke-width: 5;
   filter: drop-shadow(0 0 6px rgba(193, 87, 47, 0.55));
 }
 
