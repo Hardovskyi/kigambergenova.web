@@ -40,7 +40,7 @@ body {
   font-family: var(--sans);
   font-weight: 400;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -68,12 +68,30 @@ a { color: inherit; text-decoration: none; }
    NAV
    ========================================================= */
 .nav {
+  --nav-bg: #ebe4d4;
+  --nav-fg: var(--ink);
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px var(--gutter);
-  mix-blend-mode: difference;
-  color: #fff;
-  transition: padding 0.4s var(--ease);
+  color: var(--nav-fg);
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(24, 21, 18, 0.08);
+  transition:
+    padding 0.4s var(--ease),
+    background 0.45s var(--ease),
+    color 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+body[data-nav="top"] .nav { --nav-bg: #ebe4d4; --nav-fg: var(--ink); }
+body[data-nav="selected-work"] .nav { --nav-bg: #e4ddd0; --nav-fg: var(--ink); }
+body[data-nav="record"] .nav { --nav-bg: #e7e0d2; --nav-fg: var(--ink); }
+body[data-nav="frames"] .nav { --nav-bg: #e2e8e4; --nav-fg: var(--ink); }
+body[data-nav="bring"] .nav { --nav-bg: #e9e2d4; --nav-fg: var(--ink); }
+body[data-nav="background"] .nav { --nav-bg: #e6dfd1; --nav-fg: var(--ink); }
+body[data-nav="contact"] .nav {
+  --nav-bg: #221c18;
+  --nav-fg: #f1ece1;
+  border-bottom-color: rgba(241, 236, 225, 0.12);
 }
 .nav__brand { display: flex; align-items: baseline; gap: 12px; }
 .nav__mono {
@@ -97,7 +115,7 @@ a { color: inherit; text-decoration: none; }
 .nav__links a:hover::after, .nav__links a.is-active::after { width: 100%; }
 .nav__cv { opacity: 0.95; }
 .nav__menu { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; }
-.nav__menu span { display: block; width: 26px; height: 2px; background: #fff; transition: 0.3s; }
+.nav__menu span { display: block; width: 26px; height: 2px; background: currentColor; transition: 0.3s; }
 
 /* persistent Full Portfolio control — top right under nav */
 .page-portfolio {
@@ -131,6 +149,10 @@ body.opener-lock .page-portfolio {
   opacity: 0;
   pointer-events: none;
 }
+/* Clear the Frames place-jump row (Japan / Texas / India) */
+body[data-nav="frames"] .page-portfolio {
+  top: clamp(118px, 15vh, 148px);
+}
 @media (max-width: 560px) {
   .page-portfolio {
     top: auto;
@@ -140,6 +162,10 @@ body.opener-lock .page-portfolio {
     font-size: 0.82rem;
     letter-spacing: 0.1em;
     padding: 12px 14px;
+  }
+  body[data-nav="frames"] .page-portfolio {
+    top: auto;
+    bottom: 18px;
   }
 }
 
@@ -1006,16 +1032,14 @@ body.opener-lock .page-portfolio {
   .nav__name { display: none; }
   .nav__menu { display: flex; }
   .nav {
-    mix-blend-mode: normal; color: var(--ink);
-    background: rgba(241,236,225,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
+    color: var(--nav-fg);
+    background: var(--nav-bg);
   }
-  .nav__menu span { background: var(--ink); }
+  .nav__menu span { background: currentColor; }
   .nav__links {
     position: absolute; top: 100%; right: 0; left: 0;
     flex-direction: column; align-items: flex-start; gap: 0;
-    background: var(--paper); border-bottom: 1px solid var(--line);
+    background: var(--nav-bg); border-bottom: 1px solid var(--line);
     max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease);
   }
   .nav__links.open { max-height: 480px; }

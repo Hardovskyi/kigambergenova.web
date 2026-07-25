@@ -38,6 +38,64 @@
   window.addEventListener("scroll", updateProgress, { passive: true });
   updateProgress();
 
+  /* ---- solid nav tint matched to the active section ---- */
+  (function navTheme() {
+    var nav = document.getElementById("nav");
+    if (!nav) return;
+    var map = [
+      { id: "top", key: "top" },
+      { id: "selected-work", key: "selected-work" },
+      { id: "record", key: "record" },
+      { id: "frames-of-practice", key: "frames" },
+      { id: "what-i-bring", key: "bring" },
+      { id: "background", key: "background" },
+      { id: "contact", key: "contact" },
+    ];
+    var linkMap = {
+      "selected-work": "#selected-work",
+      record: "#record",
+      frames: "#frames-of-practice",
+      background: "#background",
+      contact: "#contact",
+    };
+
+    function setNav(key) {
+      document.body.setAttribute("data-nav", key);
+      var href = linkMap[key];
+      document.querySelectorAll(".nav__links a").forEach(function (a) {
+        var match = href && a.getAttribute("href") === href;
+        a.classList.toggle("is-active", !!match);
+      });
+    }
+
+    setNav("top");
+    if (!("IntersectionObserver" in window)) return;
+
+    var ratios = {};
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          ratios[entry.target.id] = entry.isIntersecting ? entry.intersectionRatio : 0;
+        });
+        var best = "top";
+        var bestRatio = 0;
+        map.forEach(function (item) {
+          var r = ratios[item.id] || 0;
+          if (r > bestRatio) {
+            bestRatio = r;
+            best = item.key;
+          }
+        });
+        if (bestRatio > 0) setNav(best);
+      },
+      { rootMargin: "-12% 0px -55% 0px", threshold: [0, 0.15, 0.35, 0.55, 0.75] }
+    );
+    map.forEach(function (item) {
+      var el = document.getElementById(item.id);
+      if (el) io.observe(el);
+    });
+  })();
+
   /* ---- generic reveal-on-scroll ---- */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduceMotion) {
@@ -239,9 +297,6 @@
   (function keyplanNav() {
     var heroEl = document.getElementById("top");
     var dock = document.getElementById("kpDock");
-    var opener = document.getElementById("opener");
-    var openerPlan = document.getElementById("openerPlan");
-    var openerFill = document.getElementById("openerFill");
 
     function goTo(sectionId, instant) {
       if (!sectionId) return;
@@ -249,122 +304,8 @@
       if (t) t.scrollIntoView({ behavior: instant || reduceMotion ? "auto" : "smooth" });
     }
 
-    /* orange thread that runs from the central Record node out to each room
-       (Record is the centre itself, so it has no connector) */
-    var connFor = {
-      "selected-work": ".conn-work",
-      "frames-of-practice": ".conn-practice",
-      background: ".conn-background",
-      contact: ".conn-contact"
-    };
-
-    var dismissed = false;
-
-    function removeOpener() {
-      document.body.classList.remove("opener-lock");
-      opener.classList.add("is-gone");
-      setTimeout(function () { opener.setAttribute("hidden", ""); }, 760);
-    }
-
-    /* the entry sequence:
-       A) the knot untangles in the middle,
-       B) the chosen thread lights up and runs FROM the middle out to its node,
-       C) only then does that node light up,
-       D) the node floods the page,
-       E) the section fades in underneath. */
-    function chooseEntry(sectionId, nodeEl) {
-      if (dismissed || !opener) return;
-      dismissed = true;
-
-      if (reduceMotion) {
-        document.body.classList.remove("opener-lock");
-        opener.setAttribute("hidden", "");
-        goTo(sectionId, true);
-        return;
-      }
-
-      if (nodeEl) nodeEl.classList.add("is-chosen");
-      var conn = connFor[sectionId] ? opener.querySelector(connFor[sectionId]) : null;
-      if (conn) {
-        conn.classList.add("is-chosen");
-        /* start undrawn + hidden so there is no pre-animation flash */
-        conn.style.strokeDasharray = "1";
-        conn.style.strokeDashoffset = "1";
-        conn.style.opacity = "0";
-      }
-
-      /* anchor the flood at the chosen node */
-      if (openerFill && nodeEl) {
-        var hit = nodeEl.querySelector(".node-hit") || nodeEl;
-        var r = hit.getBoundingClientRect();
-        openerFill.style.left = (r.left + r.width / 2) + "px";
-        openerFill.style.top = (r.top + r.height / 2) + "px";
-      }
-
-      var tUntangle = 720, tThread = conn ? 640 : 0, tLit = 360, tFill = 760;
-
-      /* A — untangle */
-      opener.classList.add("is-choosing");
-
-      /* B — chosen thread draws from the middle out (stays lit after) */
-      if (conn) {
-        setTimeout(function () {
-          opener.classList.add("is-threading");
-          conn.getBoundingClientRect(); /* reflow */
-          conn.style.transition = "opacity 0.2s ease, stroke-dashoffset 0.62s cubic-bezier(0.22,1,0.36,1)";
-          conn.style.opacity = "1";
-          conn.style.strokeDashoffset = "0";
-        }, tUntangle);
-      }
-
-      /* C — the section node lights up */
-      setTimeout(function () { opener.classList.add("is-lit"); }, tUntangle + tThread);
-
-      /* D — the node floods the page */
-      setTimeout(function () { opener.classList.add("is-filling"); }, tUntangle + tThread + tLit);
-
-      /* E — jump under the flood, then fade to reveal the section */
-      setTimeout(function () {
-        document.body.classList.remove("opener-lock");
-        goTo(sectionId, true);
-        requestAnimationFrame(function () { removeOpener(); });
-      }, tUntangle + tThread + tLit + tFill);
-    }
-
-    if (opener) {
-      document.body.classList.add("opener-lock");
-      /* draw the connector threads in on entry */
-      if (openerPlan) {
-        if (reduceMotion) {
-          openerPlan.classList.add("is-ready");
-        } else {
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () { openerPlan.classList.add("is-ready"); });
-          });
-        }
-      }
-      /* choose a point of entry */
-      document.querySelectorAll("#openerPlan .knode[data-section]").forEach(function (el) {
-        var sec = el.getAttribute("data-section");
-        var go = function (e) { if (e) e.stopPropagation(); chooseEntry(sec, el); };
-        el.addEventListener("click", go);
-        el.addEventListener("keydown", function (e) {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(e); }
-        });
-      });
-      /* Escape is a keyboard skip → enter at Work */
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && !dismissed) {
-          chooseEntry("selected-work", document.querySelector('#openerPlan .knode[data-section="selected-work"]'));
-        }
-      });
-      /* deep link (e.g. index.html#work) skips the opener entirely */
-      if (location.hash && location.hash.length > 1) {
-        dismissed = true;
-        document.body.classList.remove("opener-lock");
-        opener.setAttribute("hidden", "");
-      }
-    }
+    /* Opener entry is handled by js/connection-nav.js (axonometric map).
+       Dock still jumps to sections once the site is visible. */
 
     /* the corner marker (dock) appears once you leave the hero */
     if (dock && heroEl && "IntersectionObserver" in window) {

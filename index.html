@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260719b" />
+  <link rel="stylesheet" href="css/style.css?v=20260725e" />
   <link rel="stylesheet" href="css/selected-work.css?v=20260719b" />
+  <link rel="stylesheet" href="css/frames-of-practice.css?v=20260725e" />
+  <link rel="stylesheet" href="css/connection-nav.css?v=20260725e" />
   <noscript><style>.opener{display:none!important}body{overflow:auto!important}</style></noscript>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1ece1'/%3E%3Cpath d='M20 70 Q50 10 80 70' stroke='%23c1572f' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
@@ -18,105 +20,69 @@
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ============================================================
-       FULL-PAGE OPENER  (the key-plan navigation as the entry;
-       on choosing a point of entry the grid unravels and the
-       threads transfer down the page as inter-section seams)
+       FULL-PAGE OPENER  (axonometric connection map)
        ============================================================ -->
-  <div class="opener" id="opener" role="dialog" aria-label="Key plan — choose a room to enter">
-    <div class="keyplan opener__plan" id="openerPlan">
-      <svg class="keyplan__svg" viewBox="0 0 1000 1000" role="img" aria-label="Architectural key plan of five sections" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <pattern id="hatchDiag" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="rgba(24,21,18,0.20)" stroke-width="1"/></pattern>
-          <pattern id="hatchHoriz" width="7" height="7" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="7" y2="0" stroke="rgba(24,21,18,0.16)" stroke-width="1"/></pattern>
-          <pattern id="hatchGrid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0 H0 V15" fill="none" stroke="rgba(24,21,18,0.15)" stroke-width="0.8"/></pattern>
-          <pattern id="hatchDot" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(24,21,18,0.22)"/></pattern>
-          <marker id="arrowClay" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M1,1 L11,6 L1,11 z" fill="#c1572f"/></marker>
-        </defs>
+  <div class="opener opening-page is-intro" id="opener" role="dialog" aria-label="Architecture as Connection — choose a section to enter">
+    <h1 class="sr-only">Kamila Igambergenova — Architecture as Connection</h1>
 
-        <!-- grid titleblock: columns 1–8, rows A–H -->
-        <g class="plan-ref">
-          <g class="plan-ref__col"><circle cx="128" cy="44" r="11"/><text x="128" y="49">1</text><circle cx="246" cy="44" r="11"/><text x="246" y="49">2</text><circle cx="364" cy="44" r="11"/><text x="364" y="49">3</text><circle cx="482" cy="44" r="11"/><text x="482" y="49">4</text><circle cx="600" cy="44" r="11"/><text x="600" y="49">5</text><circle cx="718" cy="44" r="11"/><text x="718" y="49">6</text><circle cx="836" cy="44" r="11"/><text x="836" y="49">7</text><circle cx="954" cy="44" r="11"/><text x="954" y="49">8</text></g>
-          <g class="plan-ref__col"><circle cx="128" cy="958" r="11"/><text x="128" y="963">1</text><circle cx="246" cy="958" r="11"/><text x="246" y="963">2</text><circle cx="364" cy="958" r="11"/><text x="364" y="963">3</text><circle cx="482" cy="958" r="11"/><text x="482" y="963">4</text><circle cx="600" cy="958" r="11"/><text x="600" y="963">5</text><circle cx="718" cy="958" r="11"/><text x="718" y="963">6</text><circle cx="836" cy="958" r="11"/><text x="836" y="963">7</text><circle cx="954" cy="958" r="11"/><text x="954" y="963">8</text></g>
-          <g class="plan-ref__row"><circle cx="44" cy="150" r="11"/><text x="44" y="155">A</text><circle cx="44" cy="252" r="11"/><text x="44" y="257">B</text><circle cx="44" cy="354" r="11"/><text x="44" y="359">C</text><circle cx="44" cy="456" r="11"/><text x="44" y="461">D</text><circle cx="44" cy="558" r="11"/><text x="44" y="563">E</text><circle cx="44" cy="660" r="11"/><text x="44" y="665">F</text><circle cx="44" cy="762" r="11"/><text x="44" y="767">G</text><circle cx="44" cy="864" r="11"/><text x="44" y="869">H</text></g>
-          <g class="plan-ref__row"><circle cx="956" cy="150" r="11"/><text x="956" y="155">A</text><circle cx="956" cy="252" r="11"/><text x="956" y="257">B</text><circle cx="956" cy="354" r="11"/><text x="956" y="359">C</text><circle cx="956" cy="456" r="11"/><text x="956" y="461">D</text><circle cx="956" cy="558" r="11"/><text x="956" y="563">E</text><circle cx="956" cy="660" r="11"/><text x="956" y="665">F</text><circle cx="956" cy="762" r="11"/><text x="956" y="767">G</text><circle cx="956" cy="864" r="11"/><text x="956" y="869">H</text></g>
-          <g class="plan-tick"><path d="M124,150 h8 M126,146 v8 M242,252 h8 M244,248 v8 M600,150 h8 M602,146 v8 M718,354 h8 M720,350 v8 M364,660 h8 M366,656 v8 M482,762 h8 M484,758 v8 M836,558 h8 M838,554 v8 M600,864 h8 M602,860 v8"/></g>
-        </g>
+    <section class="intro-copy-shell" aria-label="Introduction" aria-live="polite">
+      <div class="intro-copy">
+        <p class="intro-phrase intro-phrase-1" style="--phrase-delay: 280ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">Hello.</span>
+        </p>
+        <p class="intro-phrase intro-phrase-2" style="--phrase-delay: 1050ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">I'm Kamila Igambergenova.</span>
+        </p>
+        <p class="intro-phrase intro-phrase-3" style="--phrase-delay: 1900ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">An architectural designer working across design, research, and making.</span>
+        </p>
+        <p class="intro-phrase intro-phrase-4" style="--phrase-delay: 2800ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">I approach architecture as connection—</span>
+        </p>
+        <p class="intro-phrase intro-phrase-5" style="--phrase-delay: 3650ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">between people, context, and space.</span>
+        </p>
+        <p class="intro-phrase intro-phrase-6" style="--phrase-delay: 4500ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">This website maps the work and experiences that shaped how I observe, adapt, and build.</span>
+        </p>
+        <p class="intro-phrase intro-phrase-7" style="--phrase-delay: 5550ms">
+          <span class="intro-step" aria-hidden="true"></span>
+          <span class="intro-words">Each room holds a section. Select one to enter.</span>
+        </p>
+      </div>
+    </section>
 
-        <!-- loose thread wandering across the plan, with two free ends -->
-        <path class="opener__loose" d="M662,238 C540,150 470,300 600,352 C720,404 786,300 704,468 C650,590 470,470 432,560 C384,662 566,690 470,742 C384,790 300,700 250,760 C214,806 205,814 196,820"/>
-        <circle class="loose-end" cx="662" cy="238" r="6"/>
-        <circle class="loose-end" cx="196" cy="820" r="6"/>
+    <button class="skip-intro" id="skip-intro" type="button" aria-label="Skip the intro">
+      <span class="skip-intro__fill" aria-hidden="true"></span>
+      <span class="skip-intro__label">
+        <span>Skip The Intro</span>
+        <span class="skip-intro__arrow" aria-hidden="true">→</span>
+      </span>
+    </button>
 
-        <!-- ROOM 01 — Selected Work -->
-        <g class="knode room" data-section="selected-work" tabindex="0" role="link" aria-label="Enter at Selected Work">
-          <rect x="225" y="150" width="215" height="150" fill="url(#hatchDiag)"/>
-          <path class="plan-wall" d="M225,300 V150 H440 V300 H225 M440,205 h12 v55 h-12"/>
-          <circle class="node-hit" cx="286" cy="222" r="34" fill="transparent"/>
-          <circle class="node-ring" cx="286" cy="222" r="19"/>
-          <circle class="node-dot" cx="286" cy="222" r="12"/>
-          <text class="plan-num" x="330" y="216">01</text>
-          <text class="plan-label" x="330" y="242">Selected</text>
-          <text class="plan-label" x="330" y="264">Work</text>
-        </g>
+    <section class="map-stage" id="map-stage" aria-label="Portfolio navigation map" aria-hidden="true">
+      <svg
+        class="connection-field"
+        id="connection-field"
+        viewBox="0 0 1400 1000"
+        preserveAspectRatio="xMidYMid meet"
+        aria-label="Interactive axonometric portfolio map"
+      ></svg>
+      <nav class="map-navigation" id="map-navigation" aria-label="Portfolio sections"></nav>
+    </section>
 
-        <!-- ROOM 02 — Record (centre / focal) -->
-        <g class="knode room room--focus" data-section="record" tabindex="0" role="link" aria-label="Enter at Record">
-          <rect x="420" y="410" width="220" height="230" fill="url(#hatchGrid)"/>
-          <path class="plan-wall" d="M420,410 h220 v230 h-220 z M420,430 h-16 v44 h16 M640,470 h16 v46 h-16"/>
-          <g class="plan-stair"><path d="M476,640 v30 h74 v-30 M488,640 v30 M500,640 v30 M512,640 v30 M524,640 v30 M538,640 v30"/></g>
-          <circle class="node-hit" cx="512" cy="515" r="40" fill="transparent"/>
-          <circle class="node-ring" cx="512" cy="515" r="22"/>
-          <circle class="node-dot node-dot--focus" cx="512" cy="515" r="15"/>
-          <text class="plan-num" x="562" y="512">02</text>
-          <text class="plan-label" x="562" y="536">Record</text>
-        </g>
-
-        <!-- ROOM 03 — Frames of Practice -->
-        <g class="knode room" data-section="frames-of-practice" tabindex="0" role="link" aria-label="Enter at Frames of Practice">
-          <rect x="685" y="270" width="220" height="130" fill="url(#hatchHoriz)"/>
-          <path class="plan-wall" d="M685,270 h220 v130 h-220 z M685,320 h-12 v40 h12"/>
-          <circle class="node-hit" cx="765" cy="338" r="34" fill="transparent"/>
-          <circle class="node-ring" cx="765" cy="338" r="19"/>
-          <circle class="node-dot" cx="765" cy="338" r="12"/>
-          <text class="plan-num" x="812" y="332">03</text>
-          <text class="plan-label" x="812" y="356">Frames</text>
-        </g>
-
-        <!-- ROOM 04 — Background -->
-        <g class="knode room" data-section="background" tabindex="0" role="link" aria-label="Enter at Background">
-          <rect x="125" y="545" width="195" height="125" fill="url(#hatchDot)"/>
-          <path class="plan-wall" d="M125,545 h195 v125 h-195 z"/>
-          <g class="plan-stair"><path d="M236,670 v34 h64 v-34 M248,670 v34 M260,670 v34 M272,670 v34 M286,670 v34"/></g>
-          <circle class="node-hit" cx="188" cy="610" r="34" fill="transparent"/>
-          <circle class="node-ring" cx="188" cy="610" r="19"/>
-          <circle class="node-dot" cx="188" cy="610" r="12"/>
-          <text class="plan-num" x="236" y="604">04</text>
-          <text class="plan-label" x="236" y="628">Background</text>
-        </g>
-
-        <!-- ROOM 05 — Contact -->
-        <g class="knode room" data-section="contact" tabindex="0" role="link" aria-label="Enter at Contact">
-          <rect x="690" y="745" width="175" height="125" fill="url(#hatchDiag)"/>
-          <path class="plan-wall" d="M690,745 h175 v125 h-175 z"/>
-          <g class="plan-stair"><path d="M772,870 v34 h64 v-34 M784,870 v34 M796,870 v34 M808,870 v34 M822,870 v34"/></g>
-          <circle class="node-hit" cx="752" cy="805" r="34" fill="transparent"/>
-          <circle class="node-ring" cx="752" cy="805" r="19"/>
-          <circle class="node-dot" cx="752" cy="805" r="12"/>
-          <text class="plan-num" x="800" y="799">05</text>
-          <text class="plan-label" x="800" y="823">Contact</text>
-        </g>
-
-        <!-- orange threads: from Record out to each room -->
-        <path class="connector conn-work"       pathLength="1" fill="none" stroke-width="2.6" marker-end="url(#arrowClay)" d="M482,470 C410,420 340,330 300,252"/>
-        <path class="connector conn-practice"   pathLength="1" fill="none" stroke-width="2.6" marker-end="url(#arrowClay)" d="M562,478 C650,432 706,398 748,360"/>
-        <path class="connector conn-background"  pathLength="1" fill="none" stroke-width="2.6" marker-end="url(#arrowClay)" d="M470,540 C380,576 286,596 224,608"/>
-        <path class="connector conn-contact"     pathLength="1" fill="none" stroke-width="2.6" marker-end="url(#arrowClay)" d="M548,558 C632,650 700,732 748,786"/>
-      </svg>
-    </div>
-    <p class="opener__cue" id="openerCue" aria-hidden="true">Choose a room to enter</p>
+    <button class="enter-website" id="enter-website" type="button">
+      Enter The Website
+      <span aria-hidden="true">→</span>
+    </button>
     <div class="opener__fill" id="openerFill" aria-hidden="true"></div>
   </div>
-
   <!-- NAV -->
   <header class="nav" id="nav">
     <a class="nav__brand" href="index.html">
@@ -279,151 +245,15 @@
   <div class="seam" aria-hidden="true"><svg class="seam__svg" viewBox="0 0 40 100" preserveAspectRatio="none"><path class="seam__path" d="M20,0 C7,28 33,66 20,100" pathLength="1"/></svg></div>
 
   <!-- ============================================================
-       04 — FRAMES OF PRACTICE
+       04 — FRAMES OF PRACTICE  (immersive cover-sheet story)
        ============================================================ -->
-  <section class="frames" id="frames-of-practice" aria-labelledby="frames-title">
-    <svg class="knot knot--section" viewBox="0 0 60 30" aria-hidden="true"><circle cx="23" cy="15" r="10"/><circle cx="37" cy="15" r="10"/><line x1="0" y1="15" x2="13" y2="15"/><line x1="47" y1="15" x2="60" y2="15"/></svg>
-    <div class="frames__intro reveal">
-      <p class="frames__kicker"><span>03</span> Frames of Practice</p>
-      <h2 class="frames__title" id="frames-title">Frames of <em>Practice</em></h2>
-      <p class="frames__transition">The record shows where I worked. These frames show what those experiences changed in the way I observe, contribute, and build.</p>
+  <section class="frames-of-practice" id="frames-of-practice" aria-label="Frames of Practice">
+    <div class="frames-deep-anchors" aria-hidden="true">
+      <span id="frame-japan"></span>
+      <span id="frame-texas"></span>
+      <span id="frame-india"></span>
     </div>
-
-    <div class="frames__stage">
-      <nav class="frames-index" aria-label="Chapter index">
-        <a class="frames-index__item is-active" href="#frame-japan" data-target="frame-japan"><span>01</span> Japan — Observe</a>
-        <a class="frames-index__item" href="#frame-texas" data-target="frame-texas"><span>02</span> Texas — Contribute</a>
-        <a class="frames-index__item" href="#frame-india" data-target="frame-india"><span>03</span> India — Build</a>
-      </nav>
-
-      <div class="scenes">
-
-        <article class="scene" id="frame-japan" data-chapter="01" aria-labelledby="frame-japan-h">
-          <figure class="scene__hero frame-img frame-img--hero" data-file="futureassets/japan-hero.jpg">
-            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/japan-hero.jpg" alt="A quiet Japanese street — the daily walk that trained my eye for sequence and atmosphere." loading="lazy" width="1200" height="800" /></div>
-            <figcaption class="scene__herolabel">Japan · Summer 2023</figcaption>
-          </figure>
-          <header class="scene__head">
-            <p class="scene__eyebrow">01 — Japan · Observe</p>
-            <h3 class="scene__h" id="frame-japan-h">I learned to see <em>before</em> I learned to respond.</h3>
-          </header>
-
-          <div class="scene__blocks">
-            <div class="scene__block">
-              <h4>Context</h4>
-              <p>Study abroad across six cities. Daily sketch practice while studying SANAA, Kengo Kuma, Sou Fujimoto, and Tadao Ando in person rather than through photographs.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Response</h4>
-              <p>I documented how light enters a room, how a threshold shifts what the body expects, and how material restraint can say more than expression — sequence, atmosphere, and precedent before intervention.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Developed</h4>
-              <p>Spatial observation, threshold awareness, material reading, and attention before proposal.</p>
-            </div>
-            <div class="scene__block scene__block--means">
-              <h4>Means for a Team</h4>
-              <p>I begin by understanding context, use, and atmosphere before imposing a design response.</p>
-            </div>
-          </div>
-
-          <div class="strip-block">
-            <p class="strip__label">From the sketchbook — drag to explore →</p>
-            <div class="strip" tabindex="0" aria-label="Stills from Japan">
-              <figure class="frame-img" data-file="futureassets/Japan/image1.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Japan/image1.jpg" alt="A street sequence in Japan framing the walk from public to private." loading="lazy" width="600" height="800" /></div><figcaption>Street sequence</figcaption></figure>
-              <figure class="frame-img strip--tall" data-file="futureassets/Japan/image2.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Japan/image2.jpg" alt="A threshold study framing the transition between inside and outside." loading="lazy" width="600" height="900" /></div><figcaption>Threshold study</figcaption></figure>
-              <figure class="frame-img" data-file="futureassets/Japan/image3.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Japan/image3.jpg" alt="A page from the daily sketchbook kept throughout the trip." loading="lazy" width="600" height="800" /></div><figcaption>Daily sketch</figcaption></figure>
-            </div>
-          </div>
-        </article>
-
-        <div class="scene__connector" aria-hidden="true"></div>
-
-        <article class="scene" id="frame-texas" data-chapter="02" aria-labelledby="frame-texas-h">
-          <figure class="scene__hero frame-img frame-img--hero" data-file="futureassets/Texas/image1.jpg">
-            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/Texas/image1.jpg" alt="A Habitat for Humanity build day in Texas, volunteers working on a home." loading="lazy" width="1200" height="800" /></div>
-            <figcaption class="scene__herolabel">Houston, TX · Spring 2023 · Habitat for Humanity</figcaption>
-          </figure>
-          <header class="scene__head">
-            <p class="scene__eyebrow">02 — Texas · Contribute</p>
-            <h3 class="scene__h" id="frame-texas-h">Architecture begins with <em>listening</em>.</h3>
-          </header>
-
-          <div class="scene__blocks">
-            <div class="scene__block">
-              <h4>Context</h4>
-              <p>A Habitat for Humanity week in Houston — demolition, patching, painting, and landscaping inside homes that would soon belong to families. No drawings; a crew, a site, and people who needed help.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Response</h4>
-              <p>I learned the crew’s workflow, took practical tasks without needing design authorship, and stayed attentive to what the house would hold for the people who would live there.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Developed</h4>
-              <p>Service, teamwork, adaptability, and respect for lived environments.</p>
-            </div>
-            <div class="scene__block scene__block--means">
-              <h4>Means for a Team</h4>
-              <p>I can enter an unfamiliar workflow, understand what is needed, and contribute without requiring ownership of every decision.</p>
-            </div>
-          </div>
-
-          <div class="strip-block">
-            <p class="strip__label">On site — drag to explore →</p>
-            <div class="strip" tabindex="0" aria-label="Stills from Texas">
-              <figure class="frame-img" data-file="futureassets/Texas/image2.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Texas/image2.jpg" alt="Demolition and retrofit of an existing home in progress." loading="lazy" width="600" height="800" /></div><figcaption>Demolition &amp; retrofit</figcaption></figure>
-              <figure class="frame-img strip--tall" data-file="futureassets/Texas/image3.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Texas/image3.jpg" alt="Interior improvements underway inside the home." loading="lazy" width="600" height="900" /></div><figcaption>Interior improvements</figcaption></figure>
-              <figure class="frame-img" data-file="futureassets/Texas/image4.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/Texas/image4.jpg" alt="Volunteers working together on site." loading="lazy" width="600" height="800" /></div><figcaption>Teamwork on site</figcaption></figure>
-            </div>
-          </div>
-        </article>
-
-        <div class="scene__connector" aria-hidden="true"></div>
-
-        <article class="scene scene--feature" id="frame-india" data-chapter="03" aria-labelledby="frame-india-h">
-          <figure class="scene__hero frame-img frame-img--hero" data-file="futureassets/India/image6.jpg">
-            <div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image6.jpg" alt="The completed community build at the village edge in Maharashtra, India." loading="lazy" width="1200" height="800" /></div>
-            <figcaption class="scene__herolabel">Maharashtra, India · 2024 · Design-Build</figcaption>
-          </figure>
-          <header class="scene__head">
-            <p class="scene__eyebrow">03 — India · Build</p>
-            <h3 class="scene__h" id="frame-india-h">Concept to a built community room in <em>eight weeks</em>.</h3>
-            <p class="work-xref scene__xref"><a href="work.html#community-room">View the built project ↗</a></p>
-          </header>
-
-          <div class="scene__blocks">
-            <div class="scene__block">
-              <h4>Context</h4>
-              <p>Design-build moved design out of the studio into coordination, labor, weather, and construction sequence for a community room in Maharashtra.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Response</h4>
-              <p>When a mid-project site relocation forced a redesign, I replanned foundations and the structural grid in five days — keeping design intent clear through drawings, assembly diagrams, and construction support.</p>
-            </div>
-            <div class="scene__block">
-              <h4>Developed</h4>
-              <p>Constructability, site coordination, technical communication, and protecting intent when conditions change.</p>
-            </div>
-            <div class="scene__block scene__block--means">
-              <h4>Means for a Team</h4>
-              <p>I understand that design must remain clear, buildable, and adaptable when real conditions challenge the original plan.</p>
-            </div>
-          </div>
-
-          <div class="strip-block">
-            <p class="strip__label">From site to structure — drag to explore →</p>
-            <div class="strip" tabindex="0" aria-label="Stills from India">
-              <figure class="frame-img" data-file="futureassets/India/image1.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image1.jpg" alt="The original site condition before construction began." loading="lazy" width="600" height="800" /></div><figcaption>Site condition</figcaption></figure>
-              <figure class="frame-img strip--tall" data-file="futureassets/India/image11.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image11.jpg" alt="Adjusting the structural grid to fit the relocated site." loading="lazy" width="600" height="900" /></div><figcaption>Structural grid reset</figcaption></figure>
-              <figure class="frame-img" data-file="futureassets/India/image3.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image3.jpg" alt="Brickwork rising during construction." loading="lazy" width="600" height="800" /></div><figcaption>Brickwork</figcaption></figure>
-              <figure class="frame-img strip--wide" data-file="futureassets/India/image5.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image5.jpg" alt="Construction details being worked out directly on site." loading="lazy" width="900" height="600" /></div><figcaption>Detail on site</figcaption></figure>
-              <figure class="frame-img strip--wide" data-file="futureassets/India/image8.jpg"><div class="frame-img__scale"><img class="frame-photo" src="futureassets/India/image8.jpg" alt="The completed community room in use." loading="lazy" width="900" height="600" /></div><figcaption>Completed room</figcaption></figure>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
+    <div id="frames-of-practice-root"></div>
   </section>
 
   <div class="seam" aria-hidden="true"><svg class="seam__svg" viewBox="0 0 40 100" preserveAspectRatio="none"><path class="seam__path" d="M20,0 C7,28 33,66 20,100" pathLength="1"/></svg></div>
@@ -549,7 +379,10 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260719b"></script>
+  <script src="js/main.js?v=20260725e"></script>
+  <script src="js/connection-nav.js?v=20260725e"></script>
   <script src="js/selected-work.js?v=20260719b"></script>
+  <script src="js/frames-extra-photos.js?v=20260721"></script>
+  <script src="js/frames-of-practice.js?v=20260725e"></script>
 </body>
 </html>
