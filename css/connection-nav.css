@@ -401,12 +401,16 @@ body.opener-lock {
   z-index: 12;
   right: clamp(18px, 2.6vw, 38px);
   bottom: clamp(18px, 2.6vw, 38px);
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
+  min-width: min(280px, 72vw);
+  height: 42px;
   appearance: none;
   border: 1px solid var(--ink);
-  padding: 12px 16px 11px;
+  padding: 0 16px;
+  overflow: hidden;
   background: #fff;
   color: var(--ink);
   cursor: pointer;
@@ -414,10 +418,12 @@ body.opener-lock {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(8px);
   transition:
     opacity 500ms ease 200ms,
+    visibility 500ms ease 200ms,
     transform 500ms ease 200ms,
     background 180ms ease,
     color 180ms ease,
@@ -436,16 +442,21 @@ body.opener-lock {
 #opener.opening-page.is-entering-site .intro-copy-shell,
 #opener.opening-page.is-entering-site .enter-website {
   opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none;
   transition: opacity 280ms ease;
 }
 
+#opener.opening-page.is-ready .enter-website,
 .opening-page.is-ready .enter-website {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
 
+#opener.opening-page .enter-website:hover,
+#opener.opening-page .enter-website:focus-visible,
 .enter-website:hover,
 .enter-website:focus-visible {
   background: var(--ink);
@@ -453,7 +464,7 @@ body.opener-lock {
   outline: none;
 }
 
-.enter-website span {
+.enter-website__arrow {
   font-size: 1.15em;
   line-height: 1;
 }
