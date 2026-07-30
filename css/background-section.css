@@ -1,0 +1,400 @@
+/* Background section — from background-section-revised.html */
+#background {
+  --bg-paper: #fafaf7;
+  --bg-paper-2: #f1f2ef;
+  --bg-ink: #151515;
+  --bg-soft: #5d5d58;
+  --bg-faint: #878780;
+  --bg-line: #d8d8d2;
+  --bg-line-dark: #9d9d96;
+  --bg-blue: #0165fc;
+  --bg-blue-pale: #edf3ff;
+  --bg-serif: "Fraunces", Georgia, serif;
+  --bg-sans: "Space Grotesk", Arial, sans-serif;
+  --bg-mono: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  width: 100%;
+  background: var(--bg-paper);
+  color: var(--bg-ink);
+  font-family: var(--bg-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#background .sheet {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: auto;
+  overflow: visible;
+  padding: clamp(48px, 7vw, 72px) clamp(20px, 5vw, 84px) clamp(40px, 5vw, 56px);
+  background:
+    linear-gradient(to right, transparent calc(clamp(20px, 5vw, 84px) - 1px), rgba(1, 101, 252, 0.13) clamp(20px, 5vw, 84px), transparent calc(clamp(20px, 5vw, 84px) + 1px)),
+    var(--bg-paper);
+}
+
+#background .registration {
+  position: absolute;
+  top: clamp(20px, 3vw, 28px);
+  right: clamp(16px, 3vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 400 9px/1 var(--bg-mono);
+  letter-spacing: 0.16em;
+  color: var(--bg-faint);
+}
+
+#background .registration::before {
+  content: "";
+  width: 54px;
+  border-top: 1px solid var(--bg-line);
+}
+
+#background .registration b {
+  color: var(--bg-blue);
+  font-weight: 400;
+}
+
+#background .head {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 305px);
+  gap: clamp(24px, 4vw, 50px);
+  align-items: end;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--bg-line);
+}
+
+#background .kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+  font: 400 11px/1 var(--bg-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+#background .kicker span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1.25px solid var(--bg-blue);
+  border-radius: 50%;
+  color: var(--bg-blue);
+  letter-spacing: 0.08em;
+}
+
+#background .head h2 {
+  max-width: 880px;
+  margin: 0;
+  font: italic 300 clamp(36px, 5.5vw, 67px) / 0.96 var(--bg-serif);
+  letter-spacing: -0.035em;
+  color: var(--bg-ink);
+}
+
+#background .head-copy {
+  margin: 0 0 3px;
+  max-width: 300px;
+  color: var(--bg-soft);
+  font: 300 15px/1.5 var(--bg-sans);
+}
+
+#background .head-copy strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--bg-blue);
+  font: 400 10px/1.2 var(--bg-mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+#background .body-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(36px, 5vw, 72px);
+  padding-top: 32px;
+}
+
+#background .column {
+  position: relative;
+  z-index: 2;
+}
+
+#background .column-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 8px;
+  padding-bottom: 11px;
+  border-bottom: 1.5px solid var(--bg-ink);
+  color: var(--bg-blue);
+  font: 700 10px/1 var(--bg-mono);
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+#background .column-title small {
+  color: var(--bg-faint);
+  font: 400 8px/1 var(--bg-mono);
+  letter-spacing: 0.12em;
+}
+
+#background .education {
+  position: relative;
+  min-height: 0;
+}
+
+#background .education::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  bottom: 30px;
+  border-left: 1px solid var(--bg-line-dark);
+}
+
+#background .degree {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 19px 0 20px;
+  border-bottom: 1px solid var(--bg-line);
+}
+
+#background .degree-index {
+  position: relative;
+  z-index: 1;
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-paper);
+  border: 1px solid var(--bg-blue);
+  border-radius: 50%;
+  color: var(--bg-blue);
+  font: 400 9px/1 var(--bg-mono);
+}
+
+#background .degree-meta {
+  margin: 0 0 7px;
+  color: var(--bg-faint);
+  font: 400 9px/1.3 var(--bg-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#background .degree h4 {
+  margin: 0;
+  max-width: 530px;
+  font: 400 clamp(18px, 2vw, 23px) / 1.08 var(--bg-sans);
+  letter-spacing: -0.015em;
+  color: var(--bg-ink);
+}
+
+#background .degree-school {
+  margin: 5px 0 10px;
+  color: var(--bg-soft);
+  font: 300 13px/1.35 var(--bg-sans);
+}
+
+#background .degree-honors {
+  margin: 6px 0 0;
+  color: var(--bg-blue);
+  font: 400 10px/1.35 var(--bg-mono);
+}
+
+#background .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 11px;
+}
+
+#background .tag {
+  padding: 5px 7px;
+  border: 1px solid #bfd3fb;
+  background: var(--bg-blue-pale);
+  color: #004dbf;
+  font: 400 8px/1 var(--bg-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#background .toolkit {
+  position: relative;
+}
+
+#background .tool-row {
+  display: grid;
+  grid-template-columns: 38px minmax(110px, 148px) 1fr;
+  gap: 12px;
+  align-items: start;
+  min-height: 79px;
+  padding: 14px 0 12px;
+  border-bottom: 1px solid var(--bg-line);
+}
+
+#background .tool-index {
+  color: var(--bg-blue);
+  font: 400 9px/1.3 var(--bg-mono);
+}
+
+#background .tool-label {
+  font: 700 9px/1.35 var(--bg-mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#background .tool-list {
+  margin: 0;
+  color: var(--bg-ink);
+  font: 300 13px/1.35 var(--bg-sans);
+}
+
+#background .tool-use {
+  display: block;
+  margin-top: 5px;
+  color: var(--bg-soft);
+  font: 400 9px/1.35 var(--bg-mono);
+  letter-spacing: 0.015em;
+}
+
+#background .tool-row.is-linked {
+  background: linear-gradient(90deg, transparent 0, rgba(1, 101, 252, 0.055) 14%, transparent 100%);
+}
+
+#background .strengths {
+  position: relative;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+#background .strength-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 11px;
+  border-bottom: 1.5px solid var(--bg-ink);
+  color: var(--bg-blue);
+  font: 700 10px/1 var(--bg-mono);
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+#background .strength-head small {
+  color: var(--bg-faint);
+  font: 400 8px/1 var(--bg-mono);
+  letter-spacing: 0.1em;
+}
+
+#background .strength-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#background .strength {
+  min-height: 78px;
+  padding: 13px 15px 8px 0;
+  border-right: 1px solid var(--bg-line);
+}
+
+#background .strength + .strength {
+  padding-left: 15px;
+}
+
+#background .strength:last-child {
+  border-right: 0;
+}
+
+#background .strength span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--bg-blue);
+  font: 400 9px/1 var(--bg-mono);
+}
+
+#background .strength b {
+  display: block;
+  font: 700 9px/1.25 var(--bg-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+#background .strength p {
+  margin: 5px 0 0;
+  color: var(--bg-soft);
+  font: 300 10px/1.35 var(--bg-sans);
+}
+
+#background .crop {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  opacity: 0.7;
+}
+
+#background .crop.tl {
+  top: 25px;
+  left: 25px;
+  border-top: 1px solid var(--bg-blue);
+  border-left: 1px solid var(--bg-blue);
+}
+
+#background .crop.br {
+  right: 25px;
+  bottom: 25px;
+  border-right: 1px solid var(--bg-blue);
+  border-bottom: 1px solid var(--bg-blue);
+}
+
+@media (max-width: 980px) {
+  #background .head,
+  #background .body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #background .strength-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #background .strength {
+    border-right: 0;
+    border-bottom: 1px solid var(--bg-line);
+    padding-left: 0 !important;
+    padding-right: 0;
+  }
+
+  #background .registration::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  #background .tool-row {
+    grid-template-columns: 32px 1fr;
+  }
+
+  #background .tool-label {
+    grid-column: 2;
+  }
+
+  #background .tool-list {
+    grid-column: 1 / -1;
+  }
+
+  #background .strength-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #background .registration {
+    display: none;
+  }
+}

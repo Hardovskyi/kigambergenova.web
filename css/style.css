@@ -229,7 +229,7 @@ body[data-nav="frames"] .page-portfolio {
 .hero__foot {
   position: relative; z-index: 2;
   margin-top: auto; padding-top: clamp(24px, 5vh, 60px);
-  display: flex; justify-content: space-between; align-items: flex-end;
+  display: flex; justify-content: flex-start; align-items: flex-end;
   flex-wrap: wrap; gap: 16px;
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--ink-faint);
@@ -1784,7 +1784,7 @@ body.opener-lock { overflow: hidden; }
    ANCHOR SCROLL OFFSET (fixed nav)
    ========================================================= */
 #selected-work, #record, #frames-of-practice,
-#what-i-bring, #background, #contact,
+#background, #contact,
 #frame-japan, #frame-texas, #frame-india,
 #community-room, #the-cove, #village-in-the-city, #the-wave,
 #p01, #p02, #p03, #p04 {

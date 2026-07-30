@@ -13,7 +13,7 @@ const projects = [
     image: "futureassets/community-room.webp",
     alt: "Black-and-white photograph of the built Community Room pavilion in Maharashtra",
     focus: { x: 52, y: 58 },
-    tint: "#f1ede3",
+    tint: "#0a0a0a",
     framesHref: "#frame-india",
     showRecord: true,
   },
@@ -31,7 +31,7 @@ const projects = [
     image: "futureassets/the-cove.webp",
     alt: "Axonometric view of The Cove with folded ramps and planted civic terraces",
     focus: { x: 50, y: 62 },
-    tint: "#e4ebe1",
+    tint: "#101012",
   },
   {
     id: "03",
@@ -47,7 +47,7 @@ const projects = [
     image: "futureassets/village-in-the-city.webp",
     alt: "Rendering of Village in the City with three towers connected by inhabited bridges",
     focus: { x: 52, y: 42 },
-    tint: "#e8e6ef",
+    tint: "#0e0e10",
   },
   {
     id: "04",
@@ -63,7 +63,7 @@ const projects = [
     image: "futureassets/the-wave.webp",
     alt: "Rendering of The Wave fieldhouse and its broad stepped public terrace",
     focus: { x: 60, y: 60 },
-    tint: "#f2ddc2",
+    tint: "#121214",
   },
 ];
 

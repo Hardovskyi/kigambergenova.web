@@ -1,0 +1,398 @@
+/* =========================================================
+   Index page only — black / off-white section rhythm
+   Linked from index.html. Does not affect opener or work.html.
+   Pattern: Hero white → Work black → Record white → Frames black
+            → Background white → Contact black
+   Accents: blue #0165FC on light · red #e23b2f on dark
+   Background + Contact use their own section CSS for look.
+   ========================================================= */
+
+body[data-page="about"] {
+  --paper: #f4f4f2;
+  --paper-2: #ebebe8;
+  --ink: #0a0a0a;
+  --ink-soft: #3a3a3a;
+  --ink-faint: #6a6a6a;
+  --line: #d2d2cc;
+  --sand: #e6e6e2;
+  --blue: #0165FC;
+  --blue-soft: #4d8fff;
+  --red: #e23b2f;
+  --red-soft: #ff4b2f;
+  --clay: var(--blue);
+  --clay-deep: #014fcc;
+  --surface-dark: #0a0a0a;
+  --surface-dark-2: #141414;
+  --on-dark: #f4f4f2;
+  --on-dark-soft: #b8b8b4;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ---------- Nav: invert with section ---------- */
+body[data-page="about"] .nav {
+  --nav-bg: var(--paper);
+  --nav-fg: var(--ink);
+  border-bottom-color: rgba(10, 10, 10, 0.08);
+}
+
+body[data-page="about"][data-nav="top"] .nav,
+body[data-page="about"][data-nav="record"] .nav,
+body[data-page="about"][data-nav="background"] .nav {
+  --nav-bg: var(--paper);
+  --nav-fg: var(--ink);
+  border-bottom-color: rgba(10, 10, 10, 0.08);
+}
+
+body[data-page="about"][data-nav="selected-work"] .nav,
+body[data-page="about"][data-nav="frames"] .nav,
+body[data-page="about"][data-nav="contact"] .nav {
+  --nav-bg: var(--surface-dark);
+  --nav-fg: var(--on-dark);
+  border-bottom-color: rgba(244, 244, 242, 0.12);
+}
+
+/* Full Portfolio control */
+body[data-page="about"] .page-portfolio {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: rgba(244, 244, 242, 0.94);
+}
+body[data-page="about"] .page-portfolio:hover,
+body[data-page="about"] .page-portfolio:focus-visible {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+body[data-page="about"][data-nav="selected-work"] .page-portfolio,
+body[data-page="about"][data-nav="frames"] .page-portfolio,
+body[data-page="about"][data-nav="contact"] .page-portfolio {
+  color: var(--on-dark);
+  border-color: var(--red);
+  background: rgba(10, 10, 10, 0.88);
+}
+body[data-page="about"][data-nav="selected-work"] .page-portfolio:hover,
+body[data-page="about"][data-nav="selected-work"] .page-portfolio:focus-visible,
+body[data-page="about"][data-nav="frames"] .page-portfolio:hover,
+body[data-page="about"][data-nav="frames"] .page-portfolio:focus-visible,
+body[data-page="about"][data-nav="contact"] .page-portfolio:hover,
+body[data-page="about"][data-nav="contact"] .page-portfolio:focus-visible {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+body[data-page="about"] .scroll-thread span {
+  background: linear-gradient(90deg, var(--blue), var(--red));
+}
+
+/* =========================================================
+   HERO — white / light
+   ========================================================= */
+body[data-page="about"] .hero {
+  background: var(--paper);
+  color: var(--ink);
+}
+body[data-page="about"] .hero__title .accent,
+body[data-page="about"] .hero__rule,
+body[data-page="about"] .hero__enter,
+body[data-page="about"] .hero__scrollcue {
+  color: var(--blue);
+}
+body[data-page="about"] .hero__rule { background: var(--blue); }
+body[data-page="about"] .hero__enter:hover { border-color: var(--blue); }
+body[data-page="about"] .hero__enter--ghost:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* =========================================================
+   SELECTED WORK — black
+   ========================================================= */
+body[data-page="about"] .work-story {
+  --sw-paper: #0a0a0a;
+  --sw-paper-deep: #141414;
+  --sw-ink: #f4f4f2;
+  --sw-ink-soft: #b8b8b4;
+  --sw-ink-faint: #8a8a86;
+  --sw-line: #2a2a2a;
+  --sw-line-strong: #3a3a3a;
+  --sw-accent: var(--red);
+  --project-tint: #0a0a0a !important;
+  background: #0a0a0a !important;
+  color: var(--sw-ink);
+}
+
+body[data-page="about"] .work-story .section-marker,
+body[data-page="about"] .work-story .section-marker__number {
+  color: var(--red);
+}
+body[data-page="about"] .work-story .section-marker__number {
+  border-color: var(--red);
+}
+
+body[data-page="about"] .work-story .story-heading h2 {
+  color: #f4f4f2;
+}
+body[data-page="about"] .work-story .story-heading p {
+  color: rgba(244, 244, 242, 0.72);
+}
+
+body[data-page="about"] .work-story .thread-halo {
+  stroke: rgba(244, 244, 242, 0.18);
+}
+body[data-page="about"] .work-story .thread-line {
+  stroke: rgba(244, 244, 242, 0.28);
+}
+body[data-page="about"] .work-story .thread-active {
+  stroke: color-mix(in srgb, var(--red) 85%, transparent);
+}
+
+body[data-page="about"] .work-story .station-meta,
+body[data-page="about"] .work-story .station-title,
+body[data-page="about"] .work-story .station-copy {
+  color: var(--sw-ink);
+}
+
+body[data-page="about"] .work-story .station-short-title {
+  color: var(--red);
+  background: rgba(244, 244, 242, 0.94);
+  border-color: rgba(226, 59, 47, 0.45);
+}
+
+/* =========================================================
+   RECORD — white / light + blue accents
+   ========================================================= */
+body[data-page="about"] .record {
+  max-width: none;
+  width: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  --clay: var(--blue);
+  --clay-deep: #014fcc;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+body[data-page="about"] .record__head,
+body[data-page="about"] .schedule,
+body[data-page="about"] .legend,
+body[data-page="about"] .record__resume-wrap {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+}
+body[data-page="about"] .record__kicker { color: var(--ink-soft); }
+body[data-page="about"] .record__kicker span {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+body[data-page="about"] .record__title { color: var(--ink); }
+body[data-page="about"] .record__resume { color: var(--blue); }
+body[data-page="about"] .record__resume:hover { border-color: var(--blue); }
+body[data-page="about"] .sched-xref:hover { color: var(--blue); }
+body[data-page="about"] .schedule {
+  background: #fff;
+  border-color: var(--line);
+}
+body[data-page="about"] .sched-head {
+  background: var(--paper-2);
+  color: var(--ink-faint);
+}
+
+/* =========================================================
+   TYPE ROLES (site, excluding opener / intro animation)
+   Sans  = professional statement
+   Mono  = architectural notation
+   Serif italic = personal reflection
+   ========================================================= */
+body[data-page="about"] .nav,
+body[data-page="about"] .nav__links a,
+body[data-page="about"] .page-portfolio,
+body[data-page="about"] .section-marker,
+body[data-page="about"] .hero__eyebrow,
+body[data-page="about"] .hero__scrollcue,
+body[data-page="about"] .hero__foot,
+body[data-page="about"] .hero__enter,
+body[data-page="about"] .record__kicker,
+body[data-page="about"] .sched-head,
+body[data-page="about"] .sched-row__dates,
+body[data-page="about"] .legend,
+body[data-page="about"] .record__resume,
+body[data-page="about"] .rtag {
+  font-family: var(--mono);
+  font-style: normal;
+}
+
+body[data-page="about"] .hero__lede,
+body[data-page="about"] .hero__seeking,
+body[data-page="about"] .record__lede,
+body[data-page="about"] .sched-row__role,
+body[data-page="about"] .sched-row__role b,
+body[data-page="about"] .sched-row__note,
+body[data-page="about"] .story-heading p,
+body[data-page="about"] .work-story .station-copy p {
+  font-family: var(--sans);
+  font-style: normal;
+}
+
+body[data-page="about"] .hero__title,
+body[data-page="about"] .story-heading h2,
+body[data-page="about"] .record__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Frames: match site fonts (opener untouched) */
+body[data-page="about"] #frames-of-practice-root {
+  --font-geist-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-geist-mono: "Space Mono", ui-monospace, monospace;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* =========================================================
+   FRAMES COVER — black + red
+   ========================================================= */
+body[data-page="about"] #frames-of-practice {
+  background: #0a0a0a;
+}
+body[data-page="about"] #frames-of-practice-root .frames-introduction {
+  --cover-bg: #0a0a0a;
+  --cover-ink: #f4f4f2;
+  --cover-muted: #a8a8a4;
+  --cover-rule: #2e2e2e;
+  --accent: #e23b2f;
+  --signal: #0165FC;
+  background: #0a0a0a;
+  color: #f4f4f2;
+}
+body[data-page="about"] #frames-of-practice-root .frames-introduction .cover-statement h1,
+body[data-page="about"] #frames-of-practice-root .frames-introduction .introduction-index {
+  color: #e23b2f;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-style: normal;
+}
+body[data-page="about"] #frames-of-practice-root .frames-introduction .introduction-lead {
+  color: #f4f4f2;
+  font-family: var(--serif), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+}
+body[data-page="about"] #frames-of-practice-root .frames-introduction .cover-scroll-pull:hover,
+body[data-page="about"] #frames-of-practice-root .frames-introduction .cover-scroll-pull:focus-visible {
+  background: #e23b2f;
+  border-color: #e23b2f;
+}
+
+/* =========================================================
+   FRAMES COMPLETE INDEX (last sheet) — black theme
+   ========================================================= */
+body[data-page="about"] #frames-of-practice-root .visual-index {
+  background: #0a0a0a;
+  color: #f4f4f2;
+  --ink: #f4f4f2;
+  --muted: #a8a8a4;
+  --rule: #2e2e2e;
+  --accent: #e23b2f;
+  --signal: #e23b2f;
+  --paper: #0a0a0a;
+  --place-wash: #161616;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-chapter-heading h2 {
+  color: #f4f4f2;
+  font-family: var(--serif), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-chapter-heading p {
+  color: #a8a8a4;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-style: normal;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-chapter-heading > span {
+  color: #e23b2f;
+  border-color: #e23b2f;
+  font-family: "Space Mono", ui-monospace, monospace;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-body > article {
+  border-bottom-color: #2e2e2e;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid img,
+body[data-page="about"] #frames-of-practice-root .visual-index .index-placeholder {
+  border-color: #2e2e2e;
+  background: #161616;
+  color: #8a8a86;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-placeholder:before,
+body[data-page="about"] #frames-of-practice-root .visual-index .index-placeholder:after {
+  background: #3a3a36;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-placeholder i {
+  border-color: #e23b2f;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid small {
+  color: #e23b2f;
+  font-family: "Space Mono", ui-monospace, monospace;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid b {
+  color: #a8a8a4;
+  font-family: "Space Mono", ui-monospace, monospace;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid button:after {
+  background: #2e2e2e;
+}
+
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid button:hover:after,
+body[data-page="about"] #frames-of-practice-root .visual-index .index-grid button:focus-visible:after {
+  background: #e23b2f;
+}
+
+/* Frames chapter type roles */
+body[data-page="about"] #frames-of-practice-root .caption-meta,
+body[data-page="about"] #frames-of-practice-root .sheet-photo-index,
+body[data-page="about"] #frames-of-practice-root .sheet-index,
+body[data-page="about"] #frames-of-practice-root .frame-index,
+body[data-page="about"] #frames-of-practice-root .record-mark,
+body[data-page="about"] #frames-of-practice-root .skip-to-index {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-style: normal;
+}
+
+body[data-page="about"] #frames-of-practice-root .sheet-takeaway,
+body[data-page="about"] #frames-of-practice-root .spatial-frame h1,
+body[data-page="about"] #frames-of-practice-root .place-gate h1,
+body[data-page="about"] #frames-of-practice-root .caption h1 {
+  font-family: var(--serif), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+body[data-page="about"] .work-story .project-station.is-active .station-image {
+  border-color: rgba(244, 244, 242, 0.55);
+}
+
+body[data-page="about"] .work-story .station-image {
+  border-color: rgba(244, 244, 242, 0.18);
+}
+
+body[data-page="about"][data-nav="selected-work"] .nav__links,
+body[data-page="about"][data-nav="frames"] .nav__links,
+body[data-page="about"][data-nav="contact"] .nav__links {
+  background: var(--surface-dark);
+}
+
+/* Seams between sections stay quiet */
+body[data-page="about"] .seam__path {
+  stroke: var(--line);
+}

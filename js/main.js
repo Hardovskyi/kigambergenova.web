@@ -47,7 +47,6 @@
       { id: "selected-work", key: "selected-work" },
       { id: "record", key: "record" },
       { id: "frames-of-practice", key: "frames" },
-      { id: "what-i-bring", key: "bring" },
       { id: "background", key: "background" },
       { id: "contact", key: "contact" },
     ];
@@ -292,63 +291,9 @@
   })();
 
   /* =========================================================
-     KEY-PLAN NAV — unravel-to-thread, corner dock, untangle states
+     SEAMS — reveal inter-section seams as they enter
      ========================================================= */
-  (function keyplanNav() {
-    var heroEl = document.getElementById("top");
-    var dock = document.getElementById("kpDock");
-
-    function goTo(sectionId, instant) {
-      if (!sectionId) return;
-      var t = document.getElementById(sectionId);
-      if (t) t.scrollIntoView({ behavior: instant || reduceMotion ? "auto" : "smooth" });
-    }
-
-    /* Opener entry is handled by js/connection-nav.js (axonometric map).
-       Dock still jumps to sections once the site is visible. */
-
-    /* the corner marker (dock) appears once you leave the hero */
-    if (dock && heroEl && "IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { dock.classList.toggle("show", !e.isIntersecting); });
-      }, { threshold: 0 }).observe(heroEl);
-    }
-
-    /* dock nodes jump to their section */
-    document.querySelectorAll(".kp-node[data-section]").forEach(function (el) {
-      var sec = el.getAttribute("data-section");
-      el.addEventListener("click", function () { goTo(sec); });
-      el.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goTo(sec); }
-      });
-    });
-
-    /* dock nodes untangle: tangled → active (highlight) → passed (resolved dot) */
-    var order = ["selected-work", "record", "frames-of-practice", "background", "contact"];
-    var dockNodes = {};
-    document.querySelectorAll(".kp-node[data-section]").forEach(function (n) {
-      dockNodes[n.getAttribute("data-section")] = n;
-    });
-    if (Object.keys(dockNodes).length && "IntersectionObserver" in window) {
-      var secObs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var activeIdx = order.indexOf(e.target.id);
-          order.forEach(function (id, i) {
-            var n = dockNodes[id];
-            if (!n) return;
-            n.classList.toggle("is-active", i === activeIdx);
-            n.classList.toggle("is-passed", i < activeIdx);
-          });
-        });
-      }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
-      order.forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) secObs.observe(el);
-      });
-    }
-
-    /* reveal inter-section seams + section knots as they enter */
+  (function seamReveal() {
     var seamEls = document.querySelectorAll(".seam, .knot--section, .knot--resolved");
     if ("IntersectionObserver" in window && !reduceMotion) {
       var seamIO = new IntersectionObserver(function (entries) {

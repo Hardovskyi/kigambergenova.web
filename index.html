@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260729c" />
-  <link rel="stylesheet" href="css/selected-work.css?v=20260719b" />
+  <link rel="stylesheet" href="css/style.css?v=20260729g" />
+  <link rel="stylesheet" href="css/selected-work.css?v=20260729f" />
   <link rel="stylesheet" href="css/frames-of-practice.css?v=20260725e" />
   <link rel="stylesheet" href="css/connection-nav.css?v=20260729c" />
+  <link rel="stylesheet" href="css/index-theme.css?v=20260729g" />
+  <link rel="stylesheet" href="css/background-section.css?v=20260729f" />
+  <link rel="stylesheet" href="css/contact-section.css?v=20260729f" />
   <noscript><style>.opener{display:none!important}body{overflow:auto!important}</style></noscript>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f1ece1'/%3E%3Cpath d='M20 70 Q50 10 80 70' stroke='%23c1572f' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
@@ -126,25 +129,8 @@
 
     <div class="hero__foot">
       <span class="hero__scrollcue">Scroll to explore ↓</span>
-      <span>Chicago · 41.88° N, 87.63° W</span>
     </div>
   </header>
-
-  <!-- docked key-plan: the thread's corner marker / persistent nav -->
-  <nav class="kp-dock" id="kpDock" aria-label="Section map">
-    <svg class="kp-dock__svg" viewBox="0 0 200 170" role="img" aria-label="Section map">
-      <path class="connector" pathLength="1" stroke-width="2.4" d="M52,46 C52,68 80,72 94,82"/>
-      <path class="connector" pathLength="1" stroke-width="1" d="M160,44 C160,64 120,74 106,82"/>
-      <path class="connector" pathLength="1" stroke-width="1.4" d="M46,128 C46,108 80,100 94,90"/>
-      <path class="connector" pathLength="1" stroke-width="1.4" d="M158,128 C158,108 120,100 106,90"/>
-      <g class="kp-node" data-section="selected-work"><path class="kp-tangle" d="M46,38 c4,-5 10,5 6,8 c-4,3 -8,-1 -6,-4" pathLength="1"/><circle class="kp-dot" cx="52" cy="42" r="4.5"/><text class="kp-name" x="52" y="28" text-anchor="middle">Work</text></g>
-      <g class="kp-node" data-section="record"><path class="kp-tangle" d="M154,36 c4,-5 10,5 6,8 c-4,3 -8,-1 -6,-4" pathLength="1"/><circle class="kp-dot" cx="160" cy="40" r="4"/><text class="kp-name" x="160" y="26" text-anchor="middle">Record</text></g>
-      <g class="kp-node kp-node--main" data-section="frames-of-practice"><path class="kp-tangle" d="M92,82 c6,-7 16,7 8,12 c-6,4 -12,-2 -8,-6" pathLength="1"/><circle class="kp-dot" cx="100" cy="86" r="7"/><text class="kp-name" x="100" y="108" text-anchor="middle">Frames</text></g>
-      <g class="kp-node" data-section="background"><path class="kp-tangle" d="M40,128 c4,-5 10,5 6,8 c-4,3 -8,-1 -6,-4" pathLength="1"/><circle class="kp-dot" cx="46" cy="132" r="4"/><text class="kp-name" x="46" y="152" text-anchor="middle">Background</text></g>
-      <g class="kp-node" data-section="contact"><path class="kp-tangle" d="M152,128 c4,-5 10,5 6,8 c-4,3 -8,-1 -6,-4" pathLength="1"/><circle class="kp-dot" cx="158" cy="132" r="4"/><text class="kp-name" x="158" y="152" text-anchor="middle">Contact</text></g>
-    </svg>
-    <span class="kp-dock__tag">Key plan</span>
-  </nav>
 
   <!-- ============================================================
        02 — SELECTED WORK  (continuous field)
@@ -259,130 +245,169 @@
   <div class="seam" aria-hidden="true"><svg class="seam__svg" viewBox="0 0 40 100" preserveAspectRatio="none"><path class="seam__path" d="M20,0 C7,28 33,66 20,100" pathLength="1"/></svg></div>
 
   <!-- ============================================================
-       05 — WHAT I BRING TO PRACTICE
+       04 — BACKGROUND
        ============================================================ -->
-  <section class="bring" id="what-i-bring">
-    <div class="bring__head reveal">
-      <p class="bring__kicker"><span>04</span> What I Bring to Practice</p>
-      <h2 class="bring__title">Why this path makes me useful on a team.</h2>
-      <p class="bring__lede">Five hiring-relevant habits — drawn from the work, the record, and the frames above.</p>
-    </div>
-    <ol class="bring__list">
-      <li class="bring__item reveal">
-        <h3>I observe before proposing.</h3>
-        <p>I read context, behavior, constraints, and patterns before defining a response.</p>
-      </li>
-      <li class="bring__item reveal">
-        <h3>I communicate ideas clearly.</h3>
-        <p>Teaching, publications, diagrams, presentations, and visual work trained me to translate complex ideas for different audiences.</p>
-      </li>
-      <li class="bring__item reveal">
-        <h3>I adapt without losing intent.</h3>
-        <p>Design-build taught me to revise solutions when conditions change while protecting the project’s core purpose.</p>
-      </li>
-      <li class="bring__item reveal">
-        <h3>I connect concept to execution.</h3>
-        <p>I move between research, spatial strategy, documentation, detailing, and making.</p>
-      </li>
-      <li class="bring__item reveal">
-        <h3>I contribute to teams.</h3>
-        <p>I listen, coordinate, support others, and take responsibility where the work needs it.</p>
-      </li>
-    </ol>
-  </section>
+  <section id="background" aria-label="Background">
+    <div class="sheet">
+      <i class="crop tl" aria-hidden="true"></i>
+      <i class="crop br" aria-hidden="true"></i>
+      <div class="registration"><b>04</b> / BACKGROUND / CAPABILITY INDEX</div>
 
-  <div class="seam" aria-hidden="true"><svg class="seam__svg" viewBox="0 0 40 100" preserveAspectRatio="none"><path class="seam__path" d="M20,0 C7,28 33,66 20,100" pathLength="1"/></svg></div>
+      <header class="head">
+        <div>
+          <p class="kicker"><span>04</span> Background</p>
+          <h2>Education, tools,<br />and methods.</h2>
+        </div>
+        <p class="head-copy">
+          <strong>Training translated into practice</strong>
+          My background connects architectural education with the tools and working methods I use to document, test, communicate, and build.
+        </p>
+      </header>
 
-  <!-- ============================================================
-       06 — BACKGROUND
-       ============================================================ -->
-  <section class="background" id="background">
-    <div class="bg__head reveal">
-      <p class="bg__kicker"><span>05</span> Background</p>
-      <h2 class="bg__title">Education and toolkit.</h2>
-      <p class="bg__intro">My experience spans documentation, design-build coordination, teaching, research, and visual communication.</p>
-    </div>
+      <div class="body-grid">
+        <div class="column education">
+          <h3 class="column-title">Education <small>02 completed degrees</small></h3>
 
-    <div class="bg__grid bg__grid--two">
-      <div class="bg__col reveal">
-        <h3 class="bg__label">Education</h3>
-        <article class="bg__item">
-          <span class="bg__year">Aug 2024 — May 2025 · Completed</span>
-          <h4>Master of Tall Buildings and Vertical Urbanism</h4>
-          <p>Illinois Institute of Technology / CTBUH — Chicago, IL</p>
-        </article>
-        <article class="bg__item">
-          <span class="bg__year">Aug 2020 — May 2025</span>
-          <h4>Bachelor of Architecture (B.Arch)</h4>
-          <p>Illinois Institute of Technology — Chicago, IL</p>
-          <p class="bg__honors">Dean’s List (6 semesters) · Elevate Scholarship ($5k)</p>
-        </article>
-      </div>
+          <article class="degree">
+            <span class="degree-index">01</span>
+            <div>
+              <p class="degree-meta">Graduate / Aug 2024 — May 2025 / Completed</p>
+              <h4>Master of Tall Buildings and Vertical Urbanism</h4>
+              <p class="degree-school">Illinois Institute of Technology / CTBUH — Chicago, IL</p>
+              <div class="tags">
+                <span class="tag">High-rise</span>
+                <span class="tag">Parametric</span>
+                <span class="tag">Environment</span>
+              </div>
+            </div>
+          </article>
 
-      <div class="bg__col reveal">
-        <h3 class="bg__label">Technical Toolkit</h3>
-        <div class="bg__skills">
-          <p><b>Modeling + BIM</b><br/>Revit · Rhino · Grasshopper · AutoCAD</p>
-          <p><b>Visualization</b><br/>V-Ray · Arnold · Lumion · Ladybug · Karamba</p>
-          <p><b>Communication + Documentation</b><br/>InDesign · Illustrator · Photoshop · Lightroom · Diagrams · Presentations · Publication design</p>
-          <p><b>Making + Site</b><br/>Physical models · Laser · 3D print · CNC · Assembly diagrams · Site measurements · Construction support</p>
+          <article class="degree">
+            <span class="degree-index">02</span>
+            <div>
+              <p class="degree-meta">Undergraduate / Aug 2020 — May 2025</p>
+              <h4>Bachelor of Architecture (B.Arch)</h4>
+              <p class="degree-school">Illinois Institute of Technology — Chicago, IL</p>
+              <p class="degree-honors">Dean’s List / 6 semesters · Elevate Scholarship / $5k</p>
+              <div class="tags">
+                <span class="tag">Design-build</span>
+                <span class="tag">Documentation</span>
+                <span class="tag">Making</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="column toolkit">
+          <h3 class="column-title">Technical toolkit <small>Tools grouped by use</small></h3>
+
+          <div class="tool-row is-linked">
+            <span class="tool-index">T01</span>
+            <span class="tool-label">Modeling + BIM</span>
+            <p class="tool-list">Revit · Rhino · Grasshopper · AutoCAD
+              <span class="tool-use">Documentation / coordination / parametric studies</span>
+            </p>
+          </div>
+          <div class="tool-row">
+            <span class="tool-index">T02</span>
+            <span class="tool-label">Visualization + analysis</span>
+            <p class="tool-list">V-Ray · Arnold · Lumion · Ladybug · Karamba
+              <span class="tool-use">Atmosphere / environmental testing / communication</span>
+            </p>
+          </div>
+          <div class="tool-row">
+            <span class="tool-index">T03</span>
+            <span class="tool-label">Communication</span>
+            <p class="tool-list">InDesign · Illustrator · Photoshop · Lightroom
+              <span class="tool-use">Diagrams / presentations / publication design</span>
+            </p>
+          </div>
+          <div class="tool-row is-linked">
+            <span class="tool-index">T04</span>
+            <span class="tool-label">Making + site</span>
+            <p class="tool-list">Physical models · Laser · 3D print · CNC
+              <span class="tool-use">Assembly diagrams / field measurement / construction</span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="bg__strengths reveal">
-      <h3 class="bg__label">Additional Strengths</h3>
-      <ul class="bg__strength-list">
-        <li>Documentation</li>
-        <li>Design research</li>
-        <li>Presentation development</li>
-        <li>Teaching and critique</li>
-        <li>Site coordination</li>
-      </ul>
+      <div class="strengths">
+        <div class="strength-head">Additional strengths <small>Evidence carried across projects and roles</small></div>
+        <div class="strength-grid">
+          <article class="strength"><span>A</span><b>Documentation</b><p>Drawing sets and construction details</p></article>
+          <article class="strength"><span>B</span><b>Design research</b><p>Context, precedent, and synthesis</p></article>
+          <article class="strength"><span>C</span><b>Presentation</b><p>Clear visual and verbal narratives</p></article>
+          <article class="strength"><span>D</span><b>Teaching + critique</b><p>Briefs, feedback, and coordination</p></article>
+          <article class="strength"><span>E</span><b>Site coordination</b><p>Measurement, adaptation, and support</p></article>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="seam seam--dark" aria-hidden="true"><svg class="seam__svg" viewBox="0 0 40 100" preserveAspectRatio="none"><path class="seam__path" d="M20,0 C33,28 7,66 20,100" pathLength="1"/></svg></div>
 
   <!-- ============================================================
-       07 — CONTACT
+       05 — CONTACT
        ============================================================ -->
-  <footer class="footer" id="contact">
-    <svg class="knot knot--resolved" viewBox="0 0 60 30" aria-hidden="true"><line x1="0" y1="15" x2="24" y2="15"/><circle cx="30" cy="15" r="6"/><line x1="36" y1="15" x2="60" y2="15"/></svg>
-    <div class="footer__top reveal">
-      <p class="footer__kicker"><span>06</span> Contact</p>
-      <p class="footer__statement">Let’s Connect.</p>
-      <p class="footer__cta">I’m seeking an early-career architectural role where I can contribute design thinking, visual communication, site awareness, and a strong commitment to technical growth.</p>
-    </div>
-    <div class="footer__grid">
-      <div>
-        <span class="footer__label">Email</span>
-        <a href="mailto:igambergenovak@gmail.com">igambergenovak@gmail.com</a>
+  <footer id="contact" aria-label="Contact">
+    <div class="contact-sheet">
+      <p class="section-meta"><span>05</span> Contact</p>
+
+      <div class="contact-hero">
+        <div class="hero-copy">
+          <h2>Start a<br />conversation.</h2>
+          <p>I’m looking for an architectural design role where research, technical development, and clear visual communication meet. If your team values curiosity, collaboration, and carefully built ideas, I’d be glad to connect.</p>
+
+          <div class="availability" aria-label="Opportunity information">
+            <div><span>Seeking</span><b>Architectural design</b></div>
+            <div><span>Mobility</span><b>Open to relocation</b></div>
+          </div>
+        </div>
+
+        <aside class="threshold">
+          <span class="threshold-index">Primary contact / 01</span>
+          <p class="threshold-kicker">Have a role, project, or conversation in mind?</p>
+          <a class="email" href="mailto:igambergenovak@gmail.com">
+            <strong>igambergenovak@gmail.com</strong>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <p class="email-caption">The most direct way to reach me. I’m happy to discuss architectural opportunities, design collaborations, or the work presented here.</p>
+        </aside>
       </div>
-      <div>
-        <span class="footer__label">Phone</span>
-        <a href="tel:+13127920646">+1 (312) 792-0646</a>
+
+      <div class="register">
+        <div class="register-block">
+          <p class="register-label">Contact <i>Direct channels</i></p>
+          <div class="contact-line"><span>Email</span><a href="mailto:igambergenovak@gmail.com">igambergenovak@gmail.com</a></div>
+          <div class="contact-line"><span>Phone</span><a href="tel:+13127920646">+1 (312) 792-0646</a></div>
+        </div>
+
+        <div class="register-block">
+          <p class="register-label">Connect <i>Professional</i></p>
+          <a class="linkedin" href="https://www.linkedin.com/in/kigambergenova/" target="_blank" rel="noopener noreferrer"><span>in/kigambergenova</span><i aria-hidden="true">↗</i></a>
+        </div>
+
+        <div class="register-block">
+          <p class="register-label">Documents <i>PDF / Updated 2026</i></p>
+          <div class="documents">
+            <a class="document" href="assets/Resume_Kamila_Igambergenova.pdf" target="_blank" rel="noopener"><span>Résumé<br />PDF</span><i aria-hidden="true">↗</i></a>
+            <a class="document" href="assets/Portfolio_Kamila_Igambergenova.pdf" target="_blank" rel="noopener"><span>Portfolio<br />PDF</span><i aria-hidden="true">↗</i></a>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="footer__label">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/kigambergenova/" target="_blank" rel="noopener">in/kigambergenova ↗</a>
+
+      <div class="contact-foot">
+        <span class="footer-name">Kamila Igambergenova / Architectural Designer</span>
+        <span class="footer-theme">Architecture as connection / 2026</span>
       </div>
-      <div>
-        <span class="footer__label">Documents</span>
-        <a href="assets/Resume_Kamila_Igambergenova.pdf" target="_blank" rel="noopener">Résumé (PDF) ↗</a><br/>
-        <a href="assets/Portfolio_Kamila_Igambergenova.pdf" target="_blank" rel="noopener">Portfolio (PDF) ↗</a>
-      </div>
-    </div>
-    <div class="footer__base">
-      <span>© <span id="year"></span> Kamila Igambergenova</span>
-      <span>Architecture as Connection</span>
     </div>
   </footer>
 
-  <script src="js/main.js?v=20260725e"></script>
-  <script src="js/connection-nav.js?v=20260729c"></script>
-  <script src="js/selected-work.js?v=20260719b"></script>
+  <script src="js/main.js?v=20260729e"></script>
+  <script src="js/connection-nav.js?v=20260729f"></script>
+  <script src="js/selected-work.js?v=20260729d"></script>
   <script src="js/frames-extra-photos.js?v=20260721"></script>
-  <script src="js/frames-of-practice.js?v=20260725e"></script>
+  <script src="js/frames-of-practice.js?v=20260729g"></script>
 </body>
 </html>

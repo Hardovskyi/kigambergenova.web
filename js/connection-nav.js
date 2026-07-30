@@ -581,10 +581,26 @@
 
   function goToSiteSection(sectionId, instant) {
     const target = document.getElementById(sectionId);
-    if (target) {
-      target.scrollIntoView({
-        behavior: instant || reduceMotion ? "auto" : "smooth",
+    if (!target) return;
+
+    /* Jump without a visible scroll animation (CSS scroll-behavior: smooth
+       can still animate native scrolls — force an immediate offset jump). */
+    const html = document.documentElement;
+    const previous = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    const top =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      (parseFloat(getComputedStyle(target).scrollMarginTop) || 0);
+
+    if (instant || reduceMotion) {
+      window.scrollTo(0, Math.max(0, top));
+      requestAnimationFrame(function () {
+        html.style.scrollBehavior = previous;
       });
+    } else {
+      target.scrollIntoView({ behavior: "smooth" });
+      html.style.scrollBehavior = previous;
     }
   }
 
@@ -646,9 +662,14 @@
       }, 520);
 
       window.setTimeout(() => {
+        /* Unlock + jump while the opener still covers the viewport,
+           so the destination change is not seen as a scroll. */
         document.body.classList.remove("opener-lock");
         goToSiteSection(siteSection, true);
-        requestAnimationFrame(() => removeOpener());
+        requestAnimationFrame(() => {
+          goToSiteSection(siteSection, true);
+          removeOpener();
+        });
       }, 1180);
     };
 
@@ -699,7 +720,10 @@
     window.setTimeout(() => {
       document.body.classList.remove("opener-lock");
       goToSiteSection("top", true);
-      requestAnimationFrame(() => removeOpener());
+      requestAnimationFrame(() => {
+        goToSiteSection("top", true);
+        removeOpener();
+      });
     }, 880);
   }
 
