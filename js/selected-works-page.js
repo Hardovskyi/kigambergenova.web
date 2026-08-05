@@ -1,3 +1,15 @@
+/**
+ * Full Selected Works page (work.html) — project media lives HERE.
+ *
+ * To show a real picture, add src (and optional alt) on any media item:
+ *   { code: "CR-01", type: "Drawing", title: "...", shape: "drawing",
+ *     src: "assets/selected-works/images/cr-01.jpg",
+ *     alt: "Site plan of the community room" }
+ *
+ * Put image files in assets/selected-works/images/ (or futureassets/).
+ * Use site-relative paths only — not C:/Users/...
+ * Leave src off to keep the gray "Image" placeholder.
+ */
 const projects = [
   {
     no: "01",
@@ -19,10 +31,10 @@ const projects = [
           "Establish the village edge, circulation patterns, site conditions, and the social absence the project responds to.",
         layout: "feature",
         media: [
-          { code: "CR-01", type: "Drawing", title: "Site plan + anticipated circulation", shape: "drawing" },
-          { code: "CR-02", type: "Photography", title: "Existing site condition 01", shape: "landscape" },
-          { code: "CR-03", type: "Photography", title: "Existing site condition 02", shape: "landscape" },
-          { code: "CR-04", type: "Photography", title: "Existing site condition 03", shape: "landscape" },
+          { code: "CR-01", type: "Drawing", title: "Site plan + anticipated circulation", shape: "drawing", src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-02", type: "Photography", title: "Existing site condition 01", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex.png" },
+          { code: "CR-03", type: "Photography", title: "Existing site condition 02", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-04", type: "Photography", title: "Existing site condition 03", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
         ],
       },
       {
@@ -33,12 +45,12 @@ const projects = [
           "Separate the spatial logic from the technical resolution: first the diagram sequence, then plans, sections, elevations, and the structural axon.",
         layout: "grid-3",
         media: [
-          { code: "CR-05", type: "Diagram set", title: "Four form strategies", shape: "landscape" },
-          { code: "CR-06", type: "Diagram set", title: "Five organizational strategies", shape: "landscape" },
-          { code: "CR-07", type: "Drawing", title: "Floor plan", shape: "drawing" },
-          { code: "CR-08", type: "Drawing", title: "Sections A-A + B-B", shape: "drawing" },
-          { code: "CR-09", type: "Axonometric", title: "Structural assembly", shape: "portrait" },
-          { code: "CR-10", type: "Drawing set", title: "Four elevations", shape: "drawing" },
+          { code: "CR-05", type: "Diagram set", title: "Four form strategies", shape: "landscape", src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"  },
+          { code: "CR-06", type: "Diagram set", title: "Five organizational strategies", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-07", type: "Drawing", title: "Floor plan", shape: "drawing", src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"  },
+          { code: "CR-08", type: "Drawing", title: "Sections A-A + B-B", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-09", type: "Axonometric", title: "Structural assembly", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-10", type: "Drawing set", title: "Four elevations", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
         ],
       },
       {
@@ -49,11 +61,11 @@ const projects = [
           "Show the competition proposal, design development, and built adaptation as a continuous story connected by the daily route between living, fabrication, and construction.",
         layout: "grid-3",
         media: [
-          { code: "CR-11", type: "Phase 01", title: "Competition proposal", shape: "landscape" },
-          { code: "CR-12", type: "Phase 02", title: "Design development", shape: "landscape" },
-          { code: "CR-13", type: "Phase 03", title: "Built adaptation", shape: "landscape" },
-          { code: "CR-14", type: "Diagram", title: "Assembly sequence", shape: "panorama" },
-          { code: "CR-15", type: "Map", title: "Lived · fabricated · built", shape: "drawing" },
+          { code: "CR-11", type: "Phase 01", title: "Competition proposal", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-12", type: "Phase 02", title: "Design development", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-13", type: "Phase 03", title: "Built adaptation", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-14", type: "Diagram", title: "Assembly sequence", shape: "panorama" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
+          { code: "CR-15", type: "Map", title: "Lived · fabricated · built", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png" },
         ],
       },
       {
@@ -64,9 +76,9 @@ const projects = [
           "Give the main experiential image room to breathe. Short callouts explain filtered light, privacy, ventilation, and flexible use without sitting on top of the image.",
         layout: "feature",
         media: [
-          { code: "CR-16", type: "Hero image", title: "Interior spatial quality", shape: "hero" },
-          { code: "CR-17", type: "Detail image", title: "Porous brick + filtered light", shape: "portrait" },
-          { code: "CR-18", type: "Detail image", title: "Ventilated roof opening", shape: "portrait" },
+          { code: "CR-16", type: "Hero image", title: "Interior spatial quality", shape: "hero" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-17", type: "Detail image", title: "Porous brick + filtered light", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-18", type: "Detail image", title: "Ventilated roof opening", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
         ],
       },
       {
@@ -77,12 +89,12 @@ const projects = [
           "Collect the technical material as one legible drawing field rather than scattering isolated details throughout the chapter.",
         layout: "grid-3",
         media: [
-          { code: "CR-19", type: "Detail set", title: "Structural details", shape: "drawing" },
-          { code: "CR-20", type: "Drawing", title: "Coordinated floor plan", shape: "drawing" },
-          { code: "CR-21", type: "Detail set", title: "Door details", shape: "drawing" },
-          { code: "CR-22", type: "Drawing set", title: "Built elevations", shape: "drawing" },
-          { code: "CR-23", type: "Detail", title: "Roof + column connection", shape: "portrait" },
-          { code: "CR-24", type: "Detail", title: "Foundation + wall condition", shape: "portrait" },
+          { code: "CR-19", type: "Detail set", title: "Structural details", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-20", type: "Drawing", title: "Coordinated floor plan", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-21", type: "Detail set", title: "Door details", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-22", type: "Drawing set", title: "Built elevations", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-23", type: "Detail", title: "Roof + column connection", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-24", type: "Detail", title: "Foundation + wall condition", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
         ],
       },
       {
@@ -93,13 +105,13 @@ const projects = [
           "End with evidence of process and completion: seven chronological construction frames followed by the finished communal room.",
         layout: "grid-4",
         media: [
-          { code: "CR-25", type: "Process", title: "Site reset + layout", shape: "portrait" },
-          { code: "CR-26", type: "Process", title: "Footings + sub-bases", shape: "portrait" },
-          { code: "CR-27", type: "Process", title: "Retaining + infill walls", shape: "portrait" },
-          { code: "CR-28", type: "Process", title: "Rebar + grade beams", shape: "portrait" },
-          { code: "CR-29", type: "Process", title: "Brick walls + steel frame", shape: "portrait" },
-          { code: "CR-30", type: "Process", title: "Roof + final completion", shape: "portrait" },
-          { code: "CR-31", type: "Built image", title: "Completed community room", shape: "landscape" },
+          { code: "CR-25", type: "Process", title: "Site reset + layout", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-26", type: "Process", title: "Footings + sub-bases", shape: "portrait", src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-27", type: "Process", title: "Retaining + infill walls", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-28", type: "Process", title: "Rebar + grade beams", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-29", type: "Process", title: "Brick walls + steel frame", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-30", type: "Process", title: "Roof + final completion", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
+          { code: "CR-31", type: "Built image", title: "Completed community room", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/ex3.png"},
         ],
       },
     ],
@@ -124,9 +136,8 @@ const projects = [
           "Begin with the discontinuous ground between levels, then locate the project within the wider pedestrian, transit, and visual systems.",
         layout: "feature",
         media: [
-          { code: "CV-01", type: "Site axon", title: "Upper Wacker · residual void · Lower Wacker", shape: "hero" },
-          { code: "CV-02", type: "Context image", title: "Upper Wacker approach", shape: "landscape" },
-          { code: "CV-03", type: "Context image", title: "Lower Wacker condition", shape: "landscape" },
+          { code: "CV-01", type: "Site axon", title: "Upper Wacker · residual void · Lower Wacker", shape: "hero" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/birdseye-edited.png"},
+          { code: "CV-02", type: "Context image", title: "DISCONTINUOUS GROUND BETWEEN LEVELS", shape: "landscape"  , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/COLLAGE FINAL bw.png"},
         ],
       },
       {
@@ -137,12 +148,15 @@ const projects = [
           "Keep each analytical family distinct so circulation, wind, shadow, and sight lines can be read without competing annotations.",
         layout: "grid-3",
         media: [
-          { code: "CV-04", type: "Analysis", title: "Transit + foot traffic", shape: "drawing" },
-          { code: "CV-05", type: "Analysis", title: "Sight lines", shape: "drawing" },
-          { code: "CV-06", type: "Analysis", title: "Southwest wind", shape: "drawing" },
-          { code: "CV-07", type: "Analysis", title: "Northwest wind", shape: "drawing" },
-          { code: "CV-08", type: "Analysis set", title: "Seasonal shadow studies", shape: "landscape" },
-          { code: "CV-09", type: "Context strip", title: "Urban landmarks", shape: "panorama" },
+          { code: "CV-04", type: "Analysis", title: "Foot traffic", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/FINAL SITE NARRATIVE-30.png"},
+          { code: "CV-05", type: "Context strip", title: "Public transit routes", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/public transit routes.png"},
+          { code: "CV-06", type: "Context strip", title: "Site historical context", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/historical context.png"},
+          { code: "CV-07", type: "Analysis", title: "Sight lines", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/Sight Lines.png"},
+          { code: "CV-08", type: "Analysis", title: "Site views · notable landmarks", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/views.png"},
+          { code: "CV-09", type: "Analysis", title: "Wind Speeds from September to February", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/FINAL SITE NARRATIVE-35.png"},
+          { code: "CV-10", type: "Analysis", title: "Wind Speeds from March to August", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/FINAL SITE NARRATIVE-34.png"},
+          { code: "CV-11", type: "Analysis set", title: "Seasonal shadow studies", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/shadow analysis.png"},
+          { code: "CV-12", type: "Analysis", title: "Noise intensity", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/noise intensity.png"},
         ],
       },
       {
@@ -153,10 +167,10 @@ const projects = [
           "A five-step massing sequence leads into the longitudinal section and the circulation diagram, making the spatial argument explicit before the program options.",
         layout: "grid-2",
         media: [
-          { code: "CV-10", type: "Diagram sequence", title: "Five massing operations", shape: "panorama" },
-          { code: "CV-11", type: "Drawing", title: "Longitudinal section", shape: "panorama" },
-          { code: "CV-12", type: "Axonometric", title: "Circulation by level", shape: "portrait" },
-          { code: "CV-13", type: "Diagram", title: "Level continuity + daylight voids", shape: "drawing" },
+          { code: "CV-13", type: "Diagram sequence", title: "Five massing operations", shape: "panorama" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/form diagram.png"},
+          { code: "CV-14", type: "Drawing", title: "Longitudinal section", shape: "panorama" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/section long.png"},
+          { code: "CV-15", type: "Axonometric", title: "Cross-section", shape: "panorama" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/section short.png"},
+          { code: "CV-16", type: "Diagram", title: "Circulation by level", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/circulation.png"},
         ],
       },
       {
@@ -167,12 +181,18 @@ const projects = [
           "Organize flexibility as a clear matrix: what remains fixed, what changes, and how the interior supports gallery, market, and fieldhouse configurations.",
         layout: "grid-3",
         media: [
-          { code: "CV-14", type: "Plan", title: "Program organization", shape: "drawing" },
-          { code: "CV-15", type: "Diagram", title: "Three-tenant scenario", shape: "drawing" },
-          { code: "CV-16", type: "Diagram", title: "Two-tenant scenario", shape: "drawing" },
-          { code: "CV-17", type: "Proposal", title: "Art gallery", shape: "landscape" },
-          { code: "CV-18", type: "Proposal", title: "Market", shape: "landscape" },
-          { code: "CV-19", type: "Proposal", title: "Fieldhouse", shape: "landscape" },
+          { code: "CV-16", type: "Plan", title: "Gallery/Theater Program", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/art gallery.png"},
+          { code: "CV-17", type: "Diagram", title: "Market/Soup kitchen Program", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/market.png"},
+          { code: "CV-18", type: "Diagram", title: "Athletic center/bike depot Program", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/fieldhouse.png"},
+          { code: "CV-19", type: "Proposal", title: "Art gallery", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/museum1.jpg"},
+          { code: "CV-20", type: "Proposal", title: "Market", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/market1.jpg"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/fieldhouse1.jpg"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/museum2.png"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/market2.png"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/fieldhouse2.jpg"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/museum3.png"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/market3.png"},
+          { code: "CV-21", type: "Proposal", title: "Fieldhouse", shape: "landscape" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/fieldhouse3.png"},
         ],
       },
       {
@@ -183,10 +203,11 @@ const projects = [
           "Give the wall section a full reading column, with daylight comparison and roof landscape studies in a parallel evidence column.",
         layout: "feature",
         media: [
-          { code: "CV-20", type: "Technical drawing", title: "Wall section", shape: "portrait" },
-          { code: "CV-21", type: "Analysis", title: "Daylight without frit", shape: "square" },
-          { code: "CV-22", type: "Analysis", title: "Daylight with frit", shape: "square" },
-          { code: "CV-23", type: "System diagram", title: "Roof landscape layers", shape: "drawing" },
+          { code: "CV-20", type: "Technical drawing", title: "Wall section", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/system section.png"},
+          { code: "CV-21", type: "Technical drawing", title: "Envelope Assembly", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/envelope.png"},
+          { code: "CV-22", type: "Analysis", title: "Light intensity", shape: "square" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/light intensity.png"},
+          { code: "CV-23", type: "Analysis", title: "Section perspective", shape: "square" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/DETAILED SECTION.jpg"},
+          { code: "CV-24", type: "System diagram", title: "Roof landscape layers", shape: "drawing" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/Final.Landscape.png"},
         ],
       },
       {
@@ -197,11 +218,18 @@ const projects = [
           "Conclude with four equal outcome frames and the sectional model: connection, threshold, quiet courtyard, and open roofscape.",
         layout: "grid-4",
         media: [
-          { code: "CV-24", type: "Outcome", title: "Lower Wacker connection", shape: "portrait" },
-          { code: "CV-25", type: "Outcome", title: "Upper Wacker connection", shape: "portrait" },
-          { code: "CV-26", type: "Outcome", title: "Quiet courtyard", shape: "portrait" },
-          { code: "CV-27", type: "Outcome", title: "Public roofscape", shape: "portrait" },
-          { code: "CV-28", type: "Model", title: "Sectional model", shape: "panorama" },
+          { code: "CV-24", type: "Outcome", title: "Lower Wacker connection", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/lower connection-edited.png"},
+          { code: "CV-25", type: "Outcome", title: "Upper Wacker main entrance", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/entrance-edited.png"},
+          { code: "CV-26", type: "Outcome", title: "Quiet courtyard", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/courtyard-edited 1.png"},
+          { code: "CV-27", type: "Outcome", title: "Public roofscape", shape: "portrait" , src: "C:/Users/igamb/Downloads/kamilawebsite/assets/selected-works/images/THE COVE/roof-edited 1.png"},
+          {
+            code: "CV-28",
+            type: "Model",
+            title: "Sectional model",
+            shape: "panorama",
+            src: "assets/selected-works/images/THE COVE/kamilavidwebsite.mp4",
+            alt: "Animated sectional model of The Cove",
+          },
         ],
       },
     ],
@@ -399,7 +427,48 @@ const escapeHtml = (value) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 
-function placeholderSurface(item, compact = false) {
+/**
+ * Media surface for project galleries.
+ * - If item.src is set → show image or video (by file extension)
+ * - If item.src is missing → show the "Image" placeholder
+ *
+ * Paths should be relative to the site root, e.g.:
+ *   "assets/selected-works/images/cr-01.jpg"
+ *   "assets/selected-works/images/THE COVE/kamilavidwebsite.mp4"
+ * Do NOT use Windows paths like "C:/Users/..."
+ */
+function isVideoSrc(src) {
+  return /\.(mp4|webm|ogg)(\?|$)/i.test(src || "");
+}
+
+function mediaSurface(item, compact = false) {
+  if (item.src) {
+    const label = escapeHtml(item.alt || item.title || item.code);
+    if (isVideoSrc(item.src)) {
+      return `
+        <div class="media-photo media-video ${compact ? "compact" : ""}">
+          <video
+            src="${escapeHtml(item.src)}"
+            ${compact ? "" : "controls"}
+            muted
+            playsinline
+            loop
+            preload="metadata"
+            aria-label="${label}"
+          ></video>
+        </div>
+      `;
+    }
+    return `
+      <div class="media-photo ${compact ? "compact" : ""}">
+        <img
+          src="${escapeHtml(item.src)}"
+          alt="${label}"
+          loading="lazy"
+        />
+      </div>
+    `;
+  }
   return `
     <div class="placeholder ${compact ? "compact" : ""}">
       <span class="placeholder-code">${escapeHtml(item.code)}</span>
@@ -412,7 +481,7 @@ function placeholderSurface(item, compact = false) {
 function mediaCard(item) {
   return `
     <figure class="media-card shape-${item.shape || "landscape"}">
-      ${placeholderSurface(item)}
+      ${mediaSurface(item)}
       <figcaption>
         <span>${escapeHtml(item.code)}</span>
         <span>${escapeHtml(item.type)}</span>
@@ -472,7 +541,7 @@ function galleryMarkup(project, groupIndex, imageIndex) {
     </header>
     <div class="gallery-stage">
       <div class="active-frame shape-${active.shape || "landscape"}">
-        ${placeholderSurface(active)}
+        ${mediaSurface(active)}
       </div>
       <div class="stage-caption">
         <span>${escapeHtml(active.code)}</span>
@@ -494,7 +563,7 @@ function galleryMarkup(project, groupIndex, imageIndex) {
           class="film-card shape-${item.shape || "landscape"} ${imageIndex === index ? "active" : ""}"
           data-image="${index}"
         >
-          ${placeholderSurface(item, true)}
+          ${mediaSurface(item, true)}
           <span>${escapeHtml(item.code)}</span>
           <strong>${escapeHtml(item.title)}</strong>
         </button>

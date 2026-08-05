@@ -335,6 +335,51 @@ a { color: inherit; text-decoration: none; }
   min-width: 0;
   margin: 0;
 }
+.media-photo {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #bcbcb4;
+  background: var(--soft);
+}
+.media-photo img,
+.media-photo video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff;
+}
+.media-photo.media-video,
+.media-photo.media-video video {
+  background: #0c0c0c;
+}
+.shape-hero .media-photo { aspect-ratio: 4 / 3; }
+.shape-landscape .media-photo { aspect-ratio: 3 / 2; }
+.shape-panorama .media-photo { aspect-ratio: 16 / 9; }
+.shape-portrait .media-photo { aspect-ratio: 3 / 4; }
+.shape-square .media-photo { aspect-ratio: 1 / 1; }
+.shape-drawing .media-photo {
+  aspect-ratio: 4 / 3;
+  background: #f6f6f2;
+}
+.shape-drawing .media-photo img { object-fit: contain; background: #f6f6f2; }
+.active-frame .media-photo {
+  width: 100%;
+  height: 100%;
+  max-height: min(62vh, 720px);
+  border: 0;
+  background: transparent;
+}
+.active-frame .media-photo img,
+.active-frame .media-photo video { object-fit: contain; }
+.film-card .media-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+.film-card.active .media-photo { outline: 1px solid var(--accent); outline-offset: -1px; }
 .placeholder {
   position: relative;
   width: 100%;
