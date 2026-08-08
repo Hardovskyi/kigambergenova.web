@@ -6,179 +6,284 @@
  * FILE TO EDIT:  js/frames-photos.js   ← you are here
  * Loaded from:   index.html  (before frames-of-practice.js)
  *
- * Each chapter has 10 sheets in display order (01 → 10).
- *   - Sheets with a photo object = visible image
- *   - null = IMAGE PENDING placeholder (fill in when ready)
+ * Japan sequence follows japan-frames-of-practice.html
+ * (orientation sheet with "Fifty buildings…" skipped — duplicates intro).
  *
- * Current layout (matches the site):
- *   01, 03, 06, 08  → built-in photos (paths already set)
- *   02, 04, 05, 07, 09, 10 → placeholders (null — add objects here)
- *
- * To add a placeholder photo, replace null with:
- *   {
- *     src: "futureassets/japan-05.jpg",
- *     alt: "Short description for accessibility",
- *     title: "Short caption title.",
- *     note: "One supporting sentence.",
- *     detail: "TAG / TAG / TAG",
- *     format: "portrait"   // or "landscape"
- *   }
- *
- * Image files live in:  futureassets/
+ * Image files live in:  futureassets/Japan/, futureassets/, etc.
  * ============================================================
  */
 window.FRAMES_PHOTOS = {
   japan: [
-    /* 01 — built-in */
     {
-      src: "futureassets/japan-01.jpg",
-      alt: "Timber ceiling installation above a stair and railway platform in Japan",
-      title: "Structure made atmosphere visible.",
-      note: "A ceiling could be read as material, rhythm, shadow, and movement at once.",
-      detail: "TIMBER / SHADOW / DESCENT",
-      format: "portrait",
-    },
-    /* 02 — placeholder */
-    null,
-    /* 03 — built-in */
-    {
-      src: "futureassets/japan-02.jpg",
-      alt: "Architectural library lined with books and reflected in a glass table",
-      title: "An archive became an interior.",
-      note: "Knowledge was not stored behind the space; it formed the space itself.",
-      detail: "ARCHIVE / ENCLOSURE / REFLECTION",
-      format: "portrait",
-    },
-    /* 04 — placeholder */
-    null,
-    /* 05 — placeholder */
-    null,
-    /* 06 — built-in */
-    {
-      src: "futureassets/japan-03.jpg",
-      alt: "Open workshop hall organized by a fine structural grid",
-      title: "Making occupied the whole room.",
-      note: "A generous frame allowed tools, people, plants, and unfinished work to coexist.",
-      detail: "STRUCTURE / USE / CHANGE",
+      src: "futureassets/Japan/image12.jpg",
+      alt: "Architecture students during a field study in Japan",
+      title: "Learning at full scale.",
+      note: "9+ CITIES · 50+ BUILDINGS · 300+ MILES · 42 DAYS. Japan turned precedent study into direct observation. Across civic rooms, landscapes, transport spaces, and studios, I studied how movement, material, structure, and everyday occupation produce architectural experience. A collective field study—not a catalogue of isolated icons.",
+      detail: "9+ CITIES / 50+ BUILDINGS / 300+ MILES / 42 DAYS",
       format: "landscape",
     },
-    /* 07 — placeholder */
-    null,
-    /* 08 — built-in */
     {
-      src: "futureassets/japan-04.jpg",
-      alt: "Two people seated beneath a long opening framing trees",
-      title: "The quietest space held the strongest encounter.",
-      note: "A single opening brought scale, landscape, light, and occupation into one gesture.",
-      detail: "OPENING / LIGHT / OCCUPATION",
+      src: "futureassets/Japan/image11.jpg",
+      alt: "The National Art Center, Tokyo",
+      title: "A museum without a permanent collection becomes a public interior.",
+      note: "At The National Art Center, the 21.6-meter-high atrium holds cafés, a restaurant, circulation, and places to pause beneath its inhabited concrete cones. The building is free to enter even without an exhibition ticket, so everyday occupation makes its scale and section understandable. I saw how non-gallery space can give a cultural institution its civic identity.",
+      detail: "PUBLIC ATRIUM / INHABITED SECTION / CIVIC INTERIOR",
       format: "portrait",
     },
-    /* 09 — placeholder */
-    null,
-    /* 10 — placeholder */
-    null,
+    {
+      src: "futureassets/Japan/image5.jpg",
+      alt: "MakiArt Terrace",
+      title: "The stair is part auditorium, part lobby, part street.",
+      note: "At MakiArt Terrace, broad timber steps absorb waiting, reading, informal performance, and movement into one shared interior topography. Circulation is not treated as leftover space; it becomes a civic room. The visit sharpened my interest in elements that carry several programs without losing clarity.",
+      detail: "STAIR AS ROOM / SHARED PROGRAM / INFORMAL USE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image8.jpg",
+      alt: "Honpukuji Water Temple",
+      title: "The temple begins before the building appears.",
+      note: "The route reaches a lotus pond, splits its surface, and descends between concrete walls toward the sanctuary below. At Honpukuji, movement constructs the transition from ordinary landscape to sacred interior before the destination is visible. I learned to treat arrival as an architectural project in itself.",
+      detail: "LOTUS POND / DESCENT / RITUAL SEQUENCE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image7.jpg",
+      alt: "Hyakudanen / Hundred Stepped Gardens",
+      title: "One hundred gardens turn a slope into a navigable field.",
+      note: "At Hyakudanen, one hundred planted beds, retaining walls, and repeated stairs translate the hillside into a public route. The garden is understood through climbing, crossing, and changing viewpoints rather than from one fixed position. Here, landscape and circulation operate as the same architectural system.",
+      detail: "100 GARDENS / TERRACED GROUND / PUBLIC ROUTE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image6.jpg",
+      alt: "Art Biotop Water Garden",
+      title: "The garden was made by moving nature, not replacing it.",
+      note: "Hundreds of trees were transplanted from an adjacent construction site and recomposed among more than 160 ponds. The result appears found, yet every relationship between tree, water, moss, and path is deliberate. It showed me that restraint is not the absence of design; it is the precision to change relationships without imposing a dominant object.",
+      detail: "TRANSPLANTED TREES / 160+ PONDS / PRECISE RESTRAINT",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image4.jpg",
+      alt: "Hoshakuji Station",
+      title: "A diagonal plywood system gives a small station its identity.",
+      note: "The folded ceiling extends the diagonal geometry of the nearby Oya-stone structures in a lighter, lauan-plywood construction. Its repetition gives the descent toward the platforms warmth, direction, and a memorable civic threshold. I saw how one disciplined material system can connect infrastructure to the character of its town.",
+      detail: "LAUAN PLYWOOD / DIAGONAL SYSTEM / TRANSIT",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image10.jpg",
+      alt: "Naoshima Hall",
+      title: "The roof behaves like an environmental instrument.",
+      note: "At Naoshima Hall, the timber-lined roof and its central aperture organize daylight while drawing the island's prevailing southerly winds through the main room. Environmental performance becomes spatial character rather than concealed equipment. The project made climate legible as an architectural material.",
+      detail: "PREVAILING WIND / ROOF APERTURE / DAYLIGHT",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image1.jpg",
+      alt: "KAIT Plaza",
+      title: "One of fifty-nine openings turns the sky into the room.",
+      note: "KAIT Plaza is an almost empty room shaped by a low steel roof, a subtly sloped floor, and openings that admit sky, sun, rain, and wind. Without a prescribed activity, students occupy it by sitting, meeting, resting, or simply watching conditions change. I learned how a precise envelope can invite use without dictating it.",
+      detail: "59 OPENINGS / WEATHER / UNPRESCRIBED USE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image9.jpg",
+      alt: "Naoshima Pavilion",
+      title: "A porous shell becomes structure, room, and landmark.",
+      note: "The faceted stainless-steel mesh is simultaneously structure, enclosure, inhabitable surface, and illuminated presence at the island's port. Its geometry feels complex, but every effect grows from the same constructive language. The pavilion showed me how one system can perform several roles while remaining legible.",
+      detail: "STEEL MESH / POROUS ENCLOSURE / LANDMARK",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Japan/image2.jpg",
+      alt: "KAIT Workshop",
+      title: "A forest of columns organizes work without walls.",
+      note: "KAIT Workshop uses 305 slender, individually proportioned columns to form shifting zones inside one continuous room. Like trees in a landscape, their density suggests places for making and gathering without fixing a single layout. I learned to understand flexibility as a designed field of relationships—not an empty floor.",
+      detail: "305 COLUMNS / ONE ROOM / ADAPTABLE FIELD",
+      format: "landscape",
+    },
+    {
+      src: "futureassets/Japan/image3.jpg",
+      alt: "Kengo Kuma & Associates / Studio Visit",
+      title: "A studio is also an archive of decisions.",
+      note: "Inside Kengo Kuma's studio, project monographs, material references, and shared workspaces made research visible as part of daily practice. The visit connected built precedents to the longer process behind them: testing, documenting, comparing, and refining ideas over time. Observation returned from the field as a working method.",
+      detail: "STUDIO CULTURE / MATERIAL ARCHIVE / ITERATION",
+      format: "portrait",
+    },
   ],
 
   texas: [
-    /* 01 — built-in */
     {
-      src: "futureassets/texas-01.jpg",
-      alt: "Community renovation team gathered inside a house",
-      title: "The project began as a collective.",
-      note: "Before any task, the room was already shaped by the people willing to contribute.",
-      detail: "TEAM / EXISTING ROOM",
+      src: "futureassets/Texas/image6.jpg",
+      alt: "Habitat for Humanity and ReStore volunteers in front of a completed home",
+      title: "A house has more than one life.",
+      note: "1 WEEK · 2 WORKSTREAMS · 8 FIELD RECORDS · 2023 TEXAS. During a week with Habitat for Humanity in the Houston area, I worked at both ends of a housing system: carefully deconstructing an existing house so usable materials could return through ReStore, and helping prepare another Habitat home for its future homeowners through painting, bathroom tile, cleanup, landscaping, and final details. Two sites, one housing system, and many forms of useful work.",
+      detail: "1 WEEK / 2 WORKSTREAMS / 8 FIELD RECORDS / 2023 TEXAS",
       format: "landscape",
     },
-    /* 02 — placeholder */
-    null,
-    /* 03 — built-in */
     {
-      src: "futureassets/texas-02.jpg",
-      alt: "Team members investigating a damaged bathroom wall during renovation",
-      title: "The wall revealed the real problem.",
-      note: "Useful work began with looking closely, asking questions, and accepting what the site exposed.",
-      detail: "OPEN WALL / SITE EVIDENCE",
+      src: "futureassets/Texas/image8.jpg",
+      alt: "Service begins with the work that is needed.",
+      title: "Service begins with the work that is needed.",
+      note: "At the deconstruction site, the first task was to learn the safety procedures, tools, and sequence already established by the Habitat ReStore team. We arrived without authorship and entered through responsibility: listen first, protect one another, and contribute where the work required us.",
+      detail: "SITE SAFETY / TEAM ORIENTATION / ADAPTABILITY",
       format: "portrait",
     },
-    /* 04 — placeholder */
-    null,
-    /* 05 — placeholder */
-    null,
-    /* 06 — built-in */
     {
-      src: "futureassets/texas-03.jpg",
-      alt: "Community renovation volunteers working together outside a house",
-      title: "The work moved through many hands.",
-      note: "Coordination was not separate from the project; it was the project’s operating structure.",
-      detail: "MEASURE / REPAIR / COORDINATE",
+      src: "futureassets/Texas/image3.jpg",
+      alt: "Deconstruction is not demolition.",
+      title: "Deconstruction is not demolition.",
+      note: "Inside the existing house, walls and bathroom assemblies were opened carefully so reusable fixtures and materials could be separated rather than destroyed. Working in reverse revealed how the building had been assembled—and how much judgment is required to take it apart without erasing its remaining value.",
+      detail: "SELECTIVE REMOVAL / ASSEMBLY LOGIC / EXISTING CONDITIONS",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Texas/image2.jpg",
+      alt: "Care determines what can be used again.",
+      title: "Care determines what can be used again.",
+      note: "Exterior removal and site cleanup were part of a larger material cycle. Components recovered in usable condition could move through Habitat ReStore, where donated building materials are resold at accessible prices and their value continues beyond one house.",
+      detail: "SALVAGE / MATERIAL STEWARDSHIP / RESTORE",
       format: "landscape",
     },
-    /* 07 — placeholder */
-    null,
-    /* 08 — built-in */
     {
-      src: "futureassets/texas-04.jpg",
-      alt: "Renovation team portrait in the completed room",
-      title: "Completion belonged to everyone.",
-      note: "The final room recorded shared labor more clearly than individual authorship.",
-      detail: "ROOM / SHARED LABOR",
+      src: "futureassets/Texas/image4.jpg",
+      alt: "Almost finished is not yet ready for someone to call home.",
+      title: "Almost finished is not yet ready for someone to call home.",
+      note: "At another Habitat house, the work shifted from taking apart to preparing for ownership. Interior painting, bathroom tile, patching, cleaning, and final checks asked for a different kind of attention: many small tasks coordinated toward one complete and welcoming result.",
+      detail: "AFFORDABLE HOMEOWNERSHIP / PUNCH LIST / FINISH COORDINATION",
       format: "landscape",
     },
-    /* 09 — placeholder */
-    null,
-    /* 10 — placeholder */
-    null,
+    {
+      src: "futureassets/Texas/image5.jpg",
+      alt: "Finish work is repetition with consequences.",
+      title: "Finish work is repetition with consequences.",
+      note: "Painting trim and exterior elements made quality visible in edges, coverage, preparation, and consistency. Repetitive work still required shared standards: every person’s portion had to meet the next person’s work and read as one finished home.",
+      detail: "PAINTING / QUALITY CONTROL / TEAMWORK",
+      format: "landscape",
+    },
+    {
+      src: "futureassets/Texas/image7.jpg",
+      alt: "The home begins before the front door.",
+      title: "The home begins before the front door.",
+      note: "Clearing the site and planting at the entry reframed landscaping as part of the handover, not an afterthought. The approach establishes the first experience of the house and helps a completed building feel cared for, inhabited, and ready to receive its owners.",
+      detail: "SITE CLEANUP / PLANTING / ARRIVAL",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Texas/image9.jpg",
+      alt: "Before the work disappeared, we left a record of care.",
+      title: "Before the work disappeared, we left a record of care.",
+      note: "At the end of the build day, volunteers wrote messages on a piece of framing lumber for the future homeowners. The member would become part of the house and the writing would no longer be visible, but the gesture captured what the week had taught me: care can remain present even when its authors are not.",
+      detail: "SIGNED FRAMING MEMBER / HANDOVER / CARE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/Texas/image6.jpg",
+      alt: "Housing is not one act. It is a chain of contribution.",
+      title: "Housing is not one act. It is a chain of contribution.",
+      note: "Across two sites, the work connected salvage, affordable materials, finish quality, landscape, volunteers, staff, and future homeowners. No single task defined the experience. Its value came from many people making the next step possible for someone else.",
+      detail: "HABITAT FOR HUMANITY / COLLECTIVE WORK / FOLLOW-THROUGH",
+      format: "landscape",
+    },
   ],
 
   india: [
-    /* 01 — built-in */
     {
-      src: "futureassets/india-01.jpg",
-      alt: "Builder using a plumb line on a rural construction site in India",
-      title: "The site was measured before it was drawn again.",
-      note: "Lines, levels, and local judgment turned abstraction into a physical agreement.",
-      detail: "PLUMB / LEVEL / GROUND",
-      format: "portrait",
-    },
-    /* 02 — placeholder */
-    null,
-    /* 03 — built-in */
-    {
-      src: "futureassets/india-02.jpg",
-      alt: "Two design-build participants setting out dimensions on timber",
-      title: "Dimensions became shared decisions.",
-      note: "Full scale made every assumption visible—and every correction collaborative.",
-      detail: "SET-OUT / FULL SCALE",
-      format: "portrait",
-    },
-    /* 04 — placeholder */
-    null,
-    /* 05 — placeholder */
-    null,
-    /* 06 — built-in */
-    {
-      src: "futureassets/india-03.jpg",
-      alt: "Team constructing a steel frame on a rural site in India",
-      title: "The drawing became a frame.",
-      note: "Sequence, access, weather, labor, and tolerance entered the design simultaneously.",
-      detail: "STEEL / SEQUENCE / ASSEMBLY",
+      src: "futureassets/India/image10.jpg",
+      alt: "Students and local builders working on the community room foundation in Chandewadi",
+      title: "A room, built by hand.",
+      note: "8 WEEKS · 5 DAYS TO REDESIGN · $50K BUILD BUDGET · 1 BUILT ROOM. In Chandewadi, architecture stopped being a proposal. Over eight weeks, our team worked with local builders, engineers, and community stakeholders to turn a redesigned structural grid into a completed community room—measuring, carrying, tying, pouring, laying, welding, and correcting the work ourselves. Concept, labor, and responsibility occupied the same site.",
+      detail: "8 WEEKS / 5 DAYS TO REDESIGN / $50K BUILD BUDGET / 1 BUILT ROOM",
       format: "landscape",
     },
-    /* 07 — placeholder */
-    null,
-    /* 08 — built-in */
     {
-      src: "futureassets/india-04.jpg",
-      alt: "Design-build participant welding a steel connection",
-      title: "The joint made the idea accountable.",
-      note: "The architectural intention survived by adapting to material, tools, and the people building it.",
-      detail: "WELD / CONNECTION / INTENT",
+      src: "futureassets/India/image2.jpg",
+      alt: "The first drawing was made at full scale.",
+      title: "The first drawing was made at full scale.",
+      note: "Before walls, the room existed as string lines, measured offsets, and points fixed directly onto uneven ground. Setting out made every dimension consequential: a line on paper became an excavation edge, a structural centerline, and a shared reference for the team.",
+      detail: "SITE MEASUREMENT / SETTING OUT / FULL-SCALE DRAWING",
       format: "portrait",
     },
-    /* 09 — placeholder */
-    null,
-    /* 10 — placeholder */
-    null,
+    {
+      src: "futureassets/India/image11.jpg",
+      alt: "The detail changed when we had to stand inside it.",
+      title: "The detail changed when we had to stand inside it.",
+      note: "Excavation exposed the difference between an abstract detail and a buildable one. Working beside the foundation, we checked reinforcement, clearances, levels, and the relationship between the concrete base and the brickwork it would carry.",
+      detail: "REINFORCEMENT / FOUNDATION / FIELD CHECK",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image10.jpg",
+      alt: "Construction became a shared language.",
+      title: "Construction became a shared language.",
+      note: "Students, local builders, and site engineers worked around the same formwork, reinforcement, and concrete pour. When vocabulary, tools, and habits differed, sequence and demonstration became the clearest drawings on site.",
+      detail: "SITE COORDINATION / CONCRETE / COLLABORATION",
+      format: "landscape",
+    },
+    {
+      src: "futureassets/India/image9.jpg",
+      alt: "Every material crossed the site by hand.",
+      title: "Every material crossed the site by hand.",
+      note: "There was no distance between design intent and physical effort. Aggregate, mortar, water, and tools moved through many hands. The pace of labor made access, staging, quantity, and construction order visible as design decisions rather than background logistics.",
+      detail: "MATERIAL HANDLING / STAGING / CONSTRUCTION SEQUENCE",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image3.jpg",
+      alt: "Accuracy was measured with tools, not assumptions.",
+      title: "Accuracy was measured with tools, not assumptions.",
+      note: "Cutting, bending, tying, and checking components revealed tolerances that a drawing can conceal. Repetition built confidence, but each piece still required attention. Fabrication taught me to anticipate how information will be read by the person making the work.",
+      detail: "FABRICATION / TOLERANCE / BUILDABILITY",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image4.jpg",
+      alt: "The structural grid gave the room its first outline.",
+      title: "The structural grid gave the room its first outline.",
+      note: "After the project moved to a new site, the foundation and structural grid were replanned in five days. As the steel frame rose, that compressed redesign became testable at full scale: spans, clearances, roof direction, and the proportions of the room could finally be read together.",
+      detail: "5-DAY REDESIGN / STEEL FRAME / STRUCTURAL GRID",
+      format: "landscape",
+    },
+    {
+      src: "futureassets/India/image1.jpg",
+      alt: "A connection is a decision you can see, hear, and test.",
+      title: "A connection is a decision you can see, hear, and test.",
+      note: "Welding transformed lines and connection details into a continuous frame. Making the joints myself sharpened my understanding of access, sequence, safety, and the gap between a connection that can be drawn and one that can actually be executed.",
+      detail: "WELDING / STEEL CONNECTION / SITE SAFETY",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image5.jpg",
+      alt: "The room appeared one brick course at a time.",
+      title: "The room appeared one brick course at a time.",
+      note: "Brick infill gave weight and enclosure to the steel frame. Openings had to remain aligned while materials, weather, and daily progress changed around them. The wall became a record of coordination between structure, envelope, labor, and available craft.",
+      detail: "BRICKWORK / OPENINGS / TRADE COORDINATION",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image6.jpg",
+      alt: "The roof made shelter before the building was finished.",
+      title: "The roof made shelter before the building was finished.",
+      note: "The deep corrugated roof and open edge began protecting work from sun and rain while construction continued below. Its overhang was not a graphic gesture; it was an immediate climatic instrument shaped by site conditions and the needs of the people using the room.",
+      detail: "ROOF OVERHANG / CLIMATE RESPONSE / SHELTER",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image8.jpg",
+      alt: "The drawing finally became a place we could enter.",
+      title: "The drawing finally became a place we could enter.",
+      note: "With the walls rendered, windows installed, and roof complete, the dimensions we had debated became light, shade, proportion, and movement. The unfinished floor still showed the labor behind the room, but the space was already legible as a shared interior.",
+      detail: "INTERIOR / DAYLIGHT / SPATIAL VERIFICATION",
+      format: "portrait",
+    },
+    {
+      src: "futureassets/India/image7.jpg",
+      alt: "We did not leave behind a proposal. We left a room.",
+      title: "We did not leave behind a proposal. We left a room.",
+      note: "Eight weeks after construction began, the community room stood within the landscape of Chandewadi. Its value was not the image of completion alone, but the chain of decisions, corrections, and relationships that allowed a design to become something durable and useful for others.",
+      detail: "BUILT OUTCOME / COMMUNITY ROOM / FOLLOW-THROUGH",
+      format: "portrait",
+    },
   ],
 };
 

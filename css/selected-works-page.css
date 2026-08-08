@@ -343,16 +343,27 @@ a { color: inherit; text-decoration: none; }
   background: var(--soft);
 }
 .media-photo img,
-.media-photo video {
+.media-photo video,
+.media-photo iframe {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   background: #fff;
+  border: 0;
 }
 .media-photo.media-video,
 .media-photo.media-video video {
   background: #0c0c0c;
+}
+.media-photo.media-pdf {
+  position: relative;
+  background: #fff;
+}
+.media-photo.media-pdf iframe {
+  object-fit: contain;
+  background: #fff;
+  min-height: 100%;
 }
 .shape-hero .media-photo { aspect-ratio: 4 / 3; }
 .shape-landscape .media-photo { aspect-ratio: 3 / 2; }
@@ -361,24 +372,32 @@ a { color: inherit; text-decoration: none; }
 .shape-square .media-photo { aspect-ratio: 1 / 1; }
 .shape-drawing .media-photo {
   aspect-ratio: 4 / 3;
-  background: #f6f6f2;
+  background: #fff;
 }
-.shape-drawing .media-photo img { object-fit: contain; background: #f6f6f2; }
+.shape-drawing .media-photo img,
+.shape-drawing .media-photo.media-pdf iframe { object-fit: contain; background: #fff; }
 .active-frame .media-photo {
   width: 100%;
   height: 100%;
   max-height: min(62vh, 720px);
   border: 0;
-  background: transparent;
+  background: #fff;
+}
+.active-frame .media-photo.media-pdf {
+  max-height: min(72vh, 860px);
+  aspect-ratio: 4 / 3;
+  background: #fff;
 }
 .active-frame .media-photo img,
-.active-frame .media-photo video { object-fit: contain; }
+.active-frame .media-photo video,
+.active-frame .media-photo iframe { object-fit: contain; }
 .film-card .media-photo {
   width: 100%;
   aspect-ratio: 3 / 2;
   border: 0;
   border-bottom: 1px solid var(--line);
 }
+.film-card .media-photo.media-pdf { aspect-ratio: 4 / 3; }
 .film-card.active .media-photo { outline: 1px solid var(--accent); outline-offset: -1px; }
 .placeholder {
   position: relative;
@@ -477,7 +496,10 @@ a { color: inherit; text-decoration: none; }
   padding: 22px;
   overflow: hidden;
   border: 1px solid #c9c9c1;
-  background: #ecece7;
+  background: #fff;
+}
+.active-frame.shape-drawing {
+  background: #fff;
 }
 .active-frame .placeholder {
   width: auto;
@@ -1083,4 +1105,108 @@ footer a:last-child { color: #ef5a45; }
 .index-count,
 .index-arrow {
   font-family: var(--mono);
+}
+
+/* =========================================================
+   Custom cursor — drafting registration / crop marks
+   ========================================================= */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.site-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  mix-blend-mode: multiply;
+}
+.site-cursor.is-on { opacity: 1; }
+
+.site-cursor__arm {
+  position: absolute;
+  background: #181512;
+  transform: translate(-50%, -50%);
+}
+.site-cursor__arm--v {
+  width: 1px;
+  height: 28px;
+  left: 0;
+  top: 0;
+}
+.site-cursor__arm--h {
+  width: 28px;
+  height: 1px;
+  left: 0;
+  top: 0;
+}
+
+.site-cursor__core {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  border: 1.25px solid #c1572f;
+  background: transparent;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.site-cursor__corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #c1572f;
+  border-style: solid;
+  border-width: 0;
+}
+.site-cursor__corner--tl {
+  left: -16px;
+  top: -16px;
+  border-top-width: 1.25px;
+  border-left-width: 1.25px;
+}
+.site-cursor__corner--tr {
+  left: 8px;
+  top: -16px;
+  border-top-width: 1.25px;
+  border-right-width: 1.25px;
+}
+.site-cursor__corner--bl {
+  left: -16px;
+  top: 8px;
+  border-bottom-width: 1.25px;
+  border-left-width: 1.25px;
+}
+.site-cursor__corner--br {
+  left: 8px;
+  top: 8px;
+  border-bottom-width: 1.25px;
+  border-right-width: 1.25px;
+}
+
+.site-cursor.is-hover .site-cursor__core {
+  background: #c1572f;
+  width: 6px;
+  height: 6px;
+}
+.site-cursor.is-hover .site-cursor__arm--v { height: 36px; }
+.site-cursor.is-hover .site-cursor__arm--h { width: 36px; }
+.site-cursor.is-hover .site-cursor__corner--tl { left: -20px; top: -20px; }
+.site-cursor.is-hover .site-cursor__corner--tr { left: 12px; top: -20px; }
+.site-cursor.is-hover .site-cursor__corner--bl { left: -20px; top: 12px; }
+.site-cursor.is-hover .site-cursor__corner--br { left: 12px; top: 12px; }
+
+@media (pointer: coarse) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: auto !important;
+  }
+  .site-cursor { display: none !important; }
 }

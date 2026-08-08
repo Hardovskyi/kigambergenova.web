@@ -21,97 +21,74 @@ const projects = [
     thesis:
       "A simple communal pavilion transforms the lack of shared public space into an open, shaded room for gathering, learning, and everyday use.",
     accent: "#ef5a45",
-    materialCount: "6 content groups · 30+ images and drawings",
+    materialCount: "3 content groups · 30+ images and drawings",
     sections: [
       {
-        id: "cr-orientation",
-        step: "Context",
-        title: "Site + orientation",
+        id: "cr-competition",
+        step: "Phase 01",
+        title: "Competition Proposal",
         note:
-          "Establish the village edge, circulation patterns, site conditions, and the social absence the project responds to.",
-        layout: "feature",
-        media: [
-          { code: "CR-01", type: "Drawing", title: "Site plan + anticipated circulation", shape: "drawing", src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-02", type: "Photography", title: "Existing site condition 01", shape: "landscape" , src: "assets/selected-works/images/ex.png" },
-          { code: "CR-03", type: "Photography", title: "Existing site condition 02", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-04", type: "Photography", title: "Existing site condition 03", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-        ],
-      },
-      {
-        id: "cr-strategy",
-        step: "Strategy",
-        title: "Form, organization + structure",
-        note:
-          "Separate the spatial logic from the technical resolution: first the diagram sequence, then plans, sections, elevations, and the structural axon.",
+          "Establish the site, social absence, and early formal strategies that shaped the competition proposal.",
         layout: "grid-3",
         media: [
-          { code: "CR-05", type: "Diagram set", title: "Four form strategies", shape: "landscape", src: "assets/selected-works/images/ex3.png"  },
-          { code: "CR-06", type: "Diagram set", title: "Five organizational strategies", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-07", type: "Drawing", title: "Floor plan", shape: "drawing", src: "assets/selected-works/images/ex3.png"  },
-          { code: "CR-08", type: "Drawing", title: "Sections A-A + B-B", shape: "drawing" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-09", type: "Axonometric", title: "Structural assembly", shape: "portrait" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-10", type: "Drawing set", title: "Four elevations", shape: "drawing" , src: "assets/selected-works/images/ex3.png" },
+          { code: "CR-01", type: "Drawing", title: "Aerial view", shape: "drawing", src: "assets/selected-works/images/community room/competition_render_exterior.jpg" },
+          { code: "CR-02", type: "Photography", title: "Site plan + anticipated circulation", shape: "landscape" , src: "assets/selected-works/images/community room/site.png" },
+          { code: "CR-03", type: "Photography", title: "Existing site condition 01", shape: "landscape" , src: "assets/selected-works/images/community room/IMG_8948.jpeg" },
+          { code: "CR-04", type: "Photography", title: "Existing site condition 02", shape: "landscape" , src: "assets/selected-works/images/community room/IMG_8956.jpeg" },
+          { code: "CR-05", type: "Diagram set", title: "Form and organizational strategies", shape: "landscape", src: "assets/selected-works/images/community room/form diagram.png"  },
+          { code: "CR-07", type: "Drawing", title: "Floor plan", shape: "drawing", src: "assets/selected-works/images/community room/floor plan.png"  },
+          { code: "CR-08", type: "Drawing", title: "Structural assembly", shape: "drawing" , src: "assets/selected-works/images/community room/axon.png" },
+          { code: "CR-08", type: "Drawing", title: "Sections A-A", shape: "drawing" , src: "assets/selected-works/images/community room/section A-A.png" },
+          { code: "CR-09", type: "Axonometric", title: "Section B-B", shape: "portrait" , src: "assets/selected-works/images/community room/section B-B.png" },
+          { code: "CR-10", type: "Drawing set", title: "South elevation", shape: "drawing" , src: "assets/selected-works/images/community room/elevation south.png" },
+          { code: "CR-11", type: "Phase 01", title: "North elevation", shape: "landscape" , src: "assets/selected-works/images/community room/elevation north.png" },
+          { code: "CR-14", type: "Diagram", title: "East elevation", shape: "panorama" , src: "assets/selected-works/images/community room/elevation east.png" },
+          { code: "CR-15", type: "Map", title: "West elevation", shape: "drawing" , src: "assets/selected-works/images/community room/elevation west.png" },
+          { code: "CR-16", type: "Map", title: "Interior View", shape: "drawing" , src: "assets/selected-works/images/community room/competition_render_interior.jpg" },
+          { code: "CR-17", type: "Map", title: "Interior View", shape: "drawing" , src: "assets/selected-works/images/community room/interior.png" },
         ],
       },
       {
         id: "cr-development",
-        step: "Development",
-        title: "Three phases + one route",
+        step: "Phase 02",
+        title: "Design Development",
         note:
-          "Show the competition proposal, design development, and built adaptation as a continuous story connected by the daily route between living, fabrication, and construction.",
+          "Construction documents from the CD full set — drawing sheets in sequence as the project moves toward a buildable room.",
         layout: "grid-3",
         media: [
-          { code: "CR-11", type: "Phase 01", title: "Competition proposal", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-12", type: "Phase 02", title: "Design development", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-13", type: "Phase 03", title: "Built adaptation", shape: "landscape" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-14", type: "Diagram", title: "Assembly sequence", shape: "panorama" , src: "assets/selected-works/images/ex3.png" },
-          { code: "CR-15", type: "Map", title: "Lived · fabricated · built", shape: "drawing" , src: "assets/selected-works/images/ex3.png" },
+          { code: "CR-DD-00", type: "Render", title: "Path to community room", shape: "landscape", src: "assets/selected-works/images/community room/path to community room.png", alt: "Path to community room" },
+          { code: "CR-DD-01", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 01", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 1.png", alt: "Community Room CD Full Set sheet 1" },
+          { code: "CR-DD-02", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 02", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 2.png", alt: "Community Room CD Full Set sheet 2" },
+          { code: "CR-DD-03", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 03", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 3.png", alt: "Community Room CD Full Set sheet 3" },
+          { code: "CR-DD-04", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 04", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 4.png", alt: "Community Room CD Full Set sheet 4" },
+          { code: "CR-DD-05", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 05", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 5.png", alt: "Community Room CD Full Set sheet 5" },
+          { code: "CR-DD-06", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 06", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 6.png", alt: "Community Room CD Full Set sheet 6" },
+          { code: "CR-DD-07", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 07", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 7.png", alt: "Community Room CD Full Set sheet 7" },
+          { code: "CR-DD-08", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 08", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 8.png", alt: "Community Room CD Full Set sheet 8" },
+          { code: "CR-DD-09", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 09", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 9.png", alt: "Community Room CD Full Set sheet 9" },
+          { code: "CR-DD-10", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 10", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 10.png", alt: "Community Room CD Full Set sheet 10" },
+          { code: "CR-DD-11", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 11", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 11.png", alt: "Community Room CD Full Set sheet 11" },
+          { code: "CR-DD-12", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 12", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 12.png", alt: "Community Room CD Full Set sheet 12" },
+          { code: "CR-DD-13", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 13", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 13.png", alt: "Community Room CD Full Set sheet 13" },
+          { code: "CR-DD-14", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 14", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 14.png", alt: "Community Room CD Full Set sheet 14" },
+          { code: "CR-DD-15", type: "CD Sheet", title: "CD Full Set 5-13 · Sheet 15", shape: "drawing", src: "assets/selected-works/images/community room/CD Full Set 5-13 15.png", alt: "Community Room CD Full Set sheet 15" },
         ],
       },
       {
-        id: "cr-space",
-        step: "Space",
-        title: "Spatial qualities",
+        id: "cr-built",
+        step: "Phase 03",
+        title: "Built Adaptation",
         note:
-          "Give the main experiential image room to breathe. Short callouts explain filtered light, privacy, ventilation, and flexible use without sitting on top of the image.",
-        layout: "feature",
-        media: [
-          { code: "CR-16", type: "Hero image", title: "Interior spatial quality", shape: "hero" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-17", type: "Detail image", title: "Porous brick + filtered light", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-18", type: "Detail image", title: "Ventilated roof opening", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-        ],
-      },
-      {
-        id: "cr-tectonic",
-        step: "Tectonic",
-        title: "Technical resolution",
-        note:
-          "Collect the technical material as one legible drawing field rather than scattering isolated details throughout the chapter.",
-        layout: "grid-3",
-        media: [
-          { code: "CR-19", type: "Detail set", title: "Structural details", shape: "drawing" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-20", type: "Drawing", title: "Coordinated floor plan", shape: "drawing" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-21", type: "Detail set", title: "Door details", shape: "drawing" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-22", type: "Drawing set", title: "Built elevations", shape: "drawing" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-23", type: "Detail", title: "Roof + column connection", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-24", type: "Detail", title: "Foundation + wall condition", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-        ],
-      },
-      {
-        id: "cr-outcome",
-        step: "Outcome",
-        title: "Building the room",
-        note:
-          "End with evidence of process and completion: seven chronological construction frames followed by the finished communal room.",
+          "Document the built adaptation through construction sequence and the completed communal room.",
         layout: "grid-4",
         media: [
-          { code: "CR-25", type: "Process", title: "Site reset + layout", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-26", type: "Process", title: "Footings + sub-bases", shape: "portrait", src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-27", type: "Process", title: "Retaining + infill walls", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-28", type: "Process", title: "Rebar + grade beams", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-29", type: "Process", title: "Brick walls + steel frame", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-30", type: "Process", title: "Roof + final completion", shape: "portrait" , src: "assets/selected-works/images/ex3.png"},
-          { code: "CR-31", type: "Built image", title: "Completed community room", shape: "landscape" , src: "assets/selected-works/images/ex3.png"},
+          { code: "CR-13", type: "Phase 03", title: "Built adaptation", shape: "landscape" , src: "assets/selected-works/images/community room/cm31.png" },
+          { code: "CR-25", type: "Process", title: "Site reset + layout", shape: "portrait" , src: "assets/selected-works/images/community room/cm32.jpg"},
+          { code: "CR-26", type: "Process", title: "Footings + sub-bases", shape: "portrait", src: "assets/selected-works/images/community room/cm33.jpg"},
+          { code: "CR-27", type: "Process", title: "Retaining + infill walls", shape: "portrait" , src: "assets/selected-works/images/community room/cm34.jpg"},
+          { code: "CR-28", type: "Process", title: "Rebar + grade beams", shape: "portrait" , src: "assets/selected-works/images/community room/cm35.png"},
+          { code: "CR-29", type: "Process", title: "Brick walls + steel frame", shape: "portrait" , src: "assets/selected-works/images/community room/cm36.jpg"},
+          { code: "CR-30", type: "Process", title: "Roof + final completion", shape: "portrait" , src: "assets/selected-works/images/community room/cm37.jpg"},
         ],
       },
     ],
@@ -136,7 +113,7 @@ const projects = [
           "Begin with the discontinuous ground between levels, then locate the project within the wider pedestrian, transit, and visual systems.",
         layout: "feature",
         media: [
-          { code: "CV-01", type: "Site axon", title: "Upper Wacker · residual void · Lower Wacker", shape: "hero" , src: "assets/selected-works/images/THE COVE/birdseye-edited.png"},
+          { code: "CV-01", type: "Site axon", title: "Aerial view", shape: "hero" , src: "assets/selected-works/images/THE COVE/birdseye-edited.png"},
           { code: "CV-02", type: "Context image", title: "DISCONTINUOUS GROUND BETWEEN LEVELS", shape: "landscape"  , src: "assets/selected-works/images/THE COVE/COLLAGE FINAL bw.png"},
         ],
       },
@@ -254,10 +231,11 @@ const projects = [
           "Frame the tower through its park edge, high-rise history, prevailing wind, and hot-humid comfort conditions.",
         layout: "grid-3",
         media: [
-          { code: "VC-01", type: "Drawing", title: "Urban context section", shape: "panorama" },
-          { code: "VC-02", type: "Timeline", title: "Bangkok tall buildings", shape: "panorama" },
-          { code: "VC-03", type: "Climate", title: "Wind rose", shape: "square" },
-          { code: "VC-04", type: "Climate", title: "Psychrometric chart + PMV", shape: "landscape" },
+          { code: "VC-01", type: "Drawing", title: "Site diagram", shape: "panorama" , src: "assets/selected-works/images/bangkok/site plan diagram.png"},
+          { code: "VC-01", type: "Drawing", title: "Urban context section", shape: "panorama" , src: "assets/selected-works/images/bangkok/SITE CONTEXT SECTION.png"},
+          { code: "VC-02", type: "Timeline", title: "Bangkok tall buildings", shape: "panorama" , src: "assets/selected-works/images/bangkok/historical timeline.png"},
+          { code: "VC-03", type: "Climate", title: "Wind rose", shape: "square" , src: "assets/selected-works/images/bangkok/wind rose.png"},
+          { code: "VC-04", type: "Climate", title: "Psychrometric chart + PMV", shape: "landscape" , src: "assets/selected-works/images/bangkok/chart.png"},
         ],
       },
       {
@@ -268,12 +246,12 @@ const projects = [
           "Connect the conceptual transformation to a legible program and user system, then zoom into student, elder, and family unit types.",
         layout: "grid-3",
         media: [
-          { code: "VC-05", type: "Diagram sequence", title: "Concept · elements · massing · program", shape: "panorama" },
-          { code: "VC-06", type: "User diagram", title: "Students · elders · families", shape: "drawing" },
-          { code: "VC-07", type: "Program", title: "Shared floors + collective uses", shape: "portrait" },
-          { code: "VC-08", type: "Unit type", title: "Student living", shape: "drawing" },
-          { code: "VC-09", type: "Unit type", title: "Elder living", shape: "drawing" },
-          { code: "VC-10", type: "Unit type", title: "Family living", shape: "drawing" },
+          { code: "VC-05", type: "Diagram sequence", title: "Concept · elements", shape: "panorama" , src: "assets/selected-works/images/bangkok/concept.png"},
+          { code: "VC-06", type: "User diagram", title: "Massing", shape: "drawing" , src: "assets/selected-works/images/bangkok/massing.png"},
+          { code: "VC-07", type: "Program", title: "Users", shape: "portrait" , src: "assets/selected-works/images/bangkok/users.png"},
+          { code: "VC-08", type: "Unit type", title: "Student living", shape: "drawing" , src: "assets/selected-works/images/bangkok/students.png"},
+          { code: "VC-09", type: "Unit type", title: "Elder living", shape: "drawing" , src: "assets/selected-works/images/bangkok/elder.png"},
+          { code: "VC-10", type: "Unit type", title: "Family living", shape: "drawing" , src: "assets/selected-works/images/bangkok/family.png"},
         ],
       },
       {
@@ -284,13 +262,13 @@ const projects = [
           "Treat the terraces as both social and environmental devices, pairing airflow evidence with final spatial outcomes.",
         layout: "grid-3",
         media: [
-          { code: "VC-11", type: "Diagram", title: "Wind distribution concept", shape: "drawing" },
-          { code: "VC-12", type: "Simulation", title: "External air movement", shape: "square" },
-          { code: "VC-13", type: "Simulation", title: "Vertical air movement", shape: "portrait" },
-          { code: "VC-14", type: "Outcome", title: "Terrace landscape", shape: "landscape" },
-          { code: "VC-15", type: "Outcome", title: "Terrace courtyard", shape: "landscape" },
-          { code: "VC-16", type: "Outcome", title: "View from Lumphini Park", shape: "portrait" },
-          { code: "VC-17", type: "Outcome", title: "Steam bath area", shape: "landscape" },
+          { code: "VC-11", type: "Diagram", title: "Wind distribution concept", shape: "drawing" , src: "assets/selected-works/images/bangkok/External Airflow-Concept Idea.png"},
+          { code: "VC-12", type: "Simulation", title: "External air movement", shape: "square" , src: "assets/selected-works/images/bangkok/External Airflow Simulation- Result.jpg"},
+          { code: "VC-13", type: "Simulation", title: "Vertical air movement", shape: "portrait" , src: "assets/selected-works/images/bangkok/External Airflow Simulation- Elevation.jpg"},
+          { code: "VC-14", type: "Outcome", title: "Terrace landscape", shape: "landscape" , src: "assets/selected-works/images/bangkok/landscape.png"},
+          { code: "VC-15", type: "Outcome", title: "Terrace courtyard", shape: "landscape" , src: "assets/selected-works/images/bangkok/garden.png"},
+          { code: "VC-16", type: "Outcome", title: "View from Lumphini Park", shape: "portrait" , src: "assets/selected-works/images/bangkok/exterior.png"},
+          { code: "VC-17", type: "Outcome", title: "Steam bath area", shape: "landscape" , src: "assets/selected-works/images/bangkok/steam bath.png"},
         ],
       },
     ],
@@ -344,9 +322,9 @@ const projects = [
           "End with three equally weighted plans so the visitor can compare how the experiential gradient is translated into program.",
         layout: "grid-3",
         media: [
-          { code: "WV-10", type: "Plan", title: "Basement · wellness + recovery", shape: "drawing" },
-          { code: "WV-11", type: "Plan", title: "First floor · active support", shape: "drawing" },
-          { code: "WV-12", type: "Plan", title: "Second floor · civic gathering", shape: "drawing" },
+          { code: "WV-10", type: "Plan", title: "Basement · wellness + recovery", shape: "drawing" , src: "assets/selected-works/images/the wave/basement.png"},
+          { code: "WV-11", type: "Plan", title: "First floor · active support", shape: "drawing" , src: "assets/selected-works/images/the wave/ground floor.png"},
+          { code: "WV-12", type: "Plan", title: "Second floor · civic gathering", shape: "drawing" , src: "assets/selected-works/images/the wave/second floor plan.png"},
         ],
       },
     ],
@@ -441,6 +419,10 @@ function isVideoSrc(src) {
   return /\.(mp4|webm|ogg)(\?|$)/i.test(src || "");
 }
 
+function isPdfSrc(src) {
+  return /\.pdf(\?|#|$)/i.test(src || "");
+}
+
 /** Encode spaces/special chars for web URLs; keep slashes intact. */
 function mediaUrl(src) {
   return encodeURI(src.replace(/\\/g, "/"));
@@ -449,12 +431,13 @@ function mediaUrl(src) {
 function mediaSurface(item, compact = false) {
   if (item.src) {
     const label = escapeHtml(item.alt || item.title || item.code);
-    const url = escapeHtml(mediaUrl(item.src));
+    const url = mediaUrl(item.src);
+    const safeUrl = escapeHtml(url);
     if (isVideoSrc(item.src)) {
       return `
         <div class="media-photo media-video ${compact ? "compact" : ""}">
           <video
-            src="${url}"
+            src="${safeUrl}"
             ${compact ? "" : "controls"}
             muted
             playsinline
@@ -465,10 +448,22 @@ function mediaSurface(item, compact = false) {
         </div>
       `;
     }
+    if (isPdfSrc(item.src)) {
+      const pdfSrc = escapeHtml(`${url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`);
+      return `
+        <div class="media-photo media-pdf ${compact ? "compact" : ""}">
+          <iframe
+            src="${pdfSrc}"
+            title="${label}"
+            loading="lazy"
+          ></iframe>
+        </div>
+      `;
+    }
     return `
       <div class="media-photo ${compact ? "compact" : ""}">
         <img
-          src="${url}"
+          src="${safeUrl}"
           alt="${label}"
           loading="lazy"
         />
@@ -725,9 +720,39 @@ app.innerHTML = `
 
 const galleryState = new Map();
 
+/** Step across images and into the next/previous subsection within the same project. */
+function advanceGallery(article, project, groupIndex, imageIndex, step) {
+  let g = groupIndex;
+  let i = imageIndex + step;
+  const sections = project.sections;
+
+  if (step > 0) {
+    while (i >= sections[g].media.length) {
+      if (g >= sections.length - 1) {
+        i = sections[g].media.length - 1;
+        break;
+      }
+      i -= sections[g].media.length;
+      g += 1;
+    }
+  } else if (step < 0) {
+    while (i < 0) {
+      if (g <= 0) {
+        i = 0;
+        break;
+      }
+      g -= 1;
+      i = sections[g].media.length + i;
+    }
+  }
+
+  renderGallery(article, project, g, i);
+}
+
 function renderGallery(article, project, groupIndex = 0, imageIndex = 0) {
   const group = project.sections[groupIndex];
-  const safeImageIndex = ((imageIndex % group.media.length) + group.media.length) % group.media.length;
+  if (!group || !group.media.length) return;
+  const safeImageIndex = Math.max(0, Math.min(imageIndex, group.media.length - 1));
   galleryState.set(project.id, { groupIndex, imageIndex: safeImageIndex });
 
   article.querySelectorAll("[data-group]").forEach((button) => {
@@ -739,7 +764,7 @@ function renderGallery(article, project, groupIndex = 0, imageIndex = 0) {
 
   gallery.querySelectorAll("[data-step]").forEach((button) => {
     button.addEventListener("click", () => {
-      renderGallery(article, project, groupIndex, safeImageIndex + Number(button.dataset.step));
+      advanceGallery(article, project, groupIndex, safeImageIndex, Number(button.dataset.step));
     });
   });
 
@@ -759,3 +784,56 @@ projects.forEach((project) => {
   });
   renderGallery(article, project);
 });
+
+/* =========================================================
+   Custom cursor — architectural registration / crop mark
+   ========================================================= */
+(function customCursor() {
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  document.documentElement.classList.add("has-custom-cursor");
+
+  const el = document.createElement("div");
+  el.className = "site-cursor";
+  el.setAttribute("aria-hidden", "true");
+  el.innerHTML = `
+    <span class="site-cursor__arm site-cursor__arm--v"></span>
+    <span class="site-cursor__arm site-cursor__arm--h"></span>
+    <span class="site-cursor__corner site-cursor__corner--tl"></span>
+    <span class="site-cursor__corner site-cursor__corner--tr"></span>
+    <span class="site-cursor__corner site-cursor__corner--bl"></span>
+    <span class="site-cursor__corner site-cursor__corner--br"></span>
+    <span class="site-cursor__core"></span>
+  `;
+  document.body.appendChild(el);
+
+  let x = 0;
+  let y = 0;
+  let tx = 0;
+  let ty = 0;
+  let hovering = false;
+
+  window.addEventListener("mousemove", (event) => {
+    tx = event.clientX;
+    ty = event.clientY;
+    el.classList.add("is-on");
+  }, { passive: true });
+
+  document.addEventListener("mouseleave", () => el.classList.remove("is-on"));
+  document.addEventListener("mouseenter", () => el.classList.add("is-on"));
+
+  document.addEventListener("mouseover", (event) => {
+    const target = event.target.closest("a, button, [role='button'], input, textarea, label, .film-card, .media-card");
+    hovering = !!target;
+    el.classList.toggle("is-hover", hovering);
+  }, true);
+
+  function tick() {
+    x += (tx - x) * 0.28;
+    y += (ty - y) * 0.28;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
