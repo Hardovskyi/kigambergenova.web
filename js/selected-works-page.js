@@ -22,6 +22,11 @@ const projects = [
       "A simple communal pavilion transforms the lack of shared public space into an open, shaded room for gathering, learning, and everyday use.",
     accent: "#ef5a45",
     materialCount: "3 content groups · 30+ images and drawings",
+    journal: {
+      href: "assets/selected-works/images/community room/India2024_Daily Journal_Final.pdf",
+      label: "See full documented journal",
+      eyebrow: "India 2024 · Daily journal",
+    },
     sections: [
       {
         id: "cr-competition",
@@ -293,8 +298,7 @@ const projects = [
           "Use the neighborhood elevation and everyday threshold study to establish the social logic before introducing the building.",
         layout: "grid-2",
         media: [
-          { code: "WV-01", type: "Context drawing", title: "Everyday life at the porch", shape: "panorama" },
-          { code: "WV-02", type: "Hero image", title: "Fieldhouse exterior", shape: "hero" },
+          { code: "WV-01", type: "Context drawing", title: "Everyday life at the porch", shape: "panorama" , src: "assets/selected-works/images/the wave/concept + render.png"},
         ],
       },
       {
@@ -305,13 +309,12 @@ const projects = [
           "The experiential section is the chapter’s anchor. Bright, active, and dark conditions are then shown as independent spatial frames.",
         layout: "feature",
         media: [
-          { code: "WV-03", type: "Drawing", title: "Experiential section", shape: "hero" },
-          { code: "WV-04", type: "Diagram", title: "Bright · public · social", shape: "portrait" },
-          { code: "WV-05", type: "Diagram", title: "Active · semi-public · support", shape: "portrait" },
-          { code: "WV-06", type: "Diagram", title: "Dark · intimate · calm", shape: "portrait" },
-          { code: "WV-07", type: "Interior", title: "Public room", shape: "landscape" },
-          { code: "WV-08", type: "Interior", title: "Wellness threshold", shape: "landscape" },
-          { code: "WV-09", type: "Interior", title: "Low-light recovery", shape: "landscape" },
+          { code: "WV-03", type: "Drawing", title: "Experiential section", shape: "hero" , src: "assets/selected-works/images/the wave/section.png"},
+          { code: "WV-05", type: "Diagram", title: "Experiential section", shape: "portrait" , src: "assets/selected-works/images/the wave/section2.png"},
+          { code: "WV-06", type: "Diagram", title: "From bright/public to dark/intimate", shape: "portrait" , src: "assets/selected-works/images/the wave/concept.png"},
+          { code: "WV-07", type: "Interior", title: "Yoga room", shape: "landscape" , src: "assets/selected-works/images/the wave/yoga room.jpg"},
+          { code: "WV-08", type: "Interior", title: "Fitness room", shape: "landscape" , src: "assets/selected-works/images/the wave/fitness room.png"},
+          { code: "WV-09", type: "Interior", title: "Wellness threshold", shape: "landscape" , src: "assets/selected-works/images/the wave/pool render.png"},
         ],
       },
       {
@@ -330,6 +333,27 @@ const projects = [
     ],
   },
 ];
+
+/** Sequential drawing codes per project: CR-01…, CV-01…, VC-01…, WV-01… */
+(function renumberProjectMedia() {
+  const prefixes = {
+    "community-room": "CR",
+    "the-cove": "CV",
+    "village-in-the-city": "VC",
+    "the-wave": "WV",
+  };
+  projects.forEach((project) => {
+    const prefix = prefixes[project.id];
+    if (!prefix) return;
+    let n = 1;
+    project.sections.forEach((section) => {
+      section.media.forEach((item) => {
+        item.code = `${prefix}-${String(n).padStart(2, "0")}`;
+        n += 1;
+      });
+    });
+  });
+})();
 
 const behindPaperWalls = [
   {
@@ -460,12 +484,21 @@ function mediaSurface(item, compact = false) {
         </div>
       `;
     }
+    const variantAttrs = item.variant
+      ? `
+          data-primary-src="${safeUrl}"
+          data-variant-src="${escapeHtml(mediaUrl(item.variant.src))}"
+          data-primary-alt="${label}"
+          data-variant-alt="${escapeHtml(item.variant.alt || item.variant.title || item.variant.code || label)}"
+        `
+      : "";
     return `
       <div class="media-photo ${compact ? "compact" : ""}">
         <img
           src="${safeUrl}"
           alt="${label}"
           loading="lazy"
+          ${variantAttrs}
         />
       </div>
     `;
@@ -480,10 +513,26 @@ function mediaSurface(item, compact = false) {
 }
 
 function mediaCard(item) {
+  const variant = item.variant;
   return `
-    <figure class="media-card shape-${item.shape || "landscape"}">
+    <figure class="media-card shape-${item.shape || "landscape"}${variant ? " has-variant" : ""}">
+      ${variant ? `
+        <div class="gh-switch" role="group" aria-label="Primary or variant">
+          <button type="button" class="is-active" data-gh-mode="primary">Primary</button>
+          <button type="button" data-gh-mode="variant">Variant</button>
+        </div>
+      ` : ""}
       ${mediaSurface(item)}
-      <figcaption>
+      <figcaption
+        ${variant ? `
+          data-primary-code="${escapeHtml(item.code)}"
+          data-primary-type="${escapeHtml(item.type)}"
+          data-primary-title="${escapeHtml(item.title)}"
+          data-variant-code="${escapeHtml(variant.code)}"
+          data-variant-type="${escapeHtml(variant.type)}"
+          data-variant-title="${escapeHtml(variant.title)}"
+        ` : ""}
+      >
         <span>${escapeHtml(item.code)}</span>
         <span>${escapeHtml(item.type)}</span>
         <strong>${escapeHtml(item.title)}</strong>
@@ -522,6 +571,18 @@ function projectChapter(project) {
                 </button>
               `).join("")}
             </nav>
+            ${project.journal ? `
+              <a
+                class="journal-btn"
+                href="${escapeHtml(mediaUrl(project.journal.href))}"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>${escapeHtml(project.journal.eyebrow || "Field document")}</span>
+                <strong>${escapeHtml(project.journal.label || "See full documented journal")}</strong>
+                <i aria-hidden="true">↗</i>
+              </a>
+            ` : ""}
             <a class="back-link" href="#work-index">Back to index ↑</a>
           </div>
         </aside>
@@ -543,16 +604,16 @@ function galleryMarkup(project, groupIndex, imageIndex) {
     <div class="gallery-stage">
       <div class="active-frame shape-${active.shape || "landscape"}">
         ${mediaSurface(active)}
+        <div class="stage-controls">
+          <button type="button" data-step="-1" aria-label="Previous image">←</button>
+          <button type="button" data-step="1" aria-label="Next image">→</button>
+        </div>
       </div>
       <div class="stage-caption">
         <span>${escapeHtml(active.code)}</span>
         <span>${escapeHtml(active.type)}</span>
         <strong>${escapeHtml(active.title)}</strong>
         <span>${String(imageIndex + 1).padStart(2, "0")} / ${String(group.media.length).padStart(2, "0")}</span>
-      </div>
-      <div class="stage-controls">
-        <button type="button" data-step="-1" aria-label="Previous image">←</button>
-        <button type="button" data-step="1" aria-label="Next image">→</button>
       </div>
     </div>
     <div class="filmstrip" role="tablist" aria-label="${escapeHtml(group.title)} images">
@@ -584,6 +645,50 @@ function practiceChapter({ id, number, eyebrow, title, description, items, dark 
       </header>
       <div class="practice-grid practice-matrix">
         ${items.map(mediaCard).join("")}
+      </div>
+    </section>
+  `;
+}
+
+const physicalModels = [
+  { src: "assets/selected-works/images/model making/study models.jpg", alt: "Collection of study models" },
+  { src: "assets/selected-works/images/model making/window.jpeg", alt: "Students assembling a large wooden model frame in the workshop" },
+  { src: "assets/selected-works/images/model making/1.32.jpg", alt: "Physical model study 1.32" },
+  { src: "assets/selected-works/images/model making/1.2 stairs.jpg", alt: "Stair study model" },
+  { src: "assets/selected-works/images/model making/1.2 pavillion.jpg", alt: "Pavilion study model" },
+  { src: "assets/selected-works/images/model making/lower wacker 1.2.jpg", alt: "Lower Wacker study model" },
+  { src: "assets/selected-works/images/model making/terrace 1.8.jpg", alt: "Terrace study model" },
+  { src: "assets/selected-works/images/model making/model 1.8.png", alt: "Studio model 1.8" },
+  { src: "assets/selected-works/images/model making/3d print.JPG", alt: "3D printed model component" },
+  { src: "assets/selected-works/images/model making/BIG MODEL PHOTO4.jpg", alt: "Large assembled physical model" },
+];
+
+function modelsChapter() {
+  return `
+    <section class="practice-chapter models-chapter" id="models">
+      <header>
+        <span>A.03</span>
+        <div><p>Making</p><h2>Physical Models</h2></div>
+        <p>Each model is shown through process, scale, material, assembly, and final outcome, making model-making a standalone form of architectural thinking.</p>
+      </header>
+      <div class="model-carousel" data-model-carousel aria-roledescription="carousel" aria-label="Physical models">
+        <button type="button" class="model-carousel__nav" data-model-step="-1" aria-label="Previous model">‹</button>
+        <div class="model-carousel__stage">
+          ${physicalModels.map((item, index) => `
+            <button
+              type="button"
+              class="model-carousel__card"
+              data-model-index="${index}"
+              aria-label="Model ${String(index + 1).padStart(2, "0")} of ${String(physicalModels.length).padStart(2, "0")}"
+            >
+              <img src="${escapeHtml(mediaUrl(item.src))}" alt="${escapeHtml(item.alt)}" loading="lazy" draggable="false" />
+            </button>
+          `).join("")}
+        </div>
+        <button type="button" class="model-carousel__nav" data-model-step="1" aria-label="Next model">›</button>
+        <div class="model-carousel__count" aria-live="polite">
+          <span data-model-count>01</span> / ${String(physicalModels.length).padStart(2, "0")}
+        </div>
       </div>
     </section>
   `;
@@ -629,6 +734,7 @@ app.innerHTML = `
       <a href="#photography">Photography</a>
       <a href="#models">Models</a>
       <a href="#portfolio">Portfolio PDF</a>
+      <a class="nav-cv" href="assets/Resume_Kamila_Igambergenova.pdf" target="_blank" rel="noopener">Résumé ↗</a>
     </nav>
   </header>
 
@@ -670,28 +776,51 @@ app.innerHTML = `
     title: "Grasshopper",
     description: "Computational studies are presented as a complete process: the spatial question, the rule set, tested variations, and the selected architectural output.",
     items: [
-      { code: "GH-01", type: "Problem", title: "Design input + spatial question", shape: "landscape" },
-      { code: "GH-02", type: "Definition", title: "Grasshopper logic", shape: "panorama" },
-      { code: "GH-03", type: "Study", title: "Variation matrix", shape: "drawing" },
-      { code: "GH-04", type: "Output", title: "Selected system", shape: "hero" },
+      {
+        code: "GH-A01",
+        type: "CONFIGURATION",
+        title: "INTERWOVEN SPHERICAL ENCLOSURE",
+        shape: "drawing",
+        src: "assets/selected-works/images/grasshopper/3.png",
+        alt: "Interwoven spherical enclosure configuration",
+        variant: {
+          src: "assets/selected-works/images/grasshopper/f764e8e2-e705-4139-ac9e-228932ab16ab.png",
+          code: "GH-A01.2",
+          type: "VARIANT",
+          title: "BRANCHED SUPPORT CONFIGURATION",
+          alt: "Branched support configuration variant",
+        },
+      },
+      {
+        code: "GH-A02",
+        type: "INTERIOR",
+        title: "LIGHT THROUGH THE LATTICE",
+        shape: "drawing",
+        src: "assets/selected-works/images/grasshopper/4.png",
+        alt: "Interior light through the lattice",
+      },
+      {
+        code: "GH-B01",
+        type: "SYSTEM",
+        title: "CANOPY FORMED AROUND EXISTING TREES",
+        shape: "drawing",
+        src: "assets/selected-works/images/grasshopper/2.png",
+        alt: "Canopy formed around existing trees",
+      },
+      {
+        code: "GH-B02",
+        type: "INTERIOR",
+        title: "AN INHABITED LANDSCAPE STRUCTURE",
+        shape: "drawing",
+        src: "assets/selected-works/images/grasshopper/1.png",
+        alt: "An inhabited landscape structure",
+      },
     ],
   })}
 
   ${photographyChapter()}
 
-  ${practiceChapter({
-    id: "models",
-    number: "A.03",
-    eyebrow: "Making",
-    title: "Physical Models",
-    description: "Each model is shown through process, scale, material, assembly, and final outcome, making model-making a standalone form of architectural thinking.",
-    items: [
-      { code: "MD-01", type: "Process", title: "Material preparation", shape: "square" },
-      { code: "MD-02", type: "Process", title: "Assembly sequence", shape: "square" },
-      { code: "MD-03", type: "Detail", title: "Joint + material study", shape: "portrait" },
-      { code: "MD-04", type: "Final model", title: "Complete physical model", shape: "hero" },
-    ],
-  })}
+  ${modelsChapter()}
 
   <section class="portfolio-doc" id="portfolio">
     <div class="portfolio-doc__head">
@@ -786,54 +915,105 @@ projects.forEach((project) => {
 });
 
 /* =========================================================
-   Custom cursor — architectural registration / crop mark
+   Physical models — cover-flow carousel
    ========================================================= */
-(function customCursor() {
-  if (!window.matchMedia("(pointer: fine)").matches) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+(function initModelCarousel() {
+  const root = document.querySelector("[data-model-carousel]");
+  if (!root) return;
 
-  document.documentElement.classList.add("has-custom-cursor");
+  const cards = [...root.querySelectorAll(".model-carousel__card")];
+  const countEl = root.querySelector("[data-model-count]");
+  const total = cards.length;
+  if (!total) return;
 
-  const el = document.createElement("div");
-  el.className = "site-cursor";
-  el.setAttribute("aria-hidden", "true");
-  el.innerHTML = `
-    <span class="site-cursor__arm site-cursor__arm--v"></span>
-    <span class="site-cursor__arm site-cursor__arm--h"></span>
-    <span class="site-cursor__corner site-cursor__corner--tl"></span>
-    <span class="site-cursor__corner site-cursor__corner--tr"></span>
-    <span class="site-cursor__corner site-cursor__corner--bl"></span>
-    <span class="site-cursor__corner site-cursor__corner--br"></span>
-    <span class="site-cursor__core"></span>
-  `;
-  document.body.appendChild(el);
+  let index = 0;
 
-  let x = 0;
-  let y = 0;
-  let tx = 0;
-  let ty = 0;
-  let hovering = false;
+  function render() {
+    cards.forEach((card, i) => {
+      let offset = i - index;
+      // Wrap shortest path for a continuous deck feel
+      if (offset > total / 2) offset -= total;
+      if (offset < -total / 2) offset += total;
 
-  window.addEventListener("mousemove", (event) => {
-    tx = event.clientX;
-    ty = event.clientY;
-    el.classList.add("is-on");
+      const abs = Math.abs(offset);
+      card.style.setProperty("--offset", String(offset));
+      card.style.setProperty("--abs", String(abs));
+      card.classList.toggle("is-active", offset === 0);
+      card.setAttribute("aria-current", offset === 0 ? "true" : "false");
+      card.tabIndex = offset === 0 ? 0 : -1;
+    });
+    if (countEl) countEl.textContent = String(index + 1).padStart(2, "0");
+  }
+
+  function go(step) {
+    index = (index + step + total) % total;
+    render();
+  }
+
+  root.querySelectorAll("[data-model-step]").forEach((button) => {
+    button.addEventListener("click", () => go(Number(button.dataset.modelStep)));
+  });
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const next = Number(card.dataset.modelIndex);
+      if (Number.isNaN(next) || next === index) return;
+      index = next;
+      render();
+    });
+  });
+
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      go(-1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      go(1);
+    }
+  });
+
+  let touchX = null;
+  root.addEventListener("touchstart", (event) => {
+    touchX = event.changedTouches[0]?.clientX ?? null;
+  }, { passive: true });
+  root.addEventListener("touchend", (event) => {
+    if (touchX == null) return;
+    const dx = (event.changedTouches[0]?.clientX ?? touchX) - touchX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+    touchX = null;
   }, { passive: true });
 
-  document.addEventListener("mouseleave", () => el.classList.remove("is-on"));
-  document.addEventListener("mouseenter", () => el.classList.add("is-on"));
+  render();
+})();
 
-  document.addEventListener("mouseover", (event) => {
-    const target = event.target.closest("a, button, [role='button'], input, textarea, label, .film-card, .media-card");
-    hovering = !!target;
-    el.classList.toggle("is-hover", hovering);
-  }, true);
+/* =========================================================
+   Grasshopper — primary / variant image switch
+   ========================================================= */
+(function initGrasshopperVariants() {
+  document.querySelectorAll(".media-card.has-variant").forEach((card) => {
+    const img = card.querySelector("img[data-primary-src]");
+    const caption = card.querySelector("figcaption");
+    const buttons = [...card.querySelectorAll("[data-gh-mode]")];
+    if (!img || !caption || !buttons.length) return;
 
-  function tick() {
-    x += (tx - x) * 0.28;
-    y += (ty - y) * 0.28;
-    el.style.transform = `translate(${x}px, ${y}px)`;
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+    const apply = (mode) => {
+      const isVariant = mode === "variant";
+      img.src = isVariant ? img.dataset.variantSrc : img.dataset.primarySrc;
+      img.alt = isVariant ? img.dataset.variantAlt : img.dataset.primaryAlt;
+      const code = caption.querySelector("span:nth-child(1)");
+      const type = caption.querySelector("span:nth-child(2)");
+      const title = caption.querySelector("strong");
+      if (code) code.textContent = isVariant ? caption.dataset.variantCode : caption.dataset.primaryCode;
+      if (type) type.textContent = isVariant ? caption.dataset.variantType : caption.dataset.primaryType;
+      if (title) title.textContent = isVariant ? caption.dataset.variantTitle : caption.dataset.primaryTitle;
+      buttons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.ghMode === mode);
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => apply(button.dataset.ghMode));
+    });
+  });
 })();

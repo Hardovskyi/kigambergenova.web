@@ -184,3 +184,77 @@
   justify-self: center;
   letter-spacing: 0.12em;
 }
+
+/* ---- long sheet notes: grow caption, push photo down (no text scroll) ---- */
+#frames-of-practice-root .caption {
+  max-height: none !important;
+  overflow: visible !important;
+}
+#frames-of-practice-root .caption.top-center {
+  top: 7.5%;
+  width: min(640px, 56vw);
+}
+#frames-of-practice-root .caption.bottom-center {
+  width: min(640px, 56vw);
+}
+#frames-of-practice-root .caption.top-center:after {
+  height: 18px;
+  top: calc(100% + 6px);
+}
+#frames-of-practice-root .caption.top-center:before {
+  top: calc(100% + 24px);
+}
+#frames-of-practice-root .caption p {
+  max-width: 42ch;
+}
+#frames-of-practice-root .caption.top-center p,
+#frames-of-practice-root .caption.bottom-center p {
+  max-width: 58ch;
+}
+
+/* Frame position/size set by js/frames-caption-fit.js via --fit-* vars */
+#frames-of-practice-root .spatial-frame.active.fit-adjusted {
+  top: var(--fit-frame-top, 58%) !important;
+}
+#frames-of-practice-root .spatial-frame.active.fit-adjusted .image-plane img {
+  max-height: var(--fit-img-max, 48svh) !important;
+}
+
+/* Native image size — no grey/white placeholder mat behind photos */
+#frames-of-practice-root .image-plane {
+  background: transparent !important;
+  width: fit-content !important;
+  max-width: 100%;
+  margin-inline: auto;
+}
+#frames-of-practice-root .image-plane img {
+  width: auto !important;
+  height: auto !important;
+  max-width: min(100%, 72vw);
+  max-height: 59svh;
+  object-fit: contain;
+  background: transparent !important;
+}
+#frames-of-practice-root .spatial-frame.active {
+  width: fit-content !important;
+  max-width: min(76vw, 720px);
+}
+#frames-of-practice-root .spatial-frame.active.portrait {
+  max-width: min(52vw, 480px);
+}
+#frames-of-practice-root .spatial-frame.portrait .image-plane img {
+  max-height: 64svh;
+}
+#frames-of-practice-root .spatial-frame.active.fit-adjusted .image-plane img {
+  max-height: var(--fit-img-max, 48svh) !important;
+}
+
+@media (width <= 760px) {
+  #frames-of-practice-root .image-plane img {
+    max-width: min(100%, 88vw);
+    max-height: 48svh;
+  }
+  #frames-of-practice-root .spatial-frame.active.fit-adjusted .image-plane img {
+    max-height: var(--fit-img-max, 38svh) !important;
+  }
+}
